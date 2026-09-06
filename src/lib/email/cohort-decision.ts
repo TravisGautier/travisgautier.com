@@ -3,6 +3,7 @@ import type { LoadedEntry } from '@/lib/content/loader';
 import type { Cohort } from '@/content/schemas';
 import type { ApplicationListRow, AdminDecision } from '@/lib/cohorts/admin';
 import { signCheckoutToken } from '@/lib/cohorts/checkout-token';
+import { site } from '@/lib/site';
 
 export interface SendCohortDecisionOptions {
   to: string;
@@ -51,7 +52,7 @@ function acceptBody(params: {
     '',
     'This link is single-use and expires at the date above.',
     '',
-    '— Fabled10X',
+    site.emailSignature,
   ].join('\n');
 
   const html = `<!doctype html>
@@ -74,7 +75,7 @@ function acceptBody(params: {
       Confirm by <strong>${formatDate(acceptedUntil)}</strong>. This link is
       single-use and expires at the date above.
     </p>
-    <p style="font-size:12px;color:#475569;margin:24px 0 0">— Fabled10X</p>
+    <p style="font-size:12px;color:#475569;margin:24px 0 0">${site.emailSignature}</p>
   </div>
 </body></html>`;
 
@@ -89,7 +90,7 @@ function waitlistBody(meta: Cohort): { text: string; html: string } {
     "seats for this run. You're on the waitlist and we'll reach out if a seat",
     'opens up before the cohort starts.',
     '',
-    '— Fabled10X',
+    site.emailSignature,
   ].join('\n');
 
   const html = `<!doctype html>
@@ -101,7 +102,7 @@ function waitlistBody(meta: Cohort): { text: string; html: string } {
       received more strong applications than we have seats for this run.
       You're on the waitlist and we will reach out if a seat opens up.
     </p>
-    <p style="font-size:12px;color:#475569;margin:24px 0 0">— Fabled10X</p>
+    <p style="font-size:12px;color:#475569;margin:24px 0 0">${site.emailSignature}</p>
   </div>
 </body></html>`;
 
@@ -118,7 +119,7 @@ function declineBody(meta: Cohort): { text: string; html: string } {
     "We don't send detailed feedback, but the decision is specific to this",
     "cohort run's capacity and mix — not a judgment on your project.",
     '',
-    '— Fabled10X',
+    site.emailSignature,
   ].join('\n');
 
   const html = `<!doctype html>
@@ -130,7 +131,7 @@ function declineBody(meta: Cohort): { text: string; html: string } {
       <strong>${escapeHtml(meta.title)}</strong>. We aren't able to offer you a
       seat in this cohort.
     </p>
-    <p style="font-size:12px;color:#475569;margin:24px 0 0">— Fabled10X</p>
+    <p style="font-size:12px;color:#475569;margin:24px 0 0">${site.emailSignature}</p>
   </div>
 </body></html>`;
 
@@ -146,7 +147,7 @@ export async function sendCohortDecision({
 }: SendCohortDecisionOptions): Promise<void> {
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.RESEND_FROM_COHORTS;
-  const appUrl = process.env.AUTH_URL ?? 'https://fabled10x.com';
+  const appUrl = process.env.AUTH_URL ?? site.url;
 
   // Validate accepted-decision invariant BEFORE the env short-circuit so
   // the caller always learns about a programming bug, even in dev.

@@ -236,7 +236,7 @@ describe.skipIf(!hasDb)('auth integration flows (db)', () => {
         resendRequests.push({ body: text, url: request.url });
         return HttpResponse.json({
           id: 'email_test_123',
-          from: 'no-reply@fabled10x.com',
+          from: 'no-reply@travisgautier.com',
         });
       }),
     );

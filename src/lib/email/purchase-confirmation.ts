@@ -1,5 +1,6 @@
 import { Resend } from 'resend';
 import { getProductBySlug } from '@/lib/content/products';
+import { site } from '@/lib/site';
 
 let _resend: Resend | undefined;
 function getResend(): Resend {
@@ -22,10 +23,10 @@ export async function sendPurchaseConfirmation({
 }: SendPurchaseConfirmationArgs): Promise<void> {
   const entry = await getProductBySlug(productSlug);
   const productTitle = entry?.meta.title ?? productSlug;
-  const baseUrl = process.env.AUTH_URL ?? 'https://fabled10x.com';
+  const baseUrl = process.env.AUTH_URL ?? site.url;
   const accountUrl = `${baseUrl}/products/account/purchases/${purchaseId}`;
 
-  const subject = `Your Fabled10X purchase: ${productTitle}`;
+  const subject = `Your ${site.name} purchase: ${productTitle}`;
   const html = `
     <div style="font-family: ui-sans-serif, system-ui, sans-serif; max-width: 560px;">
       <h1 style="font-size: 20px;">Thanks for your purchase</h1>
@@ -44,13 +45,13 @@ export async function sendPurchaseConfirmation({
       </p>
       <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 32px 0;" />
       <p style="color: #94a3b8; font-size: 12px;">
-        Fabled10X &middot; One person. An agent team. Full SaaS delivery.
+        ${site.name} &middot; ${site.tagline}
       </p>
     </div>
   `;
 
   const { error } = await getResend().emails.send({
-    from: process.env.AUTH_RESEND_FROM ?? 'no-reply@fabled10x.com',
+    from: process.env.AUTH_RESEND_FROM ?? site.emailFromAddress,
     to,
     subject,
     html,

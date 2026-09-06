@@ -76,7 +76,7 @@ describe('sendCohortDecision', () => {
     originalFrom = process.env.RESEND_FROM_COHORTS;
     originalAuthUrl = process.env.AUTH_URL;
     process.env.RESEND_API_KEY = 're_test_stub';
-    process.env.RESEND_FROM_COHORTS = 'cohorts@fabled10x.com';
+    process.env.RESEND_FROM_COHORTS = 'cohorts@travisgautier.com';
     process.env.AUTH_URL = 'http://localhost:3000';
   });
 

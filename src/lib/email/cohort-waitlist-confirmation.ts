@@ -1,6 +1,7 @@
 import { Resend } from 'resend';
 import type { LoadedEntry } from '@/lib/content/loader';
 import type { Cohort } from '@/content/schemas';
+import { site } from '@/lib/site';
 
 interface SendOptions {
   to: string;
@@ -43,7 +44,7 @@ function renderBody(
     '',
     `Cohort page: ${detailUrl}`,
     '',
-    '— Fabled10X',
+    site.emailSignature,
   ].join('\n');
 
   const safeTitle = escapeHtml(meta.title);
@@ -66,7 +67,7 @@ function renderBody(
         View cohort page
       </a>
     </p>
-    <p style="font-size:12px;color:#475569;margin:24px 0 0">&mdash; Fabled10X</p>
+    <p style="font-size:12px;color:#475569;margin:24px 0 0">${site.emailSignature}</p>
   </div>
 </body>
 </html>`;
@@ -80,7 +81,7 @@ export async function sendCohortWaitlistConfirmation({
 }: SendOptions): Promise<void> {
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.RESEND_FROM_COHORTS;
-  const appUrl = process.env.AUTH_URL ?? 'https://fabled10x.com';
+  const appUrl = process.env.AUTH_URL ?? site.url;
 
   if (!apiKey || !from) {
     return;

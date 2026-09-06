@@ -2,6 +2,7 @@ import NextAuth, { type NextAuthConfig } from 'next-auth';
 import Resend from 'next-auth/providers/resend';
 import { DrizzleAdapter } from '@auth/drizzle-adapter';
 import { db, schema } from '@/db/client';
+import { site } from '@/lib/site';
 
 export const sessionCallback: NonNullable<
   NonNullable<NextAuthConfig['callbacks']>['session']
@@ -24,7 +25,7 @@ export const authConfig: NextAuthConfig = {
       // Fallback prevents Resend SDK from throwing at build time when
       // env vars are absent — the key is only used at runtime.
       apiKey: process.env.RESEND_API_KEY ?? 'placeholder_build_key',
-      from: process.env.AUTH_RESEND_FROM ?? 'no-reply@fabled10x.com',
+      from: process.env.AUTH_RESEND_FROM ?? site.emailFromAddress,
     }),
   ],
   session: { strategy: 'database', maxAge: 60 * 60 * 24 * 30 },

@@ -7,7 +7,7 @@ vi.hoisted(() => {
     process.env.RESEND_API_KEY = 're_test_stub_api_key';
   }
   if (!process.env.AUTH_URL) {
-    process.env.AUTH_URL = 'https://fabled10x.com';
+    process.env.AUTH_URL = 'https://travisgautier.com';
   }
   return {};
 });
@@ -17,6 +17,7 @@ vi.mock('@/lib/content/products', () => ({
 }));
 
 import { getProductBySlug } from '@/lib/content/products';
+import { site } from '@/lib/site';
 
 const mockGetProduct = vi.mocked(getProductBySlug);
 
@@ -66,7 +67,7 @@ describe('sendPurchaseConfirmation', () => {
 
     expect(capturedBody).not.toBeNull();
     expect(capturedBody!.to).toBe('buyer@example.com');
-    expect(capturedBody!.from).toMatch(/no-reply@fabled10x\.com/);
+    expect(capturedBody!.from).toBe(site.emailFromAddress);
     expect(capturedBody!.subject).toContain('Workflow Templates');
     expect(capturedBody!.html).toContain('Workflow Templates');
     expect(capturedBody!.html).toContain('/products/account/purchases/purchase-1');

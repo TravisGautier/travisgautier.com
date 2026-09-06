@@ -1,12 +1,13 @@
 import { Bone } from '@/components/brand/Bone';
 
 import { sourceToPillar } from './sourceToPillar';
+import { site } from '@/lib/site';
 
 interface EmailCaptureProps {
   source: string;
 }
 
-const PROFILE_URL = 'https://substack.com/@fabled10x';
+const PROFILE_URL = site.substackProfileUrl;
 
 export function EmailCapture({ source }: EmailCaptureProps) {
   const baseUrl = process.env.NEXT_PUBLIC_SUBSTACK_EMBED_URL;
@@ -34,7 +35,7 @@ export function EmailCapture({ source }: EmailCaptureProps) {
   }
 
   const url = new URL(baseUrl);
-  url.searchParams.set('utm_source', 'fabled10x.com');
+  url.searchParams.set('utm_source', site.domain);
   url.searchParams.set('utm_medium', 'embed');
   url.searchParams.set('utm_campaign', `pillar:${pillar}`);
   url.searchParams.set('utm_content', source);
@@ -43,7 +44,7 @@ export function EmailCapture({ source }: EmailCaptureProps) {
     <Bone edge="subtle" className="p-(--space-5)">
       <iframe
         src={url.toString()}
-        title="Subscribe to fabled10x on Substack"
+        title={`Subscribe to ${site.name} on Substack`}
         loading="lazy"
         className="block w-full min-h-[150px] bg-(--color-bone) border-0"
         data-source={source}

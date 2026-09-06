@@ -5,6 +5,7 @@ import { render } from '@testing-library/react';
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 
 import { EmailCapture } from '../EmailCapture';
+import { site } from '@/lib/site';
 
 const REPO_ROOT = join(__dirname, '..', '..', '..', '..');
 const readSource = (relPath: string) => readFileSync(join(REPO_ROOT, relPath), 'utf8');
@@ -14,7 +15,7 @@ const GLOBALS_CSS = readSource('src/app/globals.css');
 const FORBIDDEN_SENTINEL_SRC = readSource('src/__tests__/brand/forbidden-patterns.test.ts');
 
 const ENV_KEY = 'NEXT_PUBLIC_SUBSTACK_EMBED_URL';
-const EMBED_URL = 'https://fabled10x.substack.com/embed';
+const EMBED_URL = 'https://travisgautier.substack.com/embed';
 
 function boneSurfaceRoot(container: HTMLElement): HTMLElement {
   const el = container.firstElementChild as HTMLElement | null;
@@ -45,13 +46,13 @@ describe('EmailCapture — Substack embed (email-funnel-1)', () => {
   it('unit_renders_iframe_with_substack_origin', () => {
     const { container } = render(<EmailCapture source="homepage-hero" />);
     const iframe = iframeEl(container);
-    expect(new URL(iframe.src).origin).toBe('https://fabled10x.substack.com');
+    expect(new URL(iframe.src).origin).toBe('https://travisgautier.substack.com');
     expect(new URL(iframe.src).pathname).toBe('/embed');
   });
 
   it('unit_iframe_has_accessible_title', () => {
     const { container } = render(<EmailCapture source="homepage-hero" />);
-    expect(iframeEl(container).title).toBe('Subscribe to fabled10x on Substack');
+    expect(iframeEl(container).title).toBe(`Subscribe to ${site.name} on Substack`);
   });
 
   it('unit_iframe_loading_lazy', () => {
@@ -71,7 +72,7 @@ describe('EmailCapture — Substack embed (email-funnel-1)', () => {
   it('unit_utm_campaign_pillar_delivery_for_episode_source', () => {
     const { container } = render(<EmailCapture source="episode-claude-shipped-an-app" />);
     const params = new URL(iframeEl(container).src).searchParams;
-    expect(params.get('utm_source')).toBe('fabled10x.com');
+    expect(params.get('utm_source')).toBe(site.domain);
     expect(params.get('utm_medium')).toBe('embed');
     expect(params.get('utm_campaign')).toBe('pillar:delivery');
     expect(params.get('utm_content')).toBe('episode-claude-shipped-an-app');
@@ -108,7 +109,7 @@ describe('EmailCapture — Substack embed (email-funnel-1)', () => {
     expect(container.querySelector('iframe')).toBeNull();
     const link = container.querySelector('a') as HTMLAnchorElement | null;
     expect(link, 'fallback link not found').not.toBeNull();
-    expect(link!.href).toBe('https://substack.com/@fabled10x');
+    expect(link!.href).toBe(site.substackProfileUrl);
     expect(link!.target).toBe('_blank');
     expect(link!.rel).toMatch(/noopener/);
   });

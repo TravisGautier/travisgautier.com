@@ -11,6 +11,7 @@ const { mockEmailsSend, ResendSpy } = vi.hoisted(() => {
 vi.mock('resend', () => ({ Resend: ResendSpy }));
 
 import { sendCohortApplicationReceived } from '../cohort-application-received';
+import { site } from '@/lib/site';
 
 const COHORT_FIXTURE = {
   meta: {
@@ -44,8 +45,8 @@ const originalEnv = { ...process.env };
 describe('sendCohortApplicationReceived', () => {
   beforeEach(() => {
     process.env.RESEND_API_KEY = 'rk_test_abc';
-    process.env.RESEND_FROM_COHORTS = 'cohorts@fabled10x.test';
-    process.env.AUTH_URL = 'https://fabled10x.test';
+    process.env.RESEND_FROM_COHORTS = 'cohorts@travisgautier.test';
+    process.env.AUTH_URL = 'https://travisgautier.test';
     mockEmailsSend.mockReset();
     mockEmailsSend.mockResolvedValue({ id: 'mock-email-1' });
     ResendSpy.mockClear();
@@ -80,7 +81,7 @@ describe('sendCohortApplicationReceived', () => {
     // both are valid env-guard implementations.
     if (mockEmailsSend.mock.calls.length > 0) {
       const call = mockEmailsSend.mock.calls[0][0];
-      expect(call.from).toMatch(/fabled10x/i);
+      expect(call.from).toBe(site.emailFrom);
     }
   });
 
