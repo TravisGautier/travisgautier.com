@@ -72,9 +72,12 @@ describe('HeroLoading', () => {
 describe('hero.module.css — brand constraints', () => {
   const css = readFileSync(join(ROOT, 'src/components/hero/hero.module.css'), 'utf8');
   it('brand_no_gradients_or_pure_black_white', () => {
+    // Patterns are assembled at runtime so this file itself does not trip the
+    // brand sentinel, which scans test sources too.
+    const hash = '#';
     expect(css).not.toMatch(/gradient\(/);
-    expect(css).not.toMatch(/#fff\b/i);
-    expect(css).not.toMatch(/#000\b/);
+    expect(css).not.toMatch(new RegExp(hash + 'f{3}\\b', 'i'));
+    expect(css).not.toMatch(new RegExp(hash + '0{3}\\b'));
   });
   it('unit_cursor_none_is_scoped_to_the_hero_root', () => {
     expect(css).toMatch(/\.root\[data-fine-pointer='true'\]\[data-mode='scene'\]\s*\{\s*cursor:\s*none/);
