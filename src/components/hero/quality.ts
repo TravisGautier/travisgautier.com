@@ -77,6 +77,17 @@ export interface DetermineQualityOptions {
   reducedMotion?: boolean;
   lowCores?: boolean;
   devicePixelRatio?: number;
+  /** Force a tier (dev/QA only) — skips the WebGL probe and GPU lookup. */
+  forceTier?: number;
+}
+
+// `?hero-tier=N` on a non-production build forces a tier for QA.
+export function tierOverrideFromSearch(search: string | undefined, isProduction: boolean): number | undefined {
+  if (isProduction || !search) return undefined;
+  const raw = new URLSearchParams(search).get('hero-tier');
+  if (raw === null) return undefined;
+  const n = Number(raw);
+  return Number.isInteger(n) && n >= 0 && n <= 3 ? n : undefined;
 }
 
 export function buildQualityConfig(tierIn: number, opts: { mobile: boolean; smallScreen: boolean; reducedMotion: boolean; lowCores: boolean; devicePixelRatio: number }): QualityConfig {
@@ -109,6 +120,7 @@ export async function determineQuality(options: DetermineQualityOptions = {}): P
     lowCores: options.lowCores ?? lowCoreCount(),
     devicePixelRatio: options.devicePixelRatio ?? (globalThis.devicePixelRatio || 1),
   };
+  if (options.forceTier !== undefined) return buildQualityConfig(options.forceTier, env);
   const probe = options.probe ?? probeWebGL;
   const gl = probe();
   if (!gl) return buildQualityConfig(0, env);

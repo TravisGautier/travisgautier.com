@@ -9,7 +9,7 @@ import { HeroLoading } from './HeroLoading';
 import { HeroOverlay } from './HeroOverlay';
 import { HeroTransition } from './HeroTransition';
 import { createHeroStore, type HeroMode } from './heroStore';
-import { determineQuality, type QualityConfig } from './quality';
+import { determineQuality, tierOverrideFromSearch, type QualityConfig } from './quality';
 import styles from './hero.module.css';
 import type { HeroEngine } from './engine';
 
@@ -34,6 +34,7 @@ export function PortalHero({ quality, loadEngine }: PortalHeroProps = {}) {
   const [engineKey, setEngineKey] = useState(0);
   const [finePointer, setFinePointer] = useState(false);
   const [entering, setEntering] = useState<Side | null>(null);
+  const [tier, setTier] = useState<number | null>(null);
   const routerRef = useRef(router);
   routerRef.current = router;
 
@@ -84,8 +85,13 @@ export function PortalHero({ quality, loadEngine }: PortalHeroProps = {}) {
     if (!host) return;
 
     (async () => {
-      const q = await (quality ?? (() => determineQuality({ benchmarksURL: '/benchmarks', timeoutMs: 3000 })))();
+      const q = await (quality ?? (() => determineQuality({
+        benchmarksURL: '/benchmarks',
+        timeoutMs: 3000,
+        forceTier: tierOverrideFromSearch(window.location.search, process.env.NODE_ENV === 'production'),
+      })))();
       if (cancelled) return;
+      setTier(q.tier);
       if (q.tier === 0) {
         setMode('fallback');
         return;
@@ -127,6 +133,7 @@ export function PortalHero({ quality, loadEngine }: PortalHeroProps = {}) {
     <section
       data-hero-root
       data-mode={mode}
+      data-tier={tier ?? undefined}
       data-fine-pointer={finePointer ? 'true' : 'false'}
       className={styles.root}
       role="region"

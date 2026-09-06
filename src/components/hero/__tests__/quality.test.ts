@@ -109,3 +109,25 @@ describe('quality — environment helpers', () => {
     expect(lowCoreCount(undefined)).toBe(false);
   });
 });
+
+describe('quality — dev tier override', () => {
+  it('unit_reads_hero_tier_param_outside_production_only', async () => {
+    const { tierOverrideFromSearch } = await import('../quality');
+    expect(tierOverrideFromSearch('?hero-tier=0', false)).toBe(0);
+    expect(tierOverrideFromSearch('?hero-tier=3', false)).toBe(3);
+    expect(tierOverrideFromSearch('?hero-tier=9', false)).toBeUndefined();
+    expect(tierOverrideFromSearch('?hero-tier=abc', false)).toBeUndefined();
+    expect(tierOverrideFromSearch('?other=1', false)).toBeUndefined();
+    expect(tierOverrideFromSearch('?hero-tier=2', true)).toBeUndefined();
+    expect(tierOverrideFromSearch(undefined, false)).toBeUndefined();
+  });
+
+  it('unit_forceTier_skips_probe_and_lookup', async () => {
+    const probe = vi.fn(() => null);
+    const getGPUTier = tierOf(3);
+    const c = await determineQuality({ ...env, probe, getGPUTier, forceTier: 2 });
+    expect(c.tier).toBe(2);
+    expect(probe).not.toHaveBeenCalled();
+    expect(getGPUTier).not.toHaveBeenCalled();
+  });
+});
