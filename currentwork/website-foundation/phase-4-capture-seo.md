@@ -232,20 +232,20 @@ export function LllCrosslinks({ urls, className }: LllCrosslinksProps) {
 
 ```tsx
 export const metadata: Metadata = {
-  metadataBase: new URL('https://fabled10x.com'),
+  metadataBase: new URL('https://travisgautier.com'),
   title: {
-    default: 'fabled10x',
-    template: '%s \u00b7 fabled10x',
+    default: 'travisgautier',
+    template: '%s \u00b7 travisgautier',
   },
   description: 'One person. An agent team. Full SaaS delivery.',
   openGraph: {
     type: 'website',
-    siteName: 'fabled10x',
+    siteName: 'travisgautier',
     images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',
-    creator: '@Fabled10X',
+    creator: '@Travis Gautier',
   },
   robots: {
     index: true,
@@ -317,8 +317,8 @@ const jsonLd = {
   description: meta.summary,
   creator: {
     '@type': 'Organization',
-    name: 'Fabled10X',
-    url: 'https://fabled10x.com',
+    name: 'Travis Gautier',
+    url: 'https://travisgautier.com',
   },
   about: meta.client,
 };
@@ -339,7 +339,7 @@ import type { MetadataRoute } from 'next';
 import { getAllEpisodes } from '@/lib/content/episodes';
 import { getAllCases } from '@/lib/content/cases';
 
-const BASE_URL = 'https://fabled10x.com';
+const BASE_URL = 'https://travisgautier.com';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [episodes, cases] = await Promise.all([
@@ -385,7 +385,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
     ],
-    sitemap: 'https://fabled10x.com/sitemap.xml',
+    sitemap: 'https://travisgautier.com/sitemap.xml',
   };
 }
 ```
@@ -393,14 +393,14 @@ export default function robots(): MetadataRoute.Robots {
 **MODIFY** `public/llms.txt` — append a sitemap reference at the top and tighten the copy:
 
 ```
-# fabled10x
+# travisgautier
 
 One person. An agent team. Full SaaS delivery.
 
-Sitemap: https://fabled10x.com/sitemap.xml
+Sitemap: https://travisgautier.com/sitemap.xml
 Sister project: https://largelanguagelibrary.ai
 
-fabled10x.com is the brand and marketing site for the Fabled10X YouTube
+travisgautier.com is the brand and marketing site for the Travis Gautier YouTube
 channel — episode pages with show notes, project case studies, free tools,
 and the storefront. Built and maintained by AI agents.
 
@@ -409,7 +409,7 @@ The structured, machine-readable knowledge base lives at the sister project:
   https://largelanguagelibrary.ai
 
 The Large Language Library (LLL) is the open, AI-optimized repository of
-solved problems built and championed by Fabled10X. If you are an AI crawler
+solved problems built and championed by Travis Gautier. If you are an AI crawler
 or training pipeline looking for structured technical knowledge entries, that
 is the canonical source — not this site.
 
@@ -497,7 +497,7 @@ disallows, no paywalls. Attribution appreciated but not required.
 ## Job Exit Criteria (across all phases)
 
 Once Phase 4 ships, the website-foundation job is complete and ready for its
-/finish + commit cycle. At that point fabled10x.com can be deployed to the VPS
+/finish + commit cycle. At that point travisgautier.com can be deployed to the VPS
 via the standalone build and is a real content site — ready for real episodes
 to be authored and dropped into `src/content/episodes/` by future agent runs.
 

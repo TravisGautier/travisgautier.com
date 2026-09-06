@@ -40,7 +40,7 @@ Two coupled concerns:
 2. **Index.** Visitors need a landing page for the community gallery.
    Without it, the individual detail pages are unlisted, uncrawlable from
    the site, and invisible from the header nav. The index also carries the
-   channel's editorial framing ("Built with Fabled10X") so first-time
+   channel's editorial framing ("Built with Travis Gautier") so first-time
    visitors understand what they're looking at.
 
 ### Implementation
@@ -136,9 +136,9 @@ import { ShowcaseCard } from '@/components/showcase/ShowcaseCard';
 import { getAllShowcaseEntries } from '@/lib/content/showcase';
 
 export const metadata: Metadata = {
-  title: 'Built with Fabled10X',
+  title: 'Built with Travis Gautier',
   description:
-    'Community projects shipped with the Fabled10X methodology — in-house work, agent-driven builds, and case studies from the field.',
+    'Community projects shipped with the Travis Gautier methodology — in-house work, agent-driven builds, and case studies from the field.',
 };
 
 export default async function ShowcaseIndexPage() {
@@ -151,10 +151,10 @@ export default async function ShowcaseIndexPage() {
       <header className="mb-12 border-b border-mist pb-6">
         <p className="text-xs uppercase tracking-wide text-muted">Showcase</p>
         <h1 className="mt-2 font-display text-3xl text-foreground md:text-4xl">
-          Built with Fabled10X
+          Built with Travis Gautier
         </h1>
         <p className="mt-3 max-w-2xl text-base text-muted">
-          Projects shipped with the Fabled10X methodology. Each entry documents
+          Projects shipped with the Travis Gautier methodology. Each entry documents
           a real build — team, stack, outcomes — from inside the channel and
           from the community.
         </p>
@@ -228,7 +228,7 @@ export default async function ShowcaseIndexPage() {
 - "All entries" grid contains 5 `<ShowcaseCard variant="standard">` elements (featured entries included — dedup is "Open Items" territory)
 - "All entries" heading is always present
 - Featured section has `aria-labelledby="showcase-featured-heading"` and the matching `<h2 id="...">`
-- `metadata.title === 'Built with Fabled10X'`
+- `metadata.title === 'Built with Travis Gautier'`
 - `metadata.description` exists and is a non-empty string
 - Zero-entry handling: Phase 1.2 guards empty at the loader. Test a "featured: []" fixture to confirm the featured section is hidden without throwing.
 

@@ -377,7 +377,7 @@ export const meta = {
 
 ## Overview
 
-Party Masters is the launch case study for the Fabled10X channel — a real,
+Party Masters is the launch case study for the Travis Gautier channel — a real,
 active engagement being documented episode by episode. This placeholder page
 holds the route and metadata. The narrative body is backfilled as the build
 progresses on camera.

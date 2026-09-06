@@ -2,7 +2,7 @@ version: 1
 section:
   id: "cohort-enrollment-3.2"
   name: "Apply Page + ApplicationForm + submitApplication + Applicant Email"
-  planning_file: "/home/travis/Projects/fabled10x/currentwork/cohort-enrollment/phase-3-application-flow.md"
+  planning_file: "/home/travis/Projects/travisgautier.com/currentwork/cohort-enrollment/phase-3-application-flow.md"
   line_range: [173, 1019]
   complexity: L
   merged_from: "old 3.2 (Auth-Gated Page + Middleware) + old 3.3 (Form + Submit Action) + old 3.4 (Applicant Confirmation Email)"
@@ -10,7 +10,7 @@ section:
 divergences_from_planning_doc:
   - id: middleware_is_proxy_ts
     summary: "Planning doc says MODIFY middleware.ts; actual file is proxy.ts (Next.js 16 renamed middleware → proxy per sa-2.3)."
-    impact: "Implementation will modify /home/travis/Projects/fabled10x/proxy.ts. Tests file is src/__tests__/proxy.cohort.test.ts (NOT middleware.cohort.test.ts as planning doc shows). Existing proxy.ts uses path-prefix check (startsWith), not a literal matcher list — extension adds '/cohorts/' + '/apply' check rather than appending '/cohorts/:slug/apply' to matcher."
+    impact: "Implementation will modify /home/travis/Projects/travisgautier.com/proxy.ts. Tests file is src/__tests__/proxy.cohort.test.ts (NOT middleware.cohort.test.ts as planning doc shows). Existing proxy.ts uses path-prefix check (startsWith), not a literal matcher list — extension adds '/cohorts/' + '/apply' check rather than appending '/cohorts/:slug/apply' to matcher."
     captured_in: "knowledge.yaml#storefront-auth-2.3.next16_proxy_convention"
   - id: form_field_validation_split
     summary: "ApplicationForm uses HTML5 native validation (required, minLength, max) on the client and Zod CohortApplicationInputSchema on the server."
@@ -227,7 +227,7 @@ dependencies:
     - name: "AUTH_URL"
       purpose: "Email helper builds {AUTH_URL}/products/account/cohorts tracking link"
       provider: "operator"
-      fallback: "'https://fabled10x.com' when unset"
+      fallback: "'https://travisgautier.com' when unset"
     - name: "DATABASE_URL"
       purpose: "Drizzle client — page query + action insert + waitlist link"
       provider: "operator"
@@ -314,13 +314,13 @@ patterns:
       - "escapeHtml helper for any cohort-supplied prose in HTML body"
       - "formatDate with timeZone: 'UTC' to avoid jsdom timezone drift"
       - "Inline HTML template; text + html sent together"
-      - "AUTH_URL fallback to 'https://fabled10x.com' when unset"
+      - "AUTH_URL fallback to 'https://travisgautier.com' when unset"
     template_email_helper: |
       // sendCohortApplicationReceived shape:
       export async function sendCohortApplicationReceived({ to, cohort }: { to: string; cohort: LoadedEntry<Cohort> }): Promise<void> {
         const apiKey = process.env.RESEND_API_KEY;
         const from = process.env.RESEND_FROM_COHORTS;
-        const appUrl = process.env.AUTH_URL ?? 'https://fabled10x.com';
+        const appUrl = process.env.AUTH_URL ?? 'https://travisgautier.com';
         if (!apiKey || !from) return;
         const accountUrl = `${appUrl}/products/account/cohorts`;
         const meta = cohort.meta;

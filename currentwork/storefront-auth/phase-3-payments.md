@@ -406,10 +406,10 @@ export async function sendPurchaseConfirmation({
 }: SendPurchaseConfirmationArgs): Promise<void> {
   const entry = await getProductBySlug(productSlug);
   const productTitle = entry?.meta.title ?? productSlug;
-  const baseUrl = process.env.AUTH_URL ?? 'https://fabled10x.com';
+  const baseUrl = process.env.AUTH_URL ?? 'https://travisgautier.com';
   const accountUrl = `${baseUrl}/products/account/purchases/${purchaseId}`;
 
-  const subject = `Your Fabled10X purchase: ${productTitle}`;
+  const subject = `Your Travis Gautier purchase: ${productTitle}`;
   const html = `
     <div style="font-family: ui-sans-serif, system-ui, sans-serif; max-width: 560px;">
       <h1 style="font-size: 20px;">Thanks for your purchase</h1>
@@ -428,13 +428,13 @@ export async function sendPurchaseConfirmation({
       </p>
       <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 32px 0;" />
       <p style="color: #94a3b8; font-size: 12px;">
-        Fabled10X · One person. An agent team. Full SaaS delivery.
+        Travis Gautier · One person. An agent team. Full SaaS delivery.
       </p>
     </div>
   `;
 
   await resend.emails.send({
-    from: process.env.AUTH_RESEND_FROM ?? 'no-reply@fabled10x.com',
+    from: process.env.AUTH_RESEND_FROM ?? 'no-reply@travisgautier.com',
     to,
     subject,
     html,

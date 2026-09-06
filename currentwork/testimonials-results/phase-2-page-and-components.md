@@ -370,9 +370,9 @@ import {
 
 // Static detail metadata lives on the page. Phase 3 enriches with OG/JSON-LD.
 export const metadata: Metadata = {
-  title: 'Results — Fabled10X',
+  title: 'Results — Travis Gautier',
   description:
-    'Client outcomes and quotes from teams shipping with the Fabled10X methodology.',
+    'Client outcomes and quotes from teams shipping with the Travis Gautier methodology.',
 };
 
 /**
@@ -415,7 +415,7 @@ export default async function ResultsPage() {
           Clients shipping with the methodology
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-base text-muted md:text-lg">
-          Real outcomes from teams running the Fabled10X pipeline against real
+          Real outcomes from teams running the Travis Gautier pipeline against real
           projects. Every quote here is editorial — we publish only with the
           client&rsquo;s permission.
         </p>
@@ -469,7 +469,7 @@ export default async function ResultsPage() {
 - Featured testimonial(s) receive the `md:col-span-2` treatment (spot-check the rendered DOM for the class on the correct `<li>`)
 - Footer CTA renders both `See case studies` (→ `/cases`) and `Watch episodes` (→ `/episodes`) links
 - `<main>` landmark exists (from `<Container as="main">`)
-- `metadata.title` is `'Results — Fabled10X'`
+- `metadata.title` is `'Results — Travis Gautier'`
 - `metadata.description` contains the word `outcomes`
 - Mock a testimonial with no MDX body (module `import` throws or returns `{ default: () => null }`) → the card renders without a body section and the page does not crash
 

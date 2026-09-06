@@ -47,8 +47,8 @@ The current component renders a native form bound to a server action. New behavi
 - Imports `Bone` from `@/components/brand/Bone`, `sourceToPillar` from `./sourceToPillar`
 - `EmailCaptureProps = { source: string }` only
 - Reads `process.env.NEXT_PUBLIC_SUBSTACK_EMBED_URL`
-- Fallback (env unset): Bone-wrapped `<a>` to `https://substack.com/@fabled10x` with `target="_blank"`, `rel="noopener noreferrer"`, `data-source`, `data-pillar`
-- Happy path: Bone-wrapped iframe; `src` constructed from `new URL(baseUrl)` with `utm_source=fabled10x.com`, `utm_medium=embed`, `utm_campaign=pillar:{pillar}`, `utm_content={source}`; `title="Subscribe to fabled10x on Substack"`; `loading="lazy"`; `className="block w-full min-h-[150px] bg-(--color-bone) border-0"`; `data-source`, `data-pillar`
+- Fallback (env unset): Bone-wrapped `<a>` to `https://substack.com/@travisgautier` with `target="_blank"`, `rel="noopener noreferrer"`, `data-source`, `data-pillar`
+- Happy path: Bone-wrapped iframe; `src` constructed from `new URL(baseUrl)` with `utm_source=travisgautier.com`, `utm_medium=embed`, `utm_campaign=pillar:{pillar}`, `utm_content={source}`; `title="Subscribe to travisgautier on Substack"`; `loading="lazy"`; `className="block w-full min-h-[150px] bg-(--color-bone) border-0"`; `data-source`, `data-pillar`
 
 ### Files
 
@@ -168,7 +168,7 @@ Append after the existing cohort-enrollment block:
 
 ```
 # Substack embed (email-funnel — supersedes self-hosted Resend funnel)
-NEXT_PUBLIC_SUBSTACK_EMBED_URL=https://fabled10x.substack.com/embed
+NEXT_PUBLIC_SUBSTACK_EMBED_URL=https://travisgautier.substack.com/embed
 ```
 
 Do NOT remove `RESEND_API_KEY`, `AUTH_RESEND_FROM`, or any cohort vars — they back `sa` and `cohort-enrollment`.

@@ -59,19 +59,19 @@ export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'Build log',
   description:
-    'A live, narrated view of the agent-driven build process behind fabled10x.com — current activity, every shipped section, every job plan, and the live worktrees the agents are working in.',
+    'A live, narrated view of the agent-driven build process behind travisgautier.com — current activity, every shipped section, every job plan, and the live worktrees the agents are working in.',
   openGraph: {
-    title: 'Build log · fabled10x',
+    title: 'Build log · travisgautier',
     description:
-      'The agent-driven build process behind fabled10x.com, narrated for both technical and non-technical viewers.',
+      'The agent-driven build process behind travisgautier.com, narrated for both technical and non-technical viewers.',
     type: 'website',
     url: '/build-log',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Build log · fabled10x',
+    title: 'Build log · travisgautier',
     description:
-      'The agent-driven build process behind fabled10x.com, narrated for both technical and non-technical viewers.',
+      'The agent-driven build process behind travisgautier.com, narrated for both technical and non-technical viewers.',
   },
   alternates: { canonical: '/build-log' },
 };
@@ -81,12 +81,12 @@ const jsonLd = {
   '@type': 'CollectionPage',
   name: 'Build log',
   description:
-    'A live, narrated view of the agent-driven build process behind fabled10x.com — current activity, every shipped section, every job plan, and the live worktrees the agents are working in.',
-  url: 'https://fabled10x.com/build-log',
+    'A live, narrated view of the agent-driven build process behind travisgautier.com — current activity, every shipped section, every job plan, and the live worktrees the agents are working in.',
+  url: 'https://travisgautier.com/build-log',
   isPartOf: {
     '@type': 'WebSite',
-    name: 'fabled10x',
-    url: 'https://fabled10x.com',
+    name: 'travisgautier',
+    url: 'https://travisgautier.com',
   },
 };
 
@@ -183,7 +183,7 @@ export default async function BuildLogPage() {
         <footer className="mt-12 pt-6 border-t border-bone text-xs text-(--color-muted)">
           Rebuilt at <time dateTime={nowIso}>{nowIso}</time>. Raw chronology:{' '}
           <a
-            href="https://github.com/fabled10x/fabled10x/blob/main/pipeline/IMPLEMENTATION-LOG.md"
+            href="https://github.com/travisgautier/travisgautier/blob/main/pipeline/IMPLEMENTATION-LOG.md"
             className="text-link hover:text-(--color-oxblood)"
           >
             IMPLEMENTATION-LOG.md
@@ -346,7 +346,7 @@ vi.mock('@/lib/build-log/jobs');
 vi.mock('@/lib/build-log/pipeline-state');
 vi.mock('@/lib/build-log/worktree-state');
 vi.mock('@/lib/build-log/repo-url', () => ({
-  resolveGithubRepoUrl: () => 'https://github.com/fabled10x/fabled10x',
+  resolveGithubRepoUrl: () => 'https://github.com/travisgautier/travisgautier',
 }));
 
 describe('BuildLogPage', () => {

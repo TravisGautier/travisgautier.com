@@ -4,7 +4,7 @@
 
 ## Context
 
-fabled10x.com currently ships with a placeholder "boutique consultancy" palette
+travisgautier.com currently ships with a placeholder "boutique consultancy" palette
 (ink / parchment / ember / steel / mist / signal) and the default Geist type
 stack — leftovers from `website-foundation-1.3` when no real brand spec
 existed. The user has since produced a complete editorial brand identity:
@@ -27,7 +27,7 @@ the existing brand-identity doc rewritten + a new design-system doc shipped
 alongside.
 
 The job follows the partymasters `so` precedent (32 phases / 278 sections)
-but is scaled down: fabled10x is one brand, one mode, one storefront — not a
+but is scaled down: travisgautier is one brand, one mode, one storefront — not a
 14-theme multi-tenant SaaS. The structure here is **9 phases, 32 sections**.
 
 ## What Already Exists
@@ -60,9 +60,9 @@ but is scaled down: fabled10x is one brand, one mode, one storefront — not a
   styles MDX rendered for the build log. Heading/code/table/blockquote
   treatment exists; will be retrofitted to the brand stack.
 - **Brand identity doc (placeholder)** —
-  `docs/fabled10x-brand-identity.md` describes the old "boutique
+  `docs/brand-identity.md` describes the old "boutique
   consultancy, muted confident colors" direction. Will be rewritten to the
-  editorial direction in so-1.3 and a new `docs/fabled10x-design-system.md`
+  editorial direction in so-1.3 and a new `docs/design-system.md`
   added alongside.
 - **Tailwind 4 setup** — `@import "tailwindcss"` + inline `@theme` in
   `globals.css`, `@tailwindcss/postcss` in `postcss.config.mjs`. Stable; we
@@ -77,7 +77,7 @@ but is scaled down: fabled10x is one brand, one mode, one storefront — not a
 |-----|------------------------------------------------------------------------------------------|--------------------------------|------|---------|
 | 1.1 | Palette swap + contrast pairs + dark-mode removal                                        | 1 - Foundation Tokens          | M    | Complete |
 | 1.2 | Spacing + radius scale (8px grid, restrained corners)                                    | 1 - Foundation Tokens          | M    | Complete |
-| 1.3 | Brand doc rewrite + new `docs/fabled10x-design-system.md`                                | 1 - Foundation Tokens          | S    | Complete |
+| 1.3 | Brand doc rewrite + new `docs/design-system.md`                                | 1 - Foundation Tokens          | S    | Complete |
 | 2.1 | Font loading swap (Cinzel + Inter + JetBrains Mono)                                      | 2 - Typography                 | M    | Complete |
 | 2.2 | Type scale + display-rule utilities                                                      | 2 - Typography                 | S    | Complete |
 | 2.3 | `<DropAccent>` oversized-punctuation primitive                                           | 2 - Typography                 | S    | Complete |
@@ -106,7 +106,7 @@ but is scaled down: fabled10x is one brand, one mode, one storefront — not a
 | 8.1 | Logo SVG suite + favicon set                                                             | 8 - Asset Pipeline             | M    | Complete |
 | 8.2 | Dynamic `opengraph-image.tsx` root + per-route (episodes, cases)                         | 8 - Asset Pipeline             | L    | Complete |
 | 8.3 | Dev-only `/thumb-preview` route for YouTube thumbnail capture                            | 8 - Asset Pipeline             | L    | Complete |
-| 8.4 | `docs/fabled10x-design-system.md` finalize (tokens, fonts, asset paths, forbidden list)  | 8 - Asset Pipeline             | S    | Complete |
+| 8.4 | `docs/design-system.md` finalize (tokens, fonts, asset paths, forbidden list)  | 8 - Asset Pipeline             | S    | Complete |
 | 9.1 | Mobile-first legibility tests (320×180 og, 1280×720 thumb, 360×640 viewport)             | 9 - A11y + Polish              | M    | Complete |
 | 9.2 | WCAG contrast guard sentinel                                                             | 9 - A11y + Polish              | M    | Planned |
 | 9.3 | Reduce-motion / forced-colors / 200% zoom behavior                                       | 9 - A11y + Polish              | M    | Planned |
@@ -202,8 +202,8 @@ None. This job is chrome and assets. Content schemas (`Episode`,
 | `src/app/(internal)/thumb-preview/page.tsx` | NEW — dev-only 1280×720 YouTube thumbnail composer |
 | `public/logo.svg`, `public/favicon.svg`, `public/apple-touch-icon.png`, `public/android-chrome-192.png`, `public/android-chrome-512.png` | NEW — logo + favicon suite |
 | `public/fonts/Cinzel-Black.ttf`, `public/fonts/Inter-{Regular,SemiBold,Bold}.ttf` | NEW — local font files for `ImageResponse` (next/font can't pipe into `next/og`) |
-| `docs/fabled10x-brand-identity.md` | MODIFY — rewrite for the editorial direction |
-| `docs/fabled10x-design-system.md` | NEW — canonical tokens, fonts, contrast pairs, forbidden patterns |
+| `docs/brand-identity.md` | MODIFY — rewrite for the editorial direction |
+| `docs/design-system.md` | NEW — canonical tokens, fonts, contrast pairs, forbidden patterns |
 | `src/__tests__/brand/forbidden-patterns.test.ts` | NEW — Vitest sentinel banning gradients / UI shadows / pure primaries |
 | `src/__tests__/brand/contrast.test.ts` | NEW — WCAG contrast guard on the token table |
 | `src/__tests__/brand/legibility.test.ts` | NEW — mobile-first legibility snapshots |
@@ -212,14 +212,14 @@ None. This job is chrome and assets. Content schemas (`Episode`,
 
 | Phase | Verification |
 |-------|--------------|
-| 1     | `npm run lint` clean. `npm run build` clean. `globals.css` shows the new palette + spacing scale + no dark-mode block. `docs/fabled10x-design-system.md` exists and links from `docs/fabled10x-brand-identity.md`. Visual dev-server check at `/` — pages render in marble + ink even though components haven't been reskinned yet (placeholder palette removed). |
+| 1     | `npm run lint` clean. `npm run build` clean. `globals.css` shows the new palette + spacing scale + no dark-mode block. `docs/design-system.md` exists and links from `docs/brand-identity.md`. Visual dev-server check at `/` — pages render in marble + ink even though components haven't been reskinned yet (placeholder palette removed). |
 | 2     | New fonts load in dev (network panel shows Cinzel / Inter / JetBrains Mono). `--font-display`, `--font-body`, `--font-mono` resolve to the new families. Type-scale utilities applied in a smoke test. `<DropAccent>` renders. `.build-log-prose` h2/h3/code/blockquote pick up Cinzel + Oxblood drop cap + Shadow code surfaces on `/build-log/jobs/website-foundation`. |
 | 3     | `<Marble>` / `<Parchment>` / `<Bone>` / `<Shadow>` render with the right surface tokens. `<BrushstrokeSeam>` renders in a sandbox route with feathered edge. `npm test` — forbidden-pattern sentinel green (no gradients / UI shadows / pure primaries in `src/`). |
 | 4     | `<Logo>` renders in Header at all sizes; `public/logo.svg` reachable. Header active-state visible (Oxblood on current route). Footer LLL link Verdigris-on-Bone. `<Section>` / `<SectionDivider>` render. Container widths feel editorial (max-w-prose for text-heavy pages). |
 | 5     | `<Button>` variants render in a sandbox. `<StatusBadge>` variants restyled (visual check on `/build-log`). `EmailCapture` submits cleanly with the new look; success state shows Verdigris check. Auth + Buy buttons consistent. |
 | 6     | `<EditorialCard>` enforces three-level hierarchy (accent tag → Cinzel headline → Inter subtitle). `JobCard`, `ProductCard`, `CohortCard` all refactor onto it without behavior regression. `CohortDetailHero` + `CohortStatusBadge` brand-consistent. |
 | 7     | Every page in the route inventory renders against the new system. Homepage hero shows the full-bleed illuminated-manuscript photograph with the Cinzel headline + Inter subtitle + EmailCapture stack legible over a left-protective cream overlay. `/build-log` Bone surfaces with Parchment inner panels. `/about`, `/login`, `not-found`, `error` quiet marble (no brushstroke). |
-| 8     | `og-image` API: visit `/opengraph-image`, `/episodes/<slug>/opengraph-image`, `/cases/<slug>/opengraph-image` — 1200×630 brand-consistent PNGs. `/thumb-preview?title=...&accent=?` renders 1280×720 thumbnail in dev only (404 in prod). `docs/fabled10x-design-system.md` fully populated with final values. |
+| 8     | `og-image` API: visit `/opengraph-image`, `/episodes/<slug>/opengraph-image`, `/cases/<slug>/opengraph-image` — 1200×630 brand-consistent PNGs. `/thumb-preview?title=...&accent=?` renders 1280×720 thumbnail in dev only (404 in prod). `docs/design-system.md` fully populated with final values. |
 | 9     | `npm test` — legibility + contrast + forbidden-pattern sentinels all green. Lighthouse a11y ≥ 95, perf ≥ 90 on `/`, `/episodes`, `/build-log`. Reduce-motion disables brushstroke texture. forced-colors mode legible. 320px reflow + 200% zoom both clean. |
 | All   | `npm run lint` clean. `npx tsc --noEmit` clean. `npm test` green. `npm run build` clean (standalone output). Manual page walk: `/`, `/episodes`, `/episodes/<slug>`, `/cases`, `/cases/<slug>`, `/build-log`, `/build-log/jobs/website-foundation`, `/products`, `/products/<slug>`, `/cohorts`, `/cohorts/<slug>`, `/about`, `/login`, `/login/verify`, `/products/account`, `/sitemap.xml`, `/robots.txt`. |
 

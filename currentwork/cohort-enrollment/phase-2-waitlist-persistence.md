@@ -623,7 +623,7 @@ function renderBody(meta: Cohort, appUrl: string): { text: string; html: string 
     '',
     `Cohort page: ${detailUrl}`,
     '',
-    '— Fabled10X',
+    '— Travis Gautier',
   ].join('\n');
 
   const html = `
@@ -648,7 +648,7 @@ function renderBody(meta: Cohort, appUrl: string): { text: string; html: string 
         View cohort page
       </a>
     </p>
-    <p style="font-size:12px;color:#475569;margin:24px 0 0">— Fabled10X</p>
+    <p style="font-size:12px;color:#475569;margin:24px 0 0">— Travis Gautier</p>
   </div>
 </body>
 </html>
@@ -672,7 +672,7 @@ export async function sendCohortWaitlistConfirmation({
 }: SendOptions): Promise<void> {
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.RESEND_FROM_COHORTS;
-  const appUrl = process.env.AUTH_URL ?? 'https://fabled10x.com';
+  const appUrl = process.env.AUTH_URL ?? 'https://travisgautier.com';
 
   if (!apiKey || !from) {
     // Dev ergonomics — don't blow up the submit if env isn't set locally.

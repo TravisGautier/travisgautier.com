@@ -9,7 +9,7 @@ consultants searching for utilities like "AI ROI calculator" or "dev agency
 pricing calculator", lands them on a deterministic, no-login widget, and
 converts them into email subscribers via a non-blocking capture CTA that only
 appears below a computed result. This job is #2 in `docs/future-jobs.md` and
-Phase 2 of `docs/fabled10x-website-implementation-plan.md` under "Free
+Phase 2 of `docs/website-implementation-plan.md` under "Free
 Interactive Tools".
 
 The scope is a `/tools` index page plus four stateless calculator widgets,
@@ -37,14 +37,14 @@ AI-generated outputs, per-tool dynamic OG images, search over tools.
 - **Next.js 16 App Router scaffold** — React 19.2.4, Tailwind 4, strict TS, `@/` → `src/`. (`package.json`, `tsconfig.json`, `next.config.ts`)
 - **Content schemas** — `src/content/schemas/{content-tier,content-pillar,episode,source-material,index}.ts`
 - **Test infra** — Vitest 2.1.8 + jsdom, `@testing-library/jest-dom/vitest` loaded via `src/__tests__/setup.ts`, MSW 2.7 installed, coverage thresholds 70/80/80/80 (`vitest.config.ts`)
-- **Source docs** — `docs/fabled10x-website-implementation-plan.md`, `docs/fabled10x-brand-identity.md`, `docs/future-jobs.md`
+- **Source docs** — `docs/website-implementation-plan.md`, `docs/brand-identity.md`, `docs/future-jobs.md`
 
 ### Delivered by `website-foundation` (prerequisite — NOT YET SHIPPED when this plan is written)
 This job reuses these `wf` outputs and cannot start until they exist.
 
 - **Brand design tokens** (`src/app/globals.css` from wf 1.3) — `--color-{ink,parchment,ember,steel,mist,signal}` + semantic aliases `--color-{background,foreground,muted,accent,link}`. Tailwind class surface: `bg-accent`, `text-muted`, `border-mist`, `text-link`, `bg-parchment`, `font-display`, etc.
 - **`<Container>` layout primitive** (`src/components/site/Container.tsx` from wf 1.4) — `mx-auto w-full max-w-5xl px-6 md:px-10`, accepts `className` + `as` prop (div/section/main/article).
-- **Site shell** — `<Header>`, `<Footer>`, root layout at `src/app/layout.tsx` with `metadataBase` set to `https://fabled10x.com`.
+- **Site shell** — `<Header>`, `<Footer>`, root layout at `src/app/layout.tsx` with `metadataBase` set to `https://travisgautier.com`.
 - **`<EmailCapture source="..." />`** (`src/components/capture/EmailCapture.tsx` from wf 4.1) — client component, handles the Resend server action + typed idle/success/error states. This job embeds it directly; it is not forked.
 - **Dynamic sitemap** (`src/app/sitemap.ts` from wf 4.4) — this job modifies it to append tool routes.
 - **`zod`** installed as a wf 1.2 dependency.

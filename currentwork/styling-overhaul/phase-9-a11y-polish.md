@@ -461,7 +461,7 @@ npm run build       # standalone output succeeds; no Tailwind purge warnings
   interactive in the Header (logo, trigger, drawer items) measures
   ≥ 44 × 44 CSS pixels.
 - Header logo composite renders pfp + `<Logo size="sm">` with one
-  combined `aria-label="Fabled 10X"` (screen reader announces once).
+  combined `aria-label="Travis Gautier"` (screen reader announces once).
 
 **Regression fix loop:**
 
@@ -897,7 +897,7 @@ export function HeaderLogo() {
   return (
     <Link
       href="/"
-      aria-label="Fabled 10X"
+      aria-label="Travis Gautier"
       className="
         inline-flex items-center gap-(--space-2)
         min-h-(--tap-min)
@@ -934,8 +934,8 @@ except the Header surface.
   poorly. The composite is the right composition for the one surface where
   YouTube channel-recognition matters: the page chrome.
 - **Combined `aria-label` on the wrapper `<Link>`, `aria-hidden` semantics
-  on parts.** Screen readers announce "Fabled 10X, link" once — not
-  "Image, Fabled 10X, link." The `Logo` primitive already wraps its inner
+  on parts.** Screen readers announce "Travis Gautier, link" once — not
+  "Image, Travis Gautier, link." The `Logo` primitive already wraps its inner
   parts in `aria-hidden`; the pfp's `alt=""` makes it decorative; the
   wrapper carries the accessible name.
 - **`gap-(--space-2)` between pfp and wordmark.** Tighter than Container
@@ -984,7 +984,7 @@ except the Header surface.
 - Every interactive in the Header meets the 44 CSS-pixel touch-target
   floor via `--tap-min` (9.6).
 - Header logo renders the pfp + `<Logo size="sm">` composite with one
-  combined `aria-label="Fabled 10X"`; Footer / og:images / email
+  combined `aria-label="Travis Gautier"`; Footer / og:images / email
   surfaces continue to render the typed Logo alone (9.7).
 - Phase 4.1 amendment block exists in
   `phase-4-logo-chrome.md` documenting why the Header surface composes

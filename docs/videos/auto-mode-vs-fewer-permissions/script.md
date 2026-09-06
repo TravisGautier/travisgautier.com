@@ -118,7 +118,7 @@ Static rules for the hot path. Classifier for the long tail.
 
 Run `/fewer-permission-prompts` every couple of weeks. Keep the allowlist honest. Let auto mode handle the weird stuff. Stop paying an LLM to decide if `ls` is safe.
 
-[END CARD: fabled10x handle, link to parallel-agents video if relevant]
+[END CARD: travisgautier handle, link to parallel-agents video if relevant]
 
 ---
 

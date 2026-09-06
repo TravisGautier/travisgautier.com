@@ -54,8 +54,8 @@ because Next.js serves it as a static asset from `/public/`.
 
 ```ts
 export const metadata: Metadata = {
-  metadataBase: new URL('https://fabled10x.com'),
-  title: { default: 'fabled10x', template: '%s · fabled10x' },
+  metadataBase: new URL('https://travisgautier.com'),
+  title: { default: 'travisgautier', template: '%s · travisgautier' },
   description: 'One person. An agent team. Full SaaS delivery.',
   icons: {
     icon: [
@@ -124,7 +124,7 @@ series/tier label in Oxblood Inter, and a DropAccent glyph.
 
 ### Problem
 
-When fabled10x.com links are shared on Twitter, LinkedIn, Bluesky, or
+When travisgautier.com links are shared on Twitter, LinkedIn, Bluesky, or
 preview-aware messengers, the default OG image is the static
 `/og-default.png` referenced in `layout.tsx`. Without a dynamic image,
 every shared episode shows the same generic preview. Dynamic og:images
@@ -143,7 +143,7 @@ import { join } from 'node:path';
 
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
-export const alt = 'Fabled 10X — One person. An agent team.';
+export const alt = 'Travis Gautier — One person. An agent team.';
 
 export default async function OgImage() {
   const cinzel = await readFile(join(process.cwd(), 'public/fonts/Cinzel-Black.ttf'));
@@ -172,7 +172,7 @@ export default async function OgImage() {
           }}
         >
           <span style={{ fontFamily: 'Inter Bold', fontSize: 28, color: '#6B2020', letterSpacing: 6, textTransform: 'uppercase' }}>
-            The Fabled 10X Developer
+            Travis Gautier
           </span>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <span style={{ fontFamily: 'Cinzel', fontSize: 88, color: '#1C1814', letterSpacing: 3, textTransform: 'uppercase', lineHeight: 1.05 }}>
@@ -183,7 +183,7 @@ export default async function OgImage() {
             </span>
           </div>
           <span style={{ fontFamily: 'Inter Regular', fontSize: 24, color: '#1C1814', opacity: 0.7 }}>
-            fabled10x.com
+            travisgautier.com
           </span>
         </div>
       </div>
@@ -250,7 +250,7 @@ export default async function OgImage({ params }: Params) {
             {ep.title}<span style={{ color: '#6B2020', fontSize: 108 }}>?</span>
           </span>
           <span style={{ fontFamily: 'Inter Regular', fontSize: 20, color: '#1C1814', opacity: 0.7 }}>
-            fabled10x.com
+            travisgautier.com
           </span>
         </div>
       </div>
@@ -395,7 +395,7 @@ export default async function ThumbPreviewPage({ searchParams }: Search) {
           >
             <DropAccent glyph={accent} size="thumbnail">{title}</DropAccent>
           </h1>
-          <span className="label text-(--color-ink) opacity-70">fabled10x.com</span>
+          <span className="label text-(--color-ink) opacity-70">travisgautier.com</span>
         </div>
       </BrushstrokeSeam>
     </div>
@@ -438,7 +438,7 @@ accents and titles so the user has copy-pasteable starting points.
 
 ## Feature 8.4: Design-system doc finalize
 
-**Complexity: S** — Update `docs/fabled10x-design-system.md` (created in
+**Complexity: S** — Update `docs/design-system.md` (created in
 Phase 1.3) with the final token values, font file paths, asset paths,
 opengraph-image route paths, and thumb-preview usage. Anchor the doc as
 the canonical reference future contributors land on first.
@@ -452,7 +452,7 @@ the doc.
 
 ### Implementation
 
-**MODIFY** `docs/fabled10x-design-system.md`:
+**MODIFY** `docs/design-system.md`:
 
 Add / update sections:
 
@@ -543,7 +543,7 @@ Allowed accent glyphs: `? . ! → ✕ ✓ —`.
 
 | Action | File |
 |--------|------|
-| MODIFY | `docs/fabled10x-design-system.md` |
+| MODIFY | `docs/design-system.md` |
 
 ---
 
@@ -557,7 +557,7 @@ Allowed accent glyphs: `? . ! → ✕ ✓ —`.
   `/cases/<slug>/opengraph-image` all return 1200×630 PNGs with the
   brand composition.
 - `/thumb-preview?title=...&accent=?` renders 1280×720 in dev; 404s in prod.
-- `docs/fabled10x-design-system.md` reflects final paths, routes, and
+- `docs/design-system.md` reflects final paths, routes, and
   regeneration notes.
 - `npm test` — forbidden-pattern sentinel green.
 - `npm run lint`, `npx tsc --noEmit`, `npm run build` all clean.

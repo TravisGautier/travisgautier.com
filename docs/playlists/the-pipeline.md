@@ -218,7 +218,7 @@ Discovery is 20% of the work and 80% of the value. Even using this skill *alone*
    - patterns.yaml: how existing code works (so AI matches the codebase, not training data)
    - test-cases.yaml: how to verify it (complete test specs across 10 categories)
 3. **SKILL.md walkthrough** (2–3 min) — Open `.claude/skills/discovery/SKILL.md`, walk through the actual prompt structure. This isn't code — it's markdown with instructions. Two-phase pattern: research (read-only) → plan → execute.
-4. **Standalone live demo** (4–5 min) — Run `/discovery` on a real feature from the fabled10x project. Show what it reads (planning doc + codebase), show what it produces (the 5 YAMLs). Then: take those YAMLs and feed them into a plain ChatGPT prompt to build the feature. Show that even without the rest of the pipeline, the output is dramatically better.
+4. **Standalone live demo** (4–5 min) — Run `/discovery` on a real feature from the travisgautier project. Show what it reads (planning doc + codebase), show what it produces (the 5 YAMLs). Then: take those YAMLs and feed them into a plain ChatGPT prompt to build the feature. Show that even without the rest of the pipeline, the output is dramatically better.
 5. **STRIDE threat modeling** (2 min) — The hidden weapon. Every endpoint gets six questions: spoofing, tampering, repudiation, information disclosure, denial of service, elevation of privilege. Even when the answer is "n/a with reason." Show what this catches on a simple-looking feature.
 6. **When to use / when to skip** (1 min)
    - Use it: any feature bigger than 30 minutes of work, anything with user input, anything touching data
@@ -406,7 +406,7 @@ Finish is the most overlooked phase. Everyone writes code. Almost nobody wraps i
 #### Source materials
 - .claude/skills/finish/SKILL.md
 - Live recording of `/finish` running
-- git log from fabled10x project
+- git log from travisgautier project
 
 #### Shorts potential
 - "The end of a feature is where most developers get sloppy. This skill fixes that."
@@ -475,7 +475,7 @@ The moat isn't the AI — everyone has access to the same models. The moat is ac
 **CENTERPIECE EPISODE — the payoff for the entire playlist. Everything before this built the foundation for this reveal.**
 
 #### Thesis
-Six skills, each useful alone, become something fundamentally different when chained. The Fabled10X Pipeline is 105 beats of mechanical discipline — an orchestrator that runs the full engineering cycle without human intervention between phases.
+Six skills, each useful alone, become something fundamentally different when chained. The Travis Gautier Pipeline is 105 beats of mechanical discipline — an orchestrator that runs the full engineering cycle without human intervention between phases.
 
 #### Outline
 1. **Recap** (2–3 min) — "Over the last six episodes you've seen discovery, red, green, refactor, finish, and knowledge. Each one is useful on its own. Now I'm going to show you what happens when you chain them into a single command."
@@ -543,7 +543,7 @@ Six skills, each useful alone, become something fundamentally different when cha
 The pipeline catches predictable, mechanical failures. It doesn't catch judgment failures. The human role shifts from writing code to making judgment calls — and that role isn't going away.
 
 #### Outline
-1. **What the pipeline catches** (5–6 min) — Real examples from the fabled10x build:
+1. **What the pipeline catches** (5–6 min) — Real examples from the travisgautier build:
    - Hallucinated APIs: red phase tests import a function, it doesn't exist, test fails — caught before implementation
    - Logic bugs in edge cases: edge_case test category fires on empty arrays, null values, boundary conditions — caught before merge
    - Security oversights: STRIDE modeling during discovery forces security thinking even on "simple" features
@@ -642,7 +642,7 @@ This pipeline built the website you're watching this video on. Every commit hash
 
 #### Outline
 1. **The claim** (60s) — "Everything I've shown you in this playlist — the six skills, the pipeline, the tests, the knowledge base — built a real website. The one hosting this video. I'm going to walk you through the git history and show you every section, every test, every commit."
-2. **The walkthrough** (6–8 min) — Section by section through the fabled10x repo:
+2. **The walkthrough** (6–8 min) — Section by section through the travisgautier repo:
    - website-foundation-1.1: Case Content Schema — 14 tests, commit dea757a
      - Show the actual commit, the actual test files, the actual schema
    - website-foundation-1.2: Zod Validators — 22 tests, commit 0f822fb
@@ -703,7 +703,7 @@ Start lightweight, scale up as needed. The three practices from P3 are the found
    - Live demo: create both, use them on a feature, show the difference
 3. **Tier 2: Build your first skill** (4–5 min) — Write a single SKILL.md:
    - Recommended starting skill: discovery (P4) or red (P5), because they produce the most visible improvement
-   - Walkthrough: open the fabled10x repo's `.claude/skills/discovery/SKILL.md`, explain each section, show how to adapt it to your project
+   - Walkthrough: open the travisgautier repo's `.claude/skills/discovery/SKILL.md`, explain each section, show how to adapt it to your project
    - Live demo: create a simpler version of the discovery skill in front of the camera, test it
 4. **Tier 3: Add more skills** (2–3 min) — Each skill added as you feel the gap:
    - Wrote tests manually and hated it? Add red.
@@ -722,7 +722,7 @@ Start lightweight, scale up as needed. The three practices from P3 are the found
 - Four-tier graphic (today / this week / this month / eventually)
 - Live terminal: creating a SKILL.md, running it
 - Template files on screen
-- Fabled10X repo as reference
+- Travis Gautier repo as reference
 
 #### Source materials
 - Template discovery doc (create and provide)
@@ -792,7 +792,7 @@ The wild west doesn't last forever. Standards emerge. The people who learn proce
 
 ### Flagship Series crossover
 - Building Party Masters episodes (ACT 3) can reference individual skill episodes for methodology deep-dives
-- "For how I actually build this, see The Fabled10X Pipeline playlist — individual skill episodes in the description"
+- "For how I actually build this, see The Travis Gautier Pipeline playlist — individual skill episodes in the description"
 
 ### Shorts strategy
 - Each episode produces 2–3 Shorts (mapped per episode above)
@@ -801,7 +801,7 @@ The wild west doesn't last forever. Standards emerge. The people who learn proce
 - P3 (gateway) and P10 (pipeline reveal) should produce the most Shorts — highest replay value
 
 ### Community & Ecosystem (Tier 5)
-- "Roast My Skill" — community members share their skill definitions, compare to fabled10x approach
+- "Roast My Skill" — community members share their skill definitions, compare to travisgautier approach
 - "Pipeline Office Hours" — live Q&A about methodology, troubleshooting viewer setups
 - "Fork My Pipeline" — showcase viewers who adopted and adapted the skill files
 

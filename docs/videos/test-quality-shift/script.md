@@ -131,7 +131,7 @@ But if you live in Claude Code, if you run anything with a TDD loop in it, watch
 
 The ceiling moved. Make sure your floor moved with it.
 
-[END CARD: fabled10x handle, link to intro video]
+[END CARD: travisgautier handle, link to intro video]
 
 ---
 
@@ -143,7 +143,7 @@ The ceiling moved. Make sure your floor moved with it.
 - **Category table (2:40-4:20):** the ad-6.2 vs ad-7.1 breakdown, one row at a time. Hold the permission-matrix row visibly longer. Highlight 8 → 30.
 - **Git log b-roll:** `git log --since="7 days ago" --pretty=format:"%s" | grep -E "with [0-9]+ tests"` — the raw commit list, test counts visible. Good establishing shot.
 - **Takeaway (4:20-5:20):** visual of "old guardrails decay" — abstract, not literal. Could be the gate diff one more time as a bookend.
-- **End card:** fabled10x handle, pin the intro video as the companion watch.
+- **End card:** travisgautier handle, pin the intro video as the companion watch.
 
 ## Tone/brand notes
 

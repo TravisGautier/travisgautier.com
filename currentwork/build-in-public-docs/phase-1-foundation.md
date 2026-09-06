@@ -767,7 +767,7 @@ export async function getJobsRollup(): Promise<readonly JobRollupEntry[]> {
 `src/lib/build-log/__tests__/pipeline-state.test.ts`:
 
 - **`getSessionStatus()` integration** — runs against the real `pipeline/active/session.yaml`. Returns an object with `id: '2026-04-11-001'`, `completedSections: []` (currently empty), `notes` containing the seed notes string. Schema parse succeeds.
-- **`getKnowledgeFile()` integration** — runs against the real `pipeline/active/knowledge.yaml`. Returns an object with `projectContext.purpose` containing 'fabled10x' and `conventions.path_alias` set to `'@/ → src/'`. Schema parse succeeds.
+- **`getKnowledgeFile()` integration** — runs against the real `pipeline/active/knowledge.yaml`. Returns an object with `projectContext.purpose` containing 'travisgautier' and `conventions.path_alias` set to `'@/ → src/'`. Schema parse succeeds.
 - **`mapSession()` field mapping** — pure-function unit test. Given a raw object `{ session: { id: 'x', current_section: 'foo' }, context_window: { iteration: 3 }, completed_sections: ['x-1.1'] }`, returns `{ id: 'x', currentSection: 'foo', contextWindow: { iteration: 3 }, completedSections: ['x-1.1'], ... }` with snake-case → camelCase conversion correct.
 - **`getJobsRollup()` against fixtures** — mock `getAllJobs` and `getSessionStatus` to return controlled fixture data:
   - Two jobs: `job-a` with 4 features and `job-b` with 2 features

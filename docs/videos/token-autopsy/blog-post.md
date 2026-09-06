@@ -1,6 +1,6 @@
 # Where Your Claude Code Tokens Actually Go — A Session Autopsy
 
-*Companion piece to the fabled10x video of the same name. This is the text version for search indexing, LLL crosslink, and anyone who'd rather read than watch.*
+*Companion piece to the travisgautier video of the same name. This is the text version for search indexing, LLL crosslink, and anyone who'd rather read than watch.*
 
 ---
 
@@ -104,7 +104,7 @@ Modest savings. Compounding quality risk. I didn't ship it.
 
 - Python analysis script (40 lines) — `analyze-session.py` in the repo linked below. Works on any `~/.claude/projects/*.jsonl` file.
 - Full video: [YouTube link]
-- fabled10x channel: [channel link]
+- travisgautier channel: [channel link]
 - Related LLL entry: [LLL URL if/when published]
 
 ---

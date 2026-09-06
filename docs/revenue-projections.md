@@ -1,4 +1,4 @@
-# Fabled10X — Revenue Projections & Monetization Strategy
+# Travis Gautier — Revenue Projections & Monetization Strategy
 
 **Document Version:** 1.0
 **Created:** March 2026
@@ -148,7 +148,7 @@ At 100K, rate inflation + selectivity. Premium positioning: $25K-$50K per projec
 **12-Month Consulting Revenue: $45,000-$125,000**
 
 #### Course/Cohort (Major Revenue Event at 100K)
-"The Fabled10X Academy" at $997-$1,997 (cohort) / $497 (self-paced).
+"The Travis Gautier Academy" at $997-$1,997 (cohort) / $497 (self-paced).
 Conservative launch: 100-150 students × $800 avg = $80K-$120K
 Strong launch: 200-300 students × $1,000 avg = $200K-$300K
 **12-Month Course Revenue: $95,000-$250,000**
@@ -223,12 +223,12 @@ Revenue scales disproportionately (5-6x) vs subscriber growth (4x) due to:
 - Launches month 7-8
 - Dual-path proposal framework, interactive HTML proposal template, pricing methodology, ROI calculation model, investment overview format
 
-### Product 4: "The Complete Fabled10X Playbook" — $397-$497
+### Product 4: "The Complete Travis Gautier Playbook" — $397-$497
 - Premium bundle, launches month 9-10
 - Full system: discovery through delivery
 - Includes all templates from products 1-3 plus advanced materials
 
-### Product 5: "The Fabled10X Academy" — $997-$1,997
+### Product 5: "The Travis Gautier Academy" — $997-$1,997
 - Course/cohort, launches month 10-12
 - "Build Your AI Consulting Agency"
 - Live calls, community access, accountability (cohort)

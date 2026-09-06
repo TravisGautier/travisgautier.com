@@ -8,15 +8,15 @@ claim:
   status: done
   phase_entered_at: "2026-06-06T17:46:47Z"
   phase_exited_at: "2026-06-06T17:46:47Z"
-  slot_path: "/home/travis/Projects/fabled10x-worktrees/section-styling-overhaul-2.4"
+  slot_path: "/home/travis/Projects/travisgautier.com-worktrees/section-styling-overhaul-2.4"
   branch: "section/styling-overhaul-2.4"
   pid: 158754
   beats:
-    - { id: resolve_paths, status: done, evidence: "SLOT=/home/travis/Projects/fabled10x-worktrees/section-styling-overhaul-2.4 BRANCH=section/styling-overhaul-2.4 PIDFILE=$SLOT/.pipeline.pid" }
+    - { id: resolve_paths, status: done, evidence: "SLOT=/home/travis/Projects/travisgautier.com-worktrees/section-styling-overhaul-2.4 BRANCH=section/styling-overhaul-2.4 PIDFILE=$SLOT/.pipeline.pid" }
     - { id: detect_state, status: done, classification: FRESH }
     - { id: teardown_if_stale, status: na, reason: "state was FRESH" }
     - { id: create_slot, status: done, evidence: "git worktree add succeeded; node_modules bind-mount established" }
-    - { id: provision_test_db, status: na, reason: "fabled10x is static site (no test DB) — PWTC_DISABLED" }
+    - { id: provision_test_db, status: na, reason: "travisgautier is static site (no test DB) — PWTC_DISABLED" }
     - { id: write_pidfile, status: done, evidence: "pid 158754 written to $SLOT/.pipeline.pid" }
     - { id: verify_branch, status: done, evidence: "branch=section/styling-overhaul-2.4 HEAD==origin/main (4b5ae41)" }
     - { id: enter_worktree, status: done, evidence: "pwd=$SLOT branch=section/styling-overhaul-2.4" }

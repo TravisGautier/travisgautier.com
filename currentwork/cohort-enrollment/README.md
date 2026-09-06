@@ -6,7 +6,7 @@
 
 `cohort-enrollment` is job #7 in `docs/future-jobs.md` and maps to the single
 "Cohort enrollment integration" bullet in Phase 3 of
-`docs/fabled10x-website-implementation-plan.md` (line 209). It delivers the
+`docs/website-implementation-plan.md` (line 209). It delivers the
 full applicant funnel for a paid cohort: a public catalog of upcoming
 cohorts, a waitlist form for pre-announce interest capture, an authenticated
 application form, an editorial review dashboard, acceptance emails with
@@ -75,7 +75,7 @@ generic fixed copy; per-cohort template variants are a future job.
 - **Next.js 16.2.3 App Router scaffold** — React 19.2.4, Tailwind 4, strict TS, `@/` → `src/`. (`package.json`, `tsconfig.json`, `next.config.ts`)
 - **Content schemas** — `src/content/schemas/{content-tier,content-pillar,episode,source-material,index.ts}`
 - **Test infra** — Vitest 2.1.8 + jsdom, `@testing-library/jest-dom/vitest` via `src/__tests__/setup.ts`, MSW 2.7 installed, coverage thresholds 70/80/80/80 (`vitest.config.ts`)
-- **Source docs** — `docs/fabled10x-website-implementation-plan.md`, `docs/future-jobs.md`, `docs/fabled10x-brand-identity.md`, `docs/fabled10x-launch-strategy.md`, `docs/fabled10x-revenue-projections.md`
+- **Source docs** — `docs/website-implementation-plan.md`, `docs/future-jobs.md`, `docs/brand-identity.md`, `docs/launch-strategy.md`, `docs/revenue-projections.md`
 
 ### Delivered by `website-foundation` (prereq — NOT YET SHIPPED when this plan is written)
 This job reuses these `wf` outputs and cannot start until they exist.
@@ -368,7 +368,7 @@ server-only (no `NEXT_PUBLIC_` prefix).
 | `DATABASE_URL`                        | 2.1   | Reused from sa 2.1 — Postgres connection string                                           |
 | `RESEND_API_KEY`                      | 2.2   | Reused from wf 4.1 — used for every email this job sends                                  |
 | `RESEND_COHORT_WAITLIST_AUDIENCE_ID`  | 2.2   | Resend Audience ID for the cohort waitlist — kept separate from the main newsletter audience so the two lists can evolve independently |
-| `RESEND_FROM_COHORTS`                 | 2.2   | Sender identity for cohort-related emails, e.g. `cohorts@fabled10x.com`. Kept distinct from `AUTH_RESEND_FROM` so marketing + transactional reputations don't contaminate each other |
+| `RESEND_FROM_COHORTS`                 | 2.2   | Sender identity for cohort-related emails, e.g. `cohorts@travisgautier.com`. Kept distinct from `AUTH_RESEND_FROM` so marketing + transactional reputations don't contaminate each other |
 | `AUTH_URL`                            | 3.2   | Reused from sa 2.2 — absolute origin for building links inside emails                     |
 | `ADMIN_EMAILS`                        | 4.1   | Comma-separated email allowlist for `/admin/*` routes — shared with `email-funnel` 4.4    |
 | `COHORT_CHECKOUT_SECRET`              | 4.3   | HMAC signing secret for the acceptance-email one-time checkout token. Generate via `openssl rand -base64 32`. Rotating this secret invalidates all outstanding acceptance links, which is the intended escape hatch if a secret leaks. |

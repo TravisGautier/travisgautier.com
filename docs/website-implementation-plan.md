@@ -1,30 +1,30 @@
-# Fabled10X — Website Implementation Plan
+# Travis Gautier — Website Implementation Plan
 **Document Version:** 1.0
 **Created:** April 2026
-**Domain:** fabled10x.com (secured)
-**Purpose:** Full platform implementation plan for fabled10x.com
+**Domain:** travisgautier.com (secured)
+**Purpose:** Full platform implementation plan for travisgautier.com
 
 ---
 
 ## STRATEGIC OVERVIEW
 
-Fabled10X.com is the brand and marketing site for the Fabled10X YouTube channel and social media presence. It is the place the audience lands after seeing a video, a Short, a livestream, or a social post — and it is the primary asset for converting viewers into subscribers, email signups, and customers of the digital product line.
+Travis Gautier.com is the brand and marketing site for the Travis Gautier YouTube channel and social media presence. It is the place the audience lands after seeing a video, a Short, a livestream, or a social post — and it is the primary asset for converting viewers into subscribers, email signups, and customers of the digital product line.
 
 ### What This Site Is
 - The home page for the YouTube channel
 - A browseable index of episodes with full show notes and the actual artifacts referenced in each video
 - A library of project case studies (Party Masters first, more as new client projects roll through)
 - A small set of free interactive tools that double as top-of-funnel SEO
-- The storefront for the Fabled10X digital products (templates, toolkits, course/cohort)
-- The promotional landing point for **The Large Language Library** — Fabled10X's sister project
+- The storefront for the Travis Gautier digital products (templates, toolkits, course/cohort)
+- The promotional landing point for **The Large Language Library** — Travis Gautier's sister project
 
 ### What This Site Is Not
-- Not a knowledge base. The structured, AI-optimized knowledge repository is **The Large Language Library** (`largelanguagelibrary.ai`), a separate sister project with its own repo, domain, and identity. fabled10x links *out* to LLL — it does not host LLL content.
+- Not a knowledge base. The structured, AI-optimized knowledge repository is **The Large Language Library** (`largelanguagelibrary.ai`), a separate sister project with its own repo, domain, and identity. travisgautier links *out* to LLL — it does not host LLL content.
 - Not a public JSON API surface for AI crawlers. That is also a LLL concern.
 - Not a manufactured blog. Episode show notes and case studies are byproducts of real client work and channel content — not standalone written content.
 
 ### Relationship to LLL
-LLL is the open knowledge infrastructure. fabled10x is the brand that built and champions it. Episodes and case studies cross-link out to LLL entries that were generated from the same client work. The connection is acknowledged on `/about` and surfaced in episode/case footers — not loud, not hidden.
+LLL is the open knowledge infrastructure. travisgautier is the brand that built and champions it. Episodes and case studies cross-link out to LLL entries that were generated from the same client work. The connection is acknowledged on `/about` and surfaced in episode/case footers — not loud, not hidden.
 
 ---
 
@@ -35,7 +35,7 @@ LLL is the open knowledge infrastructure. fabled10x is the brand that built and 
 **Current build status:** Only `/` (minimal placeholder) and `/llms.txt` are live as of the initial scaffold. Everything below is the intended end-state; sections are built out incrementally. The auth-gated `/products` storefront is deferred to a later phase.
 
 ```
-fabled10x.com/
+travisgautier.com/
 ├── /                    (Homepage)                              [live — placeholder]
 ├── /cases               (Project Case Studies)                  [planned]
 ├── /episodes            (YouTube Episode Index)                 [planned]
@@ -50,7 +50,7 @@ fabled10x.com/
 ## PAGE SPECIFICATIONS
 
 ### `/` — Homepage
-**Primary Job:** Communicate what Fabled10X is in one screen, drive viewers to the latest episode + storefront, capture email.
+**Primary Job:** Communicate what Travis Gautier is in one screen, drive viewers to the latest episode + storefront, capture email.
 
 **Key Elements:**
 - Brand statement front and center — one person, an agent team, full SaaS delivery
@@ -65,7 +65,7 @@ fabled10x.com/
 ---
 
 ### `/cases` — Project Case Studies
-**Primary Job:** Full documented project histories of real Fabled10X client work. The proof layer behind the channel narrative.
+**Primary Job:** Full documented project histories of real Travis Gautier client work. The proof layer behind the channel narrative.
 
 **Structure per case:**
 - Project overview and client context
@@ -126,12 +126,12 @@ Authentication is scoped exclusively to the products section. The rest of the si
 ---
 
 ### `/about` — Brand Story + LLL Relationship
-**Primary Job:** Tell the Fabled10X story. Who built this, why, and how.
+**Primary Job:** Tell the Travis Gautier story. Who built this, why, and how.
 
 **Key Elements:**
-- The Fabled10X premise — one person, an agent team, full SaaS delivery
+- The Travis Gautier premise — one person, an agent team, full SaaS delivery
 - The meta story — the channel and site are themselves built by the same agent workflow being documented on the channel
-- **The LLL relationship** — Fabled10X built and champions The Large Language Library. Acknowledged openly, not loud. The DHH/Rails ↔ Basecamp framing: the tool is bigger than the brand that built it. Link out to `largelanguagelibrary.ai`.
+- **The LLL relationship** — Travis Gautier built and champions The Large Language Library. Acknowledged openly, not loud. The DHH/Rails ↔ Basecamp framing: the tool is bigger than the brand that built it. Link out to `largelanguagelibrary.ai`.
 
 ---
 
@@ -172,7 +172,7 @@ This is a brand site. Crawlers and indexers are welcome — no rate limits, no d
 The site is maintained by the agentic harness — the same system used to build it. This is:
 
 1. **Operationally efficient** — no manual CMS updates
-2. **On-brand** — the site demonstrates the Fabled10X methodology by existing
+2. **On-brand** — the site demonstrates the Travis Gautier methodology by existing
 3. **Content for the channel** — the site build and maintenance is itself documented as part of the series
 
 Update pipeline: New episode published on YouTube → agents create the matching `/episodes/[slug]` page with show notes and source-material artifacts → committed to git → auto-deployed. Same flow for case studies and storefront updates.
@@ -182,7 +182,7 @@ Update pipeline: New episode published on YouTube → agents create the matching
 ## PHASED ROLLOUT
 
 ### Phase 0 — Plant the Flag (This Week)
-- [ ] Landing page live at fabled10x.com
+- [ ] Landing page live at travisgautier.com
 - [ ] Email capture active
 - [ ] `/llms.txt` in place from day one
 - [ ] Handles locked across all platforms
@@ -204,12 +204,12 @@ Update pipeline: New episode published on YouTube → agents create the matching
 - [ ] Email sequence built out from capture to product funnel
 
 ### Phase 3 — Community & Social Proof (Month 6-12)
-- [ ] "Built with Fabled10X" community showcase
+- [ ] "Built with Travis Gautier" community showcase
 - [ ] Results wall / testimonials
 - [ ] Cohort enrollment integration
 
 ### Phase 4 — The Meta Play (Ongoing)
-- [ ] Full documentation of site build process as Fabled10X content
+- [ ] Full documentation of site build process as Travis Gautier content
 - [ ] Deeper integration with LLL — featured-entry cards, "from the library" callouts
 
 ---

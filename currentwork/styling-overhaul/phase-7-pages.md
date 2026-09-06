@@ -84,7 +84,7 @@ export default async function HomePage() {
         <HeroBackdrop />
         <Section rhythm="lg">
           <Container className="flex flex-col gap-(--space-5) md:max-w-prose">
-            <span className="label">The Fabled 10X Developer</span>
+            <span className="label">Travis Gautier</span>
             <h1 className="display-1">
               One person.<br />
               An agent team.<br />
@@ -804,11 +804,11 @@ export default function AboutPage() {
         <Container width="prose">
           <span className="label">The Channel</span>
           <h1 className="display-1 mt-(--space-3)">
-            <DropAccent glyph=".">The Fabled 10X Developer</DropAccent>
+            <DropAccent glyph=".">Travis Gautier</DropAccent>
           </h1>
           <div className="mt-(--space-7) build-log-prose">
             <p>
-              fabled10x is the brand and marketing site for the Fabled10X
+              travisgautier is the brand and marketing site for the Travis Gautier
               YouTube channel. One person. An agent team. Full SaaS delivery.
             </p>
             {/* ... full about copy ... */}

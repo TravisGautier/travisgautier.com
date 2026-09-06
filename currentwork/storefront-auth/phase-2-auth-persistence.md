@@ -63,24 +63,24 @@ npm install --save-dev drizzle-kit
 services:
   postgres:
     image: postgres:16-alpine
-    container_name: fabled10x-postgres
+    container_name: travisgautier-postgres
     restart: unless-stopped
     environment:
-      POSTGRES_USER: ${POSTGRES_USER:-fabled10x}
+      POSTGRES_USER: ${POSTGRES_USER:-travisgautier}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-dev}
-      POSTGRES_DB: ${POSTGRES_DB:-fabled10x}
+      POSTGRES_DB: ${POSTGRES_DB:-travisgautier}
     ports:
       - '5432:5432'
     volumes:
-      - fabled10x-postgres-data:/var/lib/postgresql/data
+      - travisgautier-postgres-data:/var/lib/postgresql/data
     healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER:-fabled10x}']
+      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER:-travisgautier}']
       interval: 5s
       timeout: 5s
       retries: 5
 
 volumes:
-  fabled10x-postgres-data:
+  travisgautier-postgres-data:
 ```
 
 **NEW** `drizzle.config.ts`:
@@ -246,15 +246,15 @@ data/
 
 ```
 # Database
-DATABASE_URL=postgres://fabled10x:dev@localhost:5432/fabled10x
-POSTGRES_USER=fabled10x
+DATABASE_URL=postgres://travisgautier:dev@localhost:5432/travisgautier
+POSTGRES_USER=travisgautier
 POSTGRES_PASSWORD=dev
-POSTGRES_DB=fabled10x
+POSTGRES_DB=travisgautier
 
 # Auth.js (Feature 2.2)
 AUTH_SECRET=
 AUTH_URL=http://localhost:3000
-AUTH_RESEND_FROM=no-reply@fabled10x.com
+AUTH_RESEND_FROM=no-reply@travisgautier.com
 RESEND_API_KEY=
 
 # Stripe (Phase 3)
@@ -364,7 +364,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   providers: [
     Resend({
       apiKey: process.env.RESEND_API_KEY,
-      from: process.env.AUTH_RESEND_FROM ?? 'no-reply@fabled10x.com',
+      from: process.env.AUTH_RESEND_FROM ?? 'no-reply@travisgautier.com',
     }),
   ],
   session: {

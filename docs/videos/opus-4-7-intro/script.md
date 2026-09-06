@@ -13,7 +13,7 @@ Anthropic released Claude Opus 4.7 on April 16, 2026, into the worst PR cycle th
 3. "The Opus 4.7 Gotcha Nobody's Talking About (It's the Tokenizer)"
 4. "Opus 4.7 Retakes #1 From GPT-5.4. But Check the Tokenizer."
 
-Recommend #1 for broad appeal or #4 for click-through. #3 is the most Fabled10X but narrower audience.
+Recommend #1 for broad appeal or #4 for click-through. #3 is the most Travis Gautier but narrower audience.
 
 ## Thumbnail concept
 
@@ -126,7 +126,7 @@ Migration guide in the description. Drop in the comments what you're switching f
 - Punchy, casual, profane where it lands. "Here's what I found" attitude, not a recap show.
 - Screen-recording with voiceover beats face-cam for this one. The data is the visual.
 - Don't fanboy Anthropic. Explicitly call out where GPT-5.4 and Gemini win.
-- The tokenizer gotcha is the editorial angle. It's what makes this a Fabled10X video instead of a recap.
+- The tokenizer gotcha is the editorial angle. It's what makes this a Travis Gautier video instead of a recap.
 - The Mythos close is the narrative hook that elevates this beyond "new model dropped."
 - Target under 7:30 total. News-cycle video, not a deep dive. Respect the viewer's time.
 - Vocab to avoid (from Timewave2 voice doc, AI-vocab section only): delve, navigate, leverage, framework, paradigm, robust, groundbreaking, "testament to," "it's worth noting." Em-dashes, profanity, and rhetorical questions are fine — this is a spoken script, not a novel chapter.

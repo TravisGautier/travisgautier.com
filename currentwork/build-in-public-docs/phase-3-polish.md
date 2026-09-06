@@ -50,20 +50,20 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Build log',
   description:
-    'A live view of the agent-driven build process behind fabled10x.com — every job plan, every phase, every section the TDD pipeline has shipped or is about to ship.',
+    'A live view of the agent-driven build process behind travisgautier.com — every job plan, every phase, every section the TDD pipeline has shipped or is about to ship.',
   openGraph: {
-    title: 'Build log · fabled10x',
+    title: 'Build log · travisgautier',
     description:
-      'The agent-driven build process behind fabled10x.com, rendered as published content.',
+      'The agent-driven build process behind travisgautier.com, rendered as published content.',
     type: 'website',
     url: '/build-log',
     images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Build log · fabled10x',
+    title: 'Build log · travisgautier',
     description:
-      'The agent-driven build process behind fabled10x.com, rendered as published content.',
+      'The agent-driven build process behind travisgautier.com, rendered as published content.',
   },
   alternates: {
     canonical: '/build-log',
@@ -79,12 +79,12 @@ const jsonLd = {
   '@type': 'CollectionPage',
   name: 'Build log',
   description:
-    'The agent-driven build process behind fabled10x.com, rendered as published content.',
-  url: 'https://fabled10x.com/build-log',
+    'The agent-driven build process behind travisgautier.com, rendered as published content.',
+  url: 'https://travisgautier.com/build-log',
   isPartOf: {
     '@type': 'WebSite',
-    name: 'fabled10x',
-    url: 'https://fabled10x.com',
+    name: 'travisgautier',
+    url: 'https://travisgautier.com',
   },
 };
 
@@ -144,16 +144,16 @@ const jsonLd = {
   '@type': 'TechArticle',
   headline: job.title,
   description: job.context.split('\n')[0] ?? job.title,
-  url: `https://fabled10x.com/build-log/jobs/${slug}`,
+  url: `https://travisgautier.com/build-log/jobs/${slug}`,
   author: {
     '@type': 'Organization',
-    name: 'Fabled10X',
-    url: 'https://fabled10x.com',
+    name: 'Travis Gautier',
+    url: 'https://travisgautier.com',
   },
   isPartOf: {
     '@type': 'CollectionPage',
     name: 'Build log',
-    url: 'https://fabled10x.com/build-log',
+    url: 'https://travisgautier.com/build-log',
   },
 };
 ```
@@ -172,16 +172,16 @@ const jsonLd = {
   '@type': 'TechArticle',
   headline: `${phaseTitle} · ${job.title}`,
   description: ph.header.totalSize ?? `Phase document for ${job.title}.`,
-  url: `https://fabled10x.com/build-log/jobs/${slug}/${phase}`,
+  url: `https://travisgautier.com/build-log/jobs/${slug}/${phase}`,
   author: {
     '@type': 'Organization',
-    name: 'Fabled10X',
-    url: 'https://fabled10x.com',
+    name: 'Travis Gautier',
+    url: 'https://travisgautier.com',
   },
   isPartOf: {
     '@type': 'TechArticle',
     name: job.title,
-    url: `https://fabled10x.com/build-log/jobs/${slug}`,
+    url: `https://travisgautier.com/build-log/jobs/${slug}`,
   },
 };
 ```
@@ -192,11 +192,11 @@ Extend the existing page tests with metadata + JSON-LD assertions:
 
 `src/app/build-log/__tests__/page.test.tsx`:
 - The page rendered output contains a `<script type="application/ld+json">` element
-- The script's `__html` payload parses as JSON and has `@type: 'CollectionPage'`, `name: 'Build log'`, `url: 'https://fabled10x.com/build-log'`
+- The script's `__html` payload parses as JSON and has `@type: 'CollectionPage'`, `name: 'Build log'`, `url: 'https://travisgautier.com/build-log'`
 - The exported `metadata` const has `openGraph.url === '/build-log'`, `openGraph.type === 'website'`, `twitter.card === 'summary_large_image'`, `alternates.canonical === '/build-log'`
 
 `src/app/build-log/status/__tests__/page.test.tsx`:
-- Same JSON-LD assertions with `name: 'Pipeline status'`, `url: 'https://fabled10x.com/build-log/status'`
+- Same JSON-LD assertions with `name: 'Pipeline status'`, `url: 'https://travisgautier.com/build-log/status'`
 
 `src/app/build-log/jobs/[slug]/__tests__/page.test.tsx`:
 - `generateMetadata({ params: { slug: 'community-showcase' } })` returns an object with `title: 'community-showcase — Implementation Plan · Build log'`, `openGraph.type === 'article'`, `openGraph.url === '/build-log/jobs/community-showcase'`, `alternates.canonical === '/build-log/jobs/community-showcase'`
@@ -212,7 +212,7 @@ Extend the existing page tests with metadata + JSON-LD assertions:
 
 - **`TechArticle` for job and phase pages, `CollectionPage` for index and status** — schema.org's closest types for "developer-facing technical writing in a structured collection". `TechArticle` is appropriate for in-depth implementation plans; `CollectionPage` is appropriate for the index and the live-status board.
 - **`isPartOf` chains the structure** — phase → job → CollectionPage → WebSite. Search engines surface this as a breadcrumb trail in rich results.
-- **`OpenGraph.url` and `alternates.canonical` are relative paths** — the wf root layout sets `metadataBase: new URL('https://fabled10x.com')`, so Next.js resolves the relative paths against it. Keeping them relative avoids hardcoding the production domain in 4 separate files.
+- **`OpenGraph.url` and `alternates.canonical` are relative paths** — the wf root layout sets `metadataBase: new URL('https://travisgautier.com')`, so Next.js resolves the relative paths against it. Keeping them relative avoids hardcoding the production domain in 4 separate files.
 - **JSON-LD inlined via `dangerouslySetInnerHTML`** — same pattern as wf 4.3's episode + case detail pages. Allows the JSON to be statically embedded in the SSR output without escaping issues.
 - **JSON-LD URL is absolute** — schema.org requires fully-qualified URLs in the structured data even when the per-page metadata uses relative paths. The page builds the absolute URL from the slug params.
 - **`og-default.png` is the OG image for every build-log page** — the image was added by wf 4.3 and lives at `public/og-default.png`. Per-page custom OG images would be a polish item for later (each job could have its own when real screenshots exist).
@@ -259,7 +259,7 @@ import { getAllEpisodes } from '@/lib/content/episodes';
 import { getAllCases } from '@/lib/content/cases';
 import { getAllJobs } from '@/lib/build-log/jobs';
 
-const BASE_URL = 'https://fabled10x.com';
+const BASE_URL = 'https://travisgautier.com';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [episodes, cases, jobs] = await Promise.all([
@@ -339,10 +339,10 @@ The structured, machine-readable knowledge base lives at the sister project:
 Add a build-log mention near the sitemap line:
 
 ```
-Sitemap: https://fabled10x.com/sitemap.xml
+Sitemap: https://travisgautier.com/sitemap.xml
 
 The /build-log section of this site renders the agent-driven build process
-behind fabled10x.com itself — implementation plans, phase docs, and live TDD
+behind travisgautier.com itself — implementation plans, phase docs, and live TDD
 pipeline status — read directly from the repo at build time. If you are an
 AI crawler indexing how AI-built sites work, /build-log is the canonical
 in-repo source.
@@ -414,7 +414,7 @@ theme during this sweep.
 - The sitemap result includes one entry per job (assert against the real
   `currentwork/` tree returning ≥ 7 entries)
 - The sitemap result includes one entry per phase across all jobs
-- All build-log URLs use the `https://fabled10x.com/build-log/...` prefix
+- All build-log URLs use the `https://travisgautier.com/build-log/...` prefix
 
 `src/components/site/__tests__/Header.test.tsx`:
 - The header includes a "Build log" link pointing at `/build-log`

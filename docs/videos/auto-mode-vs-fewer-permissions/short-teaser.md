@@ -77,7 +77,7 @@ Running both is the answer. Full video linked.
 - The six-pattern table from the real scan — that's the single most convincing visual. Both variants should use it.
 - Keep captions big and burned-in. Most shorts viewers watch muted.
 - No face-cam. Terminal + settings file + captions is enough.
-- End card: "Full comparison on fabled10x" or channel handle depending on platform.
+- End card: "Full comparison on travisgautier" or channel handle depending on platform.
 
 ## Tone notes
 

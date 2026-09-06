@@ -30,9 +30,9 @@ The shipped capture in `website-foundation` Phase 4.1 (`src/components/capture/E
 
 ## Substack publication assumption
 
-The operator must supply the publication's embed URL via `NEXT_PUBLIC_SUBSTACK_EMBED_URL` (full URL including `/embed`). The component falls back to a link to `https://substack.com/@fabled10x` when the env var is unset — never renders an empty iframe.
+The operator must supply the publication's embed URL via `NEXT_PUBLIC_SUBSTACK_EMBED_URL` (full URL including `/embed`). The component falls back to a link to `https://substack.com/@travisgautier` when the env var is unset — never renders an empty iframe.
 
-`https://substack.com/@fabled10x` is the operator's *profile* URL. The actual embed URL needs a publication subdomain like `https://fabled10x.substack.com/embed`. Confirm a publication exists (or create one) before the green phase.
+`https://substack.com/@travisgautier` is the operator's *profile* URL. The actual embed URL needs a publication subdomain like `https://travisgautier.substack.com/embed`. Confirm a publication exists (or create one) before the green phase.
 
 ## Feature overview
 
@@ -79,9 +79,9 @@ The operator must supply the publication's embed URL via `NEXT_PUBLIC_SUBSTACK_E
 End-to-end:
 1. Populate `NEXT_PUBLIC_SUBSTACK_EMBED_URL` in `.env.local`.
 2. `npm run dev`; load `/`, `/episodes/<seed-slug>`, `/cases/<seed-slug>`; confirm the Substack iframe renders inside the Bone wrapper on each.
-3. View page source / network tab: iframe `src` includes `utm_source=fabled10x.com`, `utm_medium=embed`, `utm_campaign=pillar:{delivery|business}`, `utm_content={source}`.
+3. View page source / network tab: iframe `src` includes `utm_source=travisgautier.com`, `utm_medium=embed`, `utm_campaign=pillar:{delivery|business}`, `utm_content={source}`.
 4. Submit a test email through the embed → confirm arrival in Substack's subscribers panel.
-5. Unset `NEXT_PUBLIC_SUBSTACK_EMBED_URL` and reload — confirm graceful fallback link to `https://substack.com/@fabled10x`.
+5. Unset `NEXT_PUBLIC_SUBSTACK_EMBED_URL` and reload — confirm graceful fallback link to `https://substack.com/@travisgautier`.
 
 Test suites:
 - `npm test src/components/capture` — new iframe + helper tests green

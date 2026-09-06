@@ -4,12 +4,12 @@
 
 ## Context
 
-`/showcase` is the channel's "Built with Fabled10X" gallery: a public, SEO-
-indexed surface where community projects built with the Fabled10X methodology
+`/showcase` is the channel's "Built with Travis Gautier" gallery: a public, SEO-
+indexed surface where community projects built with the Travis Gautier methodology
 get their own page. It's the brand's social-proof layer, pointing viewers at
 real work shipped by people outside the core team. This job is #5 in
-`docs/future-jobs.md` and implements the "Built with Fabled10X community
-showcase" bullet from Phase 3 of `docs/fabled10x-website-implementation-plan.md`.
+`docs/future-jobs.md` and implements the "Built with Travis Gautier community
+showcase" bullet from Phase 3 of `docs/website-implementation-plan.md`.
 
 The scope is a new `Showcase` content type + loader + two pages (`/showcase`
 index and `/showcase/[slug]` detail) + SEO polish. Submission is **fully
@@ -36,7 +36,7 @@ hand-linked via frontmatter), video embeds, showcase-specific email capture.
 - **Next.js 16 App Router scaffold** — React 19.2.4, Tailwind 4, strict TS, `@/` → `src/`. (`package.json`, `tsconfig.json`, `next.config.ts`)
 - **Content schemas** — `src/content/schemas/{content-tier,content-pillar,episode,source-material,index}.ts`. No `Showcase` type yet.
 - **Test infra** — Vitest 2.1.8 + jsdom, `@testing-library/jest-dom/vitest` loaded via `src/__tests__/setup.ts`, MSW 2.7 installed, coverage thresholds 70/80/80/80 (`vitest.config.ts`)
-- **Source docs** — `docs/fabled10x-website-implementation-plan.md`, `docs/fabled10x-brand-identity.md`, `docs/future-jobs.md`, `AGENTS.md` (Next.js 16 local-docs reminder)
+- **Source docs** — `docs/website-implementation-plan.md`, `docs/brand-identity.md`, `docs/future-jobs.md`, `AGENTS.md` (Next.js 16 local-docs reminder)
 
 ### Delivered by `website-foundation` (prerequisite — NOT YET SHIPPED when this plan is written)
 This job reuses these `wf` outputs and cannot start its TDD cycles until they exist.
@@ -45,7 +45,7 @@ This job reuses these `wf` outputs and cannot start its TDD cycles until they ex
 - **Content loader utility** (`src/lib/content/loader.ts` from wf 2.2) — generic filesystem discovery + dynamic import + Zod validation. This job's `src/lib/content/showcase.ts` follows the exact same shape as `src/lib/content/episodes.ts` and `src/lib/content/cases.ts`.
 - **Zod validators** (`src/content/schemas/validators.ts` from wf 1.2) — `EpisodeSchema`, `SourceMaterialSchema`, `CaseSchema`. `ShowcaseSchema` is added here following the same export style.
 - **Brand design tokens** (`src/app/globals.css` from wf 1.3) — `--color-{ink,parchment,ember,steel,mist,signal}` + semantic aliases `--color-{background,foreground,muted,accent,link}`. Tailwind class surface: `bg-accent`, `text-muted`, `border-mist`, `text-link`, `bg-parchment`, `font-display`, etc.
-- **Site shell** (`src/components/site/{Header,Footer}.tsx` + `src/app/layout.tsx` from wf 1.4) — mounted root layout with `metadataBase` set to `https://fabled10x.com`.
+- **Site shell** (`src/components/site/{Header,Footer}.tsx` + `src/app/layout.tsx` from wf 1.4) — mounted root layout with `metadataBase` set to `https://travisgautier.com`.
 - **`<Container>` layout primitive** (`src/components/site/Container.tsx` from wf 1.4) — `mx-auto w-full max-w-5xl px-6 md:px-10`, accepts `className` + `as` prop.
 - **`<LllCrosslinks>`** (`src/components/crosslinks/LllCrosslinks.tsx` from wf 4.2) — renders `lllEntryUrls` array as a styled crosslink block. Showcase detail pages embed it directly with the same prop shape Episode + Case use.
 - **Dynamic sitemap** (`src/app/sitemap.ts` from wf 4.4) — this job modifies it to append `/showcase` + every showcase slug.

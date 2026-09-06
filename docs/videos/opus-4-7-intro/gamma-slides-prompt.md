@@ -6,7 +6,7 @@ Paste the block below into gamma.ai to generate the deck. Edit the numbers only 
 
 ## PROMPT (paste this into gamma.ai)
 
-Create a 14-slide presentation titled **"Opus 4.7 Just Dropped. Here's What Actually Changed."** that serves as on-screen companion slides for a 7-minute YouTube video on the fabled10x channel (audience: engineers using Claude Code and AI agent workflows).
+Create a 14-slide presentation titled **"Opus 4.7 Just Dropped. Here's What Actually Changed."** that serves as on-screen companion slides for a 7-minute YouTube video on the travisgautier channel (audience: engineers using Claude Code and AI agent workflows).
 
 **Tone and style:**
 - Data-first, no hype language ("amazing," "game-changing," "mind-blowing" — none of it)
@@ -22,7 +22,7 @@ Create a 14-slide presentation titled **"Opus 4.7 Just Dropped. Here's What Actu
 **Slide 1 — Title**
 - Title: "Opus 4.7 Just Dropped"
 - Subtitle: "Six weeks of pain. First reason for hope."
-- Tag line at bottom: "fabled10x — building with AI, openly"
+- Tag line at bottom: "travisgautier — building with AI, openly"
 - Date: April 16, 2026
 
 **Slide 2 — The Last Six Weeks (NEW)**
@@ -118,7 +118,7 @@ Create a 14-slide presentation titled **"Opus 4.7 Just Dropped. Here's What Actu
   1. Opus 4.7 retakes the coding crown. The SWE-bench Pro gap is real.
   2. Check the tokenizer before migrating at scale.
   3. Vision upgrade from 54.5% to 98.5% is the most underreported change.
-- Channel handle bottom-right: "fabled10x — building with AI, openly"
+- Channel handle bottom-right: "travisgautier — building with AI, openly"
 
 **Strict rules for Gamma:**
 - Preserve the exact numeric values above. Do not paraphrase 64.3% as "about 64%" or round any figure.

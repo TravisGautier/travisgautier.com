@@ -43,7 +43,7 @@ The thesis: becoming a "developer" used to mean learning to type code that runs.
 | 3: The Fundamentals | Z11–Z18 | Core programming concepts learned with AI as partner and critical review as discipline. |
 | 4: Your First App | Z19–Z26 | End-to-end web app: frontend, backend, database, deploy. Real code shipped. |
 | 5: The Judgment Layer | Z27–Z34 | Human-level skills AI can't provide. **This is where Agent Team Tactics T8 points.** |
-| 6: The 10X Moment | Z35–Z40 | Shipping as a professional. Managing AI agents. The Fabled10X Pipeline as graduation project. |
+| 6: The 10X Moment | Z35–Z40 | Shipping as a professional. Managing AI agents. The Travis Gautier Pipeline as graduation project. |
 
 ---
 
@@ -889,7 +889,7 @@ React's whole trick is: a component is a function that returns something that lo
 4. **Rendering** (2–3 min) — `ReactDOM.render` or, in Next.js, just exporting the component. How React puts your function output into the page.
 5. **Props** (3 min) — Arguments to components. `<Hello name="Alice" />`. Read inside the component as a `props` object. Demo: a reusable card component.
 6. **Composing components** (3 min) — Components use other components. A page is components all the way down. Demo: a page made of a Header, a Main, and a Footer component.
-7. **Your first Next.js page** (3 min) — Use the fabled10x project or a fresh Next.js app. Create a new page. Add a component. See it render.
+7. **Your first Next.js page** (3 min) — Use the travisgautier project or a fresh Next.js app. Create a new page. Add a component. See it render.
 8. **Close** (60s) — "Components are functions. Functions return UI. That's the whole mental model. State comes next."
 
 #### Key visuals
@@ -1699,7 +1699,7 @@ Agent Team Tactics T1 at graduation level. You're not just pairing with AI anymo
 #### Source materials
 - Agent Team Tactics T1 (foundational)
 - Pipeline P6 (preview of the orchestrated version)
-- Fabled10x CLAUDE.md and skills directory (real examples)
+- Travis Gautier CLAUDE.md and skills directory (real examples)
 
 #### Shorts potential
 - "You're no longer the one typing. You're the one directing. That's what proficient AI developer looks like day-to-day."
@@ -1707,16 +1707,16 @@ Agent Team Tactics T1 at graduation level. You're not just pairing with AI anymo
 
 ---
 
-### Z39 — "The Fabled10X Pipeline — Graduation Project"
+### Z39 — "The Travis Gautier Pipeline — Graduation Project"
 
 **Runtime target:** 25–30 min
 **Pillar:** Workflow (crosses into Delivery)
-**Search intent:** "TDD pipeline AI," "Fabled10x pipeline tutorial," "AI development methodology," "structured AI workflow"
+**Search intent:** "TDD pipeline AI," "Travis Gautier pipeline tutorial," "AI development methodology," "structured AI workflow"
 
 **Prerequisites:** Z1–Z38. This is the graduation.
 
 **Learning objectives:**
-- Run the full Fabled10X Pipeline on a real feature
+- Run the full Travis Gautier Pipeline on a real feature
 - Produce a shippable feature using the integrated system
 - Earn the "proficient AI developer" designation honestly
 
@@ -1742,13 +1742,13 @@ The full Pipeline playlist methodology, applied to a feature you build end-to-en
 - The final shipped feature running in the deployed app
 
 #### Source materials
-- The full Fabled10X Pipeline playlist (docs/playlists/the-pipeline.md)
-- Fabled10x skills directory
+- The full Travis Gautier Pipeline playlist (docs/playlists/the-pipeline.md)
+- Travis Gautier skills directory
 - The graduation project spec (create and link)
 - The completed graduation project commits
 
 #### Shorts potential
-- "Graduation: ship a real feature using the full Fabled10X Pipeline. Discovery, red, green, refactor, finish. That's proficient."
+- "Graduation: ship a real feature using the full Travis Gautier Pipeline. Discovery, red, green, refactor, finish. That's proficient."
 - "AI does most of the execution. You do all of the judgment. Shipped feature, professional methodology, full loop. That's the unlock."
 
 ---
@@ -1774,7 +1774,7 @@ Proficient is where real work starts. The curriculum ends with a clear picture o
 2. **The freelance path** (3 min) — How to start. How to price. Discovery as a paid phase (callback to Building Party Masters). Where to find clients. What year one looks like.
 3. **The startup path** (3 min) — What startups hire for. Small teams, broad responsibilities. Why judgment matters more than any single skill. How to get an interview.
 4. **The corporate path** (2 min) — Bigger teams, deeper specialization, more process. The slower-but-safer path. What to look for in a first role.
-5. **The consulting path** (2 min) — Fabled10X's own path. Building projects, documenting them, charging for expertise. The longer arc.
+5. **The consulting path** (2 min) — Travis Gautier's own path. Building projects, documenting them, charging for expertise. The longer arc.
 6. **What compounds** (3 min) — Portfolio (shipped projects). Relationships (people who've worked with you). Judgment (the thing this curriculum built). Domain expertise (years in a vertical). Reputation.
 7. **What takes years** (2 min) — Seniority isn't a set of techniques. It's experience with failure modes. Taste isn't knowable from the outside. Both take time. No hack.
 8. **Contributing to LLL** (2 min) — Every problem you solve as a proficient developer is worth preserving. Zero to 10X → Large Language Library contribution → ecosystem. Preview the LLL plugin workflow.
@@ -1809,7 +1809,7 @@ Proficient is where real work starts. The curriculum ends with a clear picture o
 - T3 database design four-stage prompt chain introduced in Z25
 - T5 structure-first spec approach used throughout Act 4
 
-### The Fabled10X Pipeline tie-ins
+### The Travis Gautier Pipeline tie-ins
 - The full Pipeline is the graduation project in Z39 — students don't use the pipeline until they've built the foundation
 - Pipeline P4 (tests before code) introduced at learning level in Z35
 - Pipeline P5 (specification) principles underlie all of Act 4

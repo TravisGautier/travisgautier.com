@@ -148,12 +148,12 @@ security_tests:
 
 accessibility_tests:
   - id: "a11y_logo_wrapper_announces_brand_label"
-    description: "Wrapper span aria-label='Fabled 10X' — screen readers announce the brand once"
+    description: "Wrapper span aria-label='Travis Gautier' — screen readers announce the brand once"
     file: "src/components/brand/__tests__/Logo.test.tsx"
     test_type: accessibility
     wcag_category: perceivable
     component: "Logo"
-    requirements: ["Wrapper has aria-label='Fabled 10X'", "Wrapper has no other accessible-name override (role, aria-labelledby)"]
+    requirements: ["Wrapper has aria-label='Travis Gautier'", "Wrapper has no other accessible-name override (role, aria-labelledby)"]
   - id: "a11y_logo_inner_parts_hidden_from_screen_readers"
     description: "Inner FABLED + {10x} spans aria-hidden — not announced as 'FABLED open brace 10x close brace'"
     file: "src/components/brand/__tests__/Logo.test.tsx"
@@ -174,7 +174,7 @@ accessibility_tests:
     test_type: accessibility
     wcag_category: perceivable
     component: "Logo"
-    requirements: ["mono=true wrapper aria-label still 'Fabled 10X'", "inner spans still aria-hidden='true'"]
+    requirements: ["mono=true wrapper aria-label still 'Travis Gautier'", "inner spans still aria-hidden='true'"]
 
 infrastructure_tests:
   - id: "infra_brand_barrel_re_exports_logo"

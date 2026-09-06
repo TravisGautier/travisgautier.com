@@ -303,7 +303,7 @@ import { getAllTools } from '@/content/tools/registry';
 export const metadata: Metadata = {
   title: 'Free Tools',
   description:
-    'Free calculators for project scoping, pricing, ROI analysis, and discovery timelines. Built by Fabled10X.',
+    'Free calculators for project scoping, pricing, ROI analysis, and discovery timelines. Built by Travis Gautier.',
 };
 
 export default function ToolsIndexPage() {

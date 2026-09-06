@@ -47,7 +47,7 @@ checklist_items:
     priority: P0
     dependencies: [1]
   - id: 9
-    text: "Outer wrapper: <span className='inline-flex items-baseline {className}'> style={gap: s.gap} aria-label='Fabled 10X'"
+    text: "Outer wrapper: <span className='inline-flex items-baseline {className}'> style={gap: s.gap} aria-label='Travis Gautier'"
     status: pending
     priority: P0
     dependencies: [1]
@@ -164,7 +164,7 @@ patterns:
           lineHeight: 1,
         };
         return (
-          <span className={`inline-flex items-baseline ${className}`} style={{ gap: s.gap }} aria-label="Fabled 10X">
+          <span className={`inline-flex items-baseline ${className}`} style={{ gap: s.gap }} aria-label="Travis Gautier">
             <span style={wordmarkStyle} aria-hidden="true">FABLED</span>
             <span style={markStyle} aria-hidden="true">{'{10x}'}</span>
           </span>
@@ -192,7 +192,7 @@ patterns:
       import * as brandBarrel from '..';
 
       function getWrapperSpan(container: HTMLElement): HTMLSpanElement | null {
-        return container.querySelector('span[aria-label="Fabled 10X"]');
+        return container.querySelector('span[aria-label="Travis Gautier"]');
       }
       function getWordmarkSpan(container: HTMLElement): HTMLSpanElement | null {
         return getWrapperSpan(container)?.querySelector('span[aria-hidden="true"]:first-child') ?? null;

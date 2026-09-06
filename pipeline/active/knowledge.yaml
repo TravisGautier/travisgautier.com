@@ -1,6 +1,6 @@
 knowledge:
   version: 1
-  project: fabled10x
+  project: travisgautier
   description: 'Cross-section knowledge store. Skills read/write here when a pattern,
 
     constraint, or decision applies to multiple sections. Keeps context
@@ -9,7 +9,7 @@ knowledge:
 
     '
 project_context:
-  purpose: 'fabled10x is the brand/marketing site for the Fabled10X YouTube channel
+  purpose: 'travisgautier is the brand/marketing site for the Travis Gautier YouTube channel
 
     and social media presence. Primary outputs: episode index, project case
 
@@ -448,7 +448,7 @@ patterns:
 
       '
     reusable_for:
-      - Any future content type added to fabled10x — extend sitemap.ts with additional
+      - Any future content type added to travisgautier — extend sitemap.ts with additional
         loader call
       - Future free-tools/storefront sitemap additions
   - id: metadataroute_robots_pattern
@@ -456,8 +456,8 @@ patterns:
     established_at: '2026-04-12'
     description: 'src/app/robots.ts: export default function returning MetadataRoute.Robots.
 
-      Permissive stance for fabled10x: { rules: [{ userAgent: ''*'', allow: ''/''
-      }], sitemap: ''https://fabled10x.com/sitemap.xml'' }.
+      Permissive stance for travisgautier: { rules: [{ userAgent: ''*'', allow: ''/''
+      }], sitemap: ''https://travisgautier.com/sitemap.xml'' }.
 
       Sync function — no async work needed. Framework serves /robots.txt.
 
@@ -656,7 +656,7 @@ website-foundation-4.1:
       reusable_for: Any future detail page needing structured data
     - id: dynamic_sitemap_from_loaders
       file: src/app/sitemap.ts
-      reusable_for: Any future content type added to fabled10x
+      reusable_for: Any future content type added to travisgautier
     - id: metadataroute_robots_pattern
       file: src/app/robots.ts
       reusable_for: Any future Next.js project needing robots.txt
@@ -1092,7 +1092,7 @@ storefront-auth-1.1:
         Tool, Service, Course)
     - id: validator_with_transform_and_anti_traversal
       file: src/content/schemas/validators.ts (ProductSchema)
-      description: 'ProductSchema introduces two patterns new to fabled10x validators:
+      description: 'ProductSchema introduces two patterns new to travisgautier validators:
 
         (1) `.toLowerCase()` Zod transform on currency — accepts mixed-case
 
@@ -1114,7 +1114,7 @@ storefront-auth-1.1:
         casing
     - id: loader_with_freeze_and_descending_sort
       file: src/lib/content/products.ts
-      description: 'First fabled10x loader to apply Object.freeze on cache assignment
+      description: 'First travisgautier loader to apply Object.freeze on cache assignment
 
         from the start (paid-forward cleanup from build-in-public-docs-1.2
 
@@ -1351,7 +1351,7 @@ storefront-auth-1.2:
   patterns_established:
     - id: extracted_card_in_link_wrapper
       file: src/components/products/ProductCard.tsx + src/app/products/page.tsx
-      description: 'First fabled10x pattern where a card component is extracted to
+      description: 'First travisgautier pattern where a card component is extracted to
         its own
 
         file AND the parent index wraps it with Link at the list level, not
@@ -1807,7 +1807,7 @@ cohort-enrollment-1.2:
   patterns_established:
     - id: cohort_loader_mirrors_products_with_startdate_asc
       file: src/lib/content/cohorts.ts
-      description: "Fourth fabled10x content loader, structurally identical to products.ts\n\
+      description: "Fourth travisgautier content loader, structurally identical to products.ts\n\
         (ReadonlyArray<LoadedEntry<T>> + Object.freeze + manifest pattern) with\n\
         two intentional divergences:\n  (1) Sort by `meta.startDate` ASCENDING (not\
         \ `meta.publishedAt`\n      DESCENDING). Rationale (planning-doc line 506-508):\
@@ -2937,11 +2937,11 @@ styling-overhaul-1.3:
 
     styling-overhaul (so-1.1 + 1.2 + 1.3). Single file modified
 
-    (docs/fabled10x-brand-identity.md, only Visual Identity Direction section,
+    (docs/brand-identity.md, only Visual Identity Direction section,
 
     14 other sections preserved verbatim), one file created
 
-    (docs/fabled10x-design-system.md, 8 canonical sections: Palette /
+    (docs/design-system.md, 8 canonical sections: Palette /
 
     Contrast Pairs / Typography / Material Language / Composition /
 
@@ -4074,7 +4074,7 @@ cohort-enrollment-4.1:
       reusable_for: any admin write-action form where N discrete decisions all share
         validation + invocation logic
     - id: drizzle_transaction_two_writes
-      description: "First db.transaction() usage in fabled10x. Pattern:\n  await db.transaction(async\
+      description: "First db.transaction() usage in travisgautier. Pattern:\n  await db.transaction(async\
         \ (tx) => {\n    await tx.insert(table_a).values(...).onConflictDoNothing({target:\
         \ ...});\n    await tx.update(table_b).set({...}).where(eq(table_b.id, id));\n\
         \  });\n  // post-tx side-effects (email) wrapped in try/swallow\nInsert +\
@@ -4086,7 +4086,7 @@ cohort-enrollment-4.1:
       reusable_for: any future admin action that must atomically write to two related
         tables
     - id: drizzle_inner_join_admin_query
-      description: "First .innerJoin() usage in fabled10x. Pattern:\n  db.select({\
+      description: "First .innerJoin() usage in travisgautier. Pattern:\n  db.select({\
         \ application: schema.cohortApplications, userEmail: schema.users.email })\n\
         \    .from(schema.cohortApplications)\n    .innerJoin(schema.users, eq(schema.cohortApplications.userId,\
         \ schema.users.id))\n    .where(...)\n    .orderBy(desc(schema.cohortApplications.submittedAt));\n\
@@ -5252,7 +5252,7 @@ styling-overhaul-5.2:
       literal — restyles must preserve that exact testid format. Document with explicit
       cross-consumer integration tests in the primitive owner's test file so the contract
       is visible from both sides.
-    - fabled10x has no /scripts directory, no docker setup, no .env files in main,
+    - travisgautier has no /scripts directory, no docker setup, no .env files in main,
       no test DB. PWTC (per-worktree test container) machinery from partymasters is
       fully N/A here — pipeline + worktree-claim short-circuit cleanly via CLAIM-04a
       PWTC_DISABLED-equivalent + env-symlink loop's [[ -e ]] guard.
@@ -5408,7 +5408,7 @@ styling-overhaul-5.3:
       '
     - 'currentwork/{job-slug}/README.md must be edited in the WORKTREE,
 
-      not in the main repo. Editing /home/travis/Projects/fabled10x/
+      not in the main repo. Editing /home/travis/Projects/travisgautier.com/
 
       currentwork/... pollutes the main working tree and breaks the
 
@@ -5694,7 +5694,7 @@ styling-overhaul-6.2:
 
         '
   gotchas:
-    - 'Worktree-claim CLAIM-04''s `mount --bind /home/travis/Projects/fabled10x/node_modules`
+    - 'Worktree-claim CLAIM-04''s `mount --bind /home/travis/Projects/travisgautier.com/node_modules`
 
       is denied by the auto-mode classifier ("requires elevated privileges").
 
@@ -5918,7 +5918,7 @@ styling-overhaul-6.4:
       Now-canonical formatDate idiom: month/day/year + timeZone:''UTC''. Cross-section
       spread: account/CohortList.tsx and account/PurchaseList.tsx still have the latent
       bug; flagged for follow-up but predates this section.'
-    - 'fabled10x Cohort schema reality: 5 CohortStatus values (announced/open/closed/enrolled/shipped)
+    - 'travisgautier Cohort schema reality: 5 CohortStatus values (announced/open/closed/enrolled/shipped)
       + capacity (single number, no seatsRemaining/seatsTotal split) + durationWeeks
       + commitmentHoursPerWeek (separate numbers, no `duration` string). The styling-overhaul-6.4
       planning doc snippet referenced an aspirational 3-status model with different
@@ -6163,7 +6163,7 @@ styling-overhaul-7.3:
         should bundle the consumer rewrite from the start, not split.
       - NEXT_PUBLIC_SUBSTACK_EMBED_URL is intentionally public-prefixed (build-time
         inline). Operator must add the value to .env.local before the iframe renders;
-        otherwise the fallback link to substack.com/@fabled10x ships.
+        otherwise the fallback link to substack.com/@travisgautier ships.
       - RESEND_AUDIENCE_ID was read by the deleted actions.ts but was never declared
         in .env.example (orphan env var). Operator should remove it from .env.local
         and deploy secrets after this ships. NOT a code-side concern.
@@ -6227,7 +6227,7 @@ email-funnel-1.5:
       reusable_utilities by mistake in the prior session. Not fixed here per section-scoped
       rule. Whoever runs ef-1.6 next could promote it to a top-level entry en passant
       if convenient.'
-    - 'Operator action items (still outstanding from ef-1.1): confirm fabled10x.substack.com/embed
+    - 'Operator action items (still outstanding from ef-1.1): confirm travisgautier.substack.com/embed
       exists OR create the publication; migrate Resend audience to Substack via CSV
       export -> import; create Substack sections per pillar; drop RESEND_AUDIENCE_ID
       from .env.local + deploy secrets.'
@@ -6580,7 +6580,7 @@ styling-overhaul-7.5:
       / aria-labelledby / data-testid all work without explicit prop plumbing. Same
       applies to Marble + Parchment + Section. Confirmed via the so-7.5 status banner
       pattern.
-    - PWTC N/A confirmed for fabled10x (no docker/db infra). Env-symlink loop fell
+    - PWTC N/A confirmed for travisgautier (no docker/db infra). Env-symlink loop fell
       through silently — no .env / .env.local / .env.db in main. node_modules bind-mounted
       from main.
     - Cross-section formatPrice duplication now at 7+ sites (was 6 at so-6.3), formatDate
@@ -7122,7 +7122,7 @@ build-log-overhaul-3.1:
 styling-overhaul-8.4:
   completed_at: '2026-06-09'
   summary: 'Final section of styling-overhaul Phase 8. Pure docs section — finalized
-    docs/fabled10x-design-system.md with the real shipped asset paths, the off-site
+    docs/design-system.md with the real shipped asset paths, the off-site
     brand surfaces (og:image routes + thumb-preview), and regeneration notes. No production
     code; the only non-doc artifact is 23 new tests appended to the existing brand
     docs harness.

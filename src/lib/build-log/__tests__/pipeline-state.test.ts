@@ -53,11 +53,11 @@ notes: |
 
 const MINIMAL_KNOWLEDGE_YAML = `knowledge:
   version: 1
-  project: fabled10x
+  project: travisgautier
   description: "test"
 
 project_context:
-  purpose: "fabled10x marketing site"
+  purpose: "travisgautier marketing site"
 
 conventions:
   path_alias: "@/ → src/"
@@ -137,7 +137,7 @@ describe('pipeline-state.ts: mapKnowledge (unit)', () => {
     mockYamlFiles({
       [KNOWLEDGE_PATH]: `knowledge:
   version: 1
-  project: "fabled10x"
+  project: "travisgautier"
   description: "kb"
 
 project_context:
@@ -155,7 +155,7 @@ open_questions:
     const { getKnowledgeFile } = await import('../pipeline-state');
     const result = await getKnowledgeFile();
     expect(result.version).toBe(1);
-    expect(result.project).toBe('fabled10x');
+    expect(result.project).toBe('travisgautier');
     expect(result.description).toBe('kb');
     expect(result.projectContext?.purpose).toBe('site');
     expect(result.conventions).toEqual({ path_alias: '@/ → src/' });
@@ -541,7 +541,7 @@ describe('pipeline-state.ts: getSessionStatus / getKnowledgeFile (unit)', () => 
     const { getKnowledgeFile } = await import('../pipeline-state');
     const result = await getKnowledgeFile();
     expect(result.version).toBe(1);
-    expect(result.projectContext?.purpose).toBe('fabled10x marketing site');
+    expect(result.projectContext?.purpose).toBe('travisgautier marketing site');
   });
 });
 
@@ -556,10 +556,10 @@ describe('pipeline-state.ts: integration against real pipeline/active/', () => {
     expect(Array.isArray(result.completedSections)).toBe(true);
   });
 
-  it('integration_knowledge_yaml_parses_real: real knowledge.yaml → purpose mentions fabled10x, path_alias present', async () => {
+  it('integration_knowledge_yaml_parses_real: real knowledge.yaml → purpose mentions travisgautier, path_alias present', async () => {
     const { getKnowledgeFile } = await import('../pipeline-state');
     const result = await getKnowledgeFile();
-    expect(result.projectContext?.purpose).toMatch(/fabled10x/i);
+    expect(result.projectContext?.purpose).toMatch(/travisgautier/i);
     expect(result.conventions).toHaveProperty('path_alias');
     expect(result.conventions?.path_alias).toBe('@/ → src/');
   });

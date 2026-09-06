@@ -4,12 +4,12 @@
 
 ## Context
 
-fabled10x.com is the brand site for the Fabled10X YouTube channel — the place
+travisgautier.com is the brand site for the Travis Gautier YouTube channel — the place
 viewers land after watching an episode and the asset that converts them into
 subscribers and email signups. As of 2026-04-11 the repo is a fresh Next.js 16
 App Router scaffold with a placeholder homepage and `public/llms.txt`. Nothing
 else is live, and `pipeline/active/session.yaml` explicitly names
-`docs/fabled10x-website-implementation-plan.md` as the seed for the first
+`docs/website-implementation-plan.md` as the seed for the first
 `currentwork/` job.
 
 This job delivers the **public content site MVP** — the scope of Phase 0 and
@@ -36,11 +36,11 @@ shippable to the VPS in standalone mode.
   - `src/content/schemas/episode.ts` — `Episode` interface
   - `src/content/schemas/source-material.ts` — `SourceMaterial` interface + `SOURCE_MATERIAL_KINDS`
   - `src/content/schemas/index.ts` — barrel re-export
-- **Placeholder homepage** — `src/app/page.tsx` renders `<h1>fabled10x</h1>`. Root layout at `src/app/layout.tsx` wires Geist sans/mono fonts.
+- **Placeholder homepage** — `src/app/page.tsx` renders `<h1>travisgautier</h1>`. Root layout at `src/app/layout.tsx` wires Geist sans/mono fonts.
 - **llms.txt** — `public/llms.txt` is populated and points crawlers at the Large Language Library sister project.
 - **Test infra** — Vitest 2.1.8 + jsdom, `src/__tests__/setup.ts` loads `@testing-library/jest-dom/vitest`, MSW 2.7 installed, coverage thresholds 70/80/80/80 (`vitest.config.ts`). Only `smoke.test.ts` exists today.
-- **Source doc** — `docs/fabled10x-website-implementation-plan.md` (site map, page specs, phased rollout).
-- **Brand doc** — `docs/fabled10x-brand-identity.md` (voice, tone, visual direction — "boutique consultancy, muted confident colors, strong typography, narrative quality").
+- **Source doc** — `docs/website-implementation-plan.md` (site map, page specs, phased rollout).
+- **Brand doc** — `docs/brand-identity.md` (voice, tone, visual direction — "boutique consultancy, muted confident colors, strong typography, narrative quality").
 - **Next.js 16 MDX guide** — `node_modules/next/dist/docs/01-app/02-guides/mdx.md` (local docs required reading per `AGENTS.md`).
 
 ## Feature Overview (11 Features, 4 Phases)
@@ -164,7 +164,7 @@ be installed at the start of the job):
 
 ## Open Items (Resolve During Implementation)
 
-- **Brand design tokens**: `docs/fabled10x-brand-identity.md` gives direction (boutique consultancy, muted confident colors, narrative quality) but no specific hex values or font stack. Phase 1.3 owns the call.
+- **Brand design tokens**: `docs/brand-identity.md` gives direction (boutique consultancy, muted confident colors, narrative quality) but no specific hex values or font stack. Phase 1.3 owns the call.
 - **`RESEND_API_KEY`**: User must provision and add to `.env.local` before Phase 4.1 can be verified end-to-end. Plan notes where the key is referenced; implementation is functional without the key (form degrades to an error state).
 - **Party Masters placeholder copy**: Phase 2.3 ships stub copy. Real case content is a separate concern and not part of this job.
 

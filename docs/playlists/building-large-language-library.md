@@ -41,7 +41,7 @@ The hook: five AIs from five labs judging every submission for novelty. If even 
 | 2: The Architecture | L4–L6 | Schema, governance council, cost defense — design before code. |
 | 3: The Build | L7–L11 | Foundation through launch. Real code, real integrations, real problems. |
 | 4: The Proof | L12–L14 | Community submissions, council disagreements, honest cost accounting. |
-| 5: The Protocol | L15–L16 | Plugin ecosystem, the long-term vision. LLL becomes bigger than Fabled10X. |
+| 5: The Protocol | L15–L16 | Plugin ecosystem, the long-term vision. LLL becomes bigger than Travis Gautier. |
 
 ---
 
@@ -134,10 +134,10 @@ LLL is not a product pitch — it's a design problem. What would a public knowle
    - Governed by a council of five competing AI models — not upvotes, not human editors, not a single company
    - Free forever, public forever, open source forever
    - Show the tagline: *"What survives the context window."*
-4. **The relationship to Fabled10X** (2–3 min) — Stated plainly:
-   - "I'm building LLL. Fabled10X is documenting the build and promoting the result. But LLL belongs to everyone."
+4. **The relationship to Travis Gautier** (2–3 min) — Stated plainly:
+   - "I'm building LLL. Travis Gautier is documenting the build and promoting the result. But LLL belongs to everyone."
    - The DHH analogy: Basecamp built Rails. Rails got bigger than Basecamp. That's the goal.
-   - LLL generates no revenue. Fabled10X does. LLL generates credibility, community, and contribution to the AI ecosystem.
+   - LLL generates no revenue. Travis Gautier does. LLL generates credibility, community, and contribution to the AI ecosystem.
 5. **Close** (60s) — "Next episode: the governance model. Five AIs from five labs, reviewing every submission. It's the part that makes people do a double-take — and it's the part that makes the whole thing work."
 
 #### Key visuals
@@ -147,7 +147,7 @@ LLL is not a product pitch — it's a design problem. What would a public knowle
 - The DHH/Rails/Basecamp parallel graphic
 
 #### Source materials
-- docs/large-language-library-implementation-plan.md (What LLL Is, What LLL Is Not, Relationship to Fabled10X)
+- docs/large-language-library-implementation-plan.md (What LLL Is, What LLL Is Not, Relationship to Travis Gautier)
 - Comparison matrix of existing knowledge platforms
 - LLL brand assets (logo, tagline)
 
@@ -643,7 +643,7 @@ LLL launches with content. An empty knowledge base is not a knowledge base. Ever
 **Search intent:** "open source project launch," "AI knowledge base launch," "largelanguagelibrary.ai"
 
 #### Thesis
-The site goes live. Schema v1.0 published. `@lll/schema` on npm. The governance page is a first-class destination. This is not a Fabled10X product launch — it's an invitation to the community.
+The site goes live. Schema v1.0 published. `@lll/schema` on npm. The governance page is a first-class destination. This is not a Travis Gautier product launch — it's an invitation to the community.
 
 #### Outline
 1. **Pre-launch checklist** (3–4 min) — Everything that needs to be true before going live:
@@ -664,7 +664,7 @@ The site goes live. Schema v1.0 published. `@lll/schema` on npm. The governance 
    - `/submit`: all contribution paths explained
    - `/governance`: council composition, rubric, changelog, statistics, score distributions
    - `/schema`: public schema documentation and version history
-   - `/about`: mission, Fabled10X relationship stated plainly, invitation to build
+   - `/about`: mission, Travis Gautier relationship stated plainly, invitation to build
 3. **The governance page** (3–4 min) — A first-class destination, not an afterthought:
    - Current council composition with pinned versions
    - The full novelty-focused rubric
@@ -672,7 +672,7 @@ The site goes live. Schema v1.0 published. `@lll/schema` on npm. The governance 
    - Aggregate statistics: approval rates, score distributions, divergence patterns
    - "Most projects bury their governance in a wiki. This is a primary navigation destination."
 4. **The announcement** (2–3 min) — How to announce without pitching:
-   - Not "Fabled10X launches a product." It's "We built this. It belongs to everyone. Here's how to contribute."
+   - Not "Travis Gautier launches a product." It's "We built this. It belongs to everyone. Here's how to contribute."
    - The README as the first thing anyone reads
    - The open-source license (MIT or Apache 2.0, trademark excluded)
    - "LLL should outlive any single contributor, brand, or organization."
@@ -708,10 +708,10 @@ The site goes live. Schema v1.0 published. `@lll/schema` on npm. The governance 
 **Pillar:** Future
 **Search intent:** "open source community building," "first contributor experience," "community-driven AI project"
 
-**CREDIBILITY EPISODE — the moment LLL stops being a Fabled10X project and starts being a community project.**
+**CREDIBILITY EPISODE — the moment LLL stops being a Travis Gautier project and starts being a community project.**
 
 #### Thesis
-The first non-Fabled10X submission is the inflection point. LLL is either a community project or a vanity project. This episode documents whichever reality happens.
+The first non-Travis Gautier submission is the inflection point. LLL is either a community project or a vanity project. This episode documents whichever reality happens.
 
 #### Outline
 1. **The waiting** (2–3 min) — What it's like after launch:
@@ -739,7 +739,7 @@ The first non-Fabled10X submission is the inflection point. LLL is either a comm
 5. **What if nobody comes** (2–3 min) — Honest accounting if adoption is slow:
    - Not every open-source project gets contributors on day one
    - What the data says about early traction vs long-term adoption
-   - What Fabled10X does next: more seed content, different promotion, patience
+   - What Travis Gautier does next: more seed content, different promotion, patience
    - "I'd rather show you an empty contributor list than fake enthusiasm."
 6. **Close** (60s) — "The first outsider changes everything — or confirms that there's more work to do. Either way, you're seeing the real story."
 
@@ -863,9 +863,9 @@ LLL is free forever. Free is not costless. Here are the real numbers: token cost
    - Which layers need to scale first?
    - The Phase 3 answer: fine-tuned local validator pre-screening before council
    - "The system works at current volume. Whether it works at 100x depends on Layer 7."
-6. **The relationship stated plainly** (2 min) — LLL and Fabled10X:
+6. **The relationship stated plainly** (2 min) — LLL and Travis Gautier:
    - LLL generates zero revenue
-   - Fabled10X generates revenue through YouTube, consulting, digital products
+   - Travis Gautier generates revenue through YouTube, consulting, digital products
    - LLL generates credibility, community, and contribution to the ecosystem
    - "This is the honest answer to 'how is it funded.' The channel funds the library. The library funds the channel's credibility."
 7. **Close** (60s) — "Free forever. Not costless forever. Here are the numbers so you can decide whether this model is sustainable. I think it is. Show me where I'm wrong."
@@ -880,7 +880,7 @@ LLL is free forever. Free is not costless. Here are the real numbers: token cost
 - Real API billing data from all five providers
 - Hosting invoices (VPS, domain)
 - Filtering rate data from each cost defense layer
-- docs/large-language-library-implementation-plan.md (Cost Architecture, Relationship to Fabled10X)
+- docs/large-language-library-implementation-plan.md (Cost Architecture, Relationship to Travis Gautier)
 
 #### Shorts potential
 - "Here's exactly what it costs to run five AI models on every submission. Real invoices."
@@ -934,7 +934,7 @@ The plugin is the primary contribution path at scale. The AI that solved the pro
    - Any AI coding tool can implement `/lll-submit`
    - Cursor, Copilot, Codex, Aider — the community builds plugins on the open spec
    - The submitting model is recorded permanently — the corpus tracks which AI tools contribute knowledge
-   - "Fabled10X builds the Claude Code plugin. The community builds the rest."
+   - "Travis Gautier builds the Claude Code plugin. The community builds the rest."
 5. **Demo** (3–4 min) — End-to-end `/lll-submit` in a real coding session:
    - Solve a problem with Claude Code
    - Invoke `/lll-submit`
@@ -1041,7 +1041,7 @@ LLL is not a product. It's not a startup. It's an attempt to build one of the fo
 - L1 "Knowledge Dies in the Context Window" is the systemic version of what Party Masters viewers see at the individual project level
 - Building Party Masters Act 3 episodes can reference LLL entries generated from the same features — "this solution is now published in the Large Language Library"
 
-### The Fabled10X Pipeline tie-ins
+### The Travis Gautier Pipeline tie-ins
 - L4 "A Schema for Everything Humans Know" is the knowledge architecture version of Pipeline P5 "The Specification Phase Nobody Does" — "LLL's schema is the same principle as the pipeline's 5 YAML contracts, applied to human knowledge instead of code features"
 - L6 "The Seven-Layer Cost Defense" parallels Pipeline P9 "The Real Cost" — same transparency format
 - L14 "The Real Cost of Free" uses the same real-numbers-no-hedging approach as Pipeline P9

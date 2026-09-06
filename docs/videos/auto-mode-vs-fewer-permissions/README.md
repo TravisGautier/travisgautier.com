@@ -1,6 +1,6 @@
 # Video: Auto Mode vs the Allowlist Skill
 
-Working folder for the fabled10x video **"Claude Ships an AI Classifier for Permissions. You Should Still Write an Allowlist."**
+Working folder for the travisgautier video **"Claude Ships an AI Classifier for Permissions. You Should Still Write an Allowlist."**
 
 Video framing: Opus 4.7 shipped a new `auto` permission mode — an LLM classifier that decides per-call whether a tool use is safe. The community-side `/fewer-permission-prompts` skill generates a static allowlist from your transcripts. Both reduce prompt fatigue. The tradeoffs are not what the marketing says they are.
 

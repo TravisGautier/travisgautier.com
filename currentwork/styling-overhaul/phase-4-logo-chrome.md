@@ -76,7 +76,7 @@ export function Logo({ size = 'md', mono = false, className = '' }: LogoProps) {
     <span
       className={`inline-flex items-baseline ${className}`}
       style={{ gap: s.gap }}
-      aria-label="Fabled 10X"
+      aria-label="Travis Gautier"
     >
       <span style={wordmarkStyle} aria-hidden="true">FABLED</span>
       <span style={markStyle} aria-hidden="true">{'{10x}'}</span>
@@ -121,7 +121,7 @@ re-renders the lockup via `ImageResponse` using the local font files in
   composition). One prop covers it; without it, every consumer would
   swap in a re-styled version.
 - **`aria-label` on the wrapper, `aria-hidden` on parts.** Screen readers
-  announce "Fabled 10X" once, not "FABLED open brace 10x close brace."
+  announce "Travis Gautier" once, not "FABLED open brace 10x close brace."
 - **Three sizes only.** `sm` for Footer, `md` for Header (default), `lg`
   for the homepage hero. If a fourth size shows up in implementation,
   question whether the surface really needs a fourth.
@@ -157,7 +157,7 @@ keeps the typed Logo alone.
   `<Logo>` at `size="sm"`. The Logo primitive doesn't change.
 
 **Accessibility:** The wrapper carries a single
-`aria-label="Fabled 10X"`. The pfp uses `alt=""` (decorative). The Logo's
+`aria-label="Travis Gautier"`. The pfp uses `alt=""` (decorative). The Logo's
 internal spans remain `aria-hidden="true"`. Screen readers announce the
 name once.
 

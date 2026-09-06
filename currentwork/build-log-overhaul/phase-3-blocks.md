@@ -84,7 +84,7 @@ export function Hero({ liveStatus, session, worktrees, rollup, nowIso }: HeroPro
       </h1>
       <p className="text-lg text-(--color-ink) max-w-2xl mb-2">{sentence}</p>
       <p className="text-sm text-(--color-muted) max-w-2xl mb-6">
-        The agent-driven build process behind fabled10x.com, rendered as published
+        The agent-driven build process behind travisgautier.com, rendered as published
         content. <a href="#whatisthis" className="text-link hover:text-(--color-oxblood)">
           What is this?
         </a>

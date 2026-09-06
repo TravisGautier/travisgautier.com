@@ -10,7 +10,7 @@ content type, its validator, the loader, two seed MDX files, and the
 catalog routes. No forms, no persistence, no emails, no payments — the
 waitlist + apply CTAs on the detail page render as visually-disabled
 placeholders until Phases 2 and 3 wire them up. This phase is shippable on
-its own: even if Phases 2–4 slip, fabled10x.com gets a browsable cohort
+its own: even if Phases 2–4 slip, travisgautier.com gets a browsable cohort
 catalog that indexes well in Google and links out to "coming soon" states.
 
 ---
@@ -571,9 +571,9 @@ import { CohortCard } from '@/components/cohorts/CohortCard';
 export const metadata: Metadata = {
   title: 'Cohorts',
   description:
-    'Join a Fabled10X cohort — intensive programs for solo consultants and small agencies running AI-driven delivery workflows.',
+    'Join a Travis Gautier cohort — intensive programs for solo consultants and small agencies running AI-driven delivery workflows.',
   openGraph: {
-    title: 'Fabled10X Cohorts',
+    title: 'Travis Gautier Cohorts',
     description:
       'Intensive programs for solo consultants and small agencies running AI-driven delivery workflows.',
   },

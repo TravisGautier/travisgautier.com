@@ -292,7 +292,7 @@ export default async function AdminApplicationsPage({ searchParams }: RouteParam
 
 - No session → redirects to `/login?callbackUrl=%2Fadmin...`.
 - Session with email not in `ADMIN_EMAILS` → renders the "Forbidden" state
-  (test sets `process.env.ADMIN_EMAILS = 'root@fabled10x.com'` + session
+  (test sets `process.env.ADMIN_EMAILS = 'root@travisgautier.com'` + session
   email `intruder@example.com`).
 - Session with email in `ADMIN_EMAILS` (case-insensitive) → renders the
   `{children}` slot wrapped in the admin header.
@@ -949,7 +949,7 @@ function acceptBody(params: {
     'This link is single-use and expires at the date above. After that the',
     "seat is released and we'll reach out to someone on the waitlist.",
     '',
-    '— Fabled10X',
+    '— Travis Gautier',
   ].join('\n');
 
   const html = `
@@ -975,7 +975,7 @@ function acceptBody(params: {
       single-use and expires at the date above. After that the seat is
       released and we will reach out to someone on the waitlist.
     </p>
-    <p style="font-size:12px;color:#475569;margin:24px 0 0">— Fabled10X</p>
+    <p style="font-size:12px;color:#475569;margin:24px 0 0">— Travis Gautier</p>
   </div>
 </body>
 </html>
@@ -995,7 +995,7 @@ function waitlistBody(meta: Cohort): { text: string; html: string } {
     "If it doesn't work out for this run, we'll keep your application on file",
     'and invite you to apply again for the next cohort in this series.',
     '',
-    '— Fabled10X',
+    '— Travis Gautier',
   ].join('\n');
 
   const html = `
@@ -1013,7 +1013,7 @@ function waitlistBody(meta: Cohort): { text: string; html: string } {
       If it does not work out for this run, we will keep your application on
       file and invite you to apply again for the next cohort in this series.
     </p>
-    <p style="font-size:12px;color:#475569;margin:24px 0 0">— Fabled10X</p>
+    <p style="font-size:12px;color:#475569;margin:24px 0 0">— Travis Gautier</p>
   </div>
 </body></html>
   `.trim();
@@ -1032,7 +1032,7 @@ function declineBody(meta: Cohort): { text: string; html: string } {
     "cohort run's capacity and mix — not a judgment on your project. Future",
     'cohorts in this series remain open to you.',
     '',
-    '— Fabled10X',
+    '— Travis Gautier',
   ].join('\n');
 
   const html = `
@@ -1050,7 +1050,7 @@ function declineBody(meta: Cohort): { text: string; html: string } {
       cohort run's capacity and mix — not a judgment on your project. Future
       cohorts in this series remain open to you.
     </p>
-    <p style="font-size:12px;color:#475569;margin:24px 0 0">— Fabled10X</p>
+    <p style="font-size:12px;color:#475569;margin:24px 0 0">— Travis Gautier</p>
   </div>
 </body></html>
   `.trim();
@@ -1067,7 +1067,7 @@ export async function sendCohortDecision({
 }: SendOptions): Promise<void> {
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.RESEND_FROM_COHORTS;
-  const appUrl = process.env.AUTH_URL ?? 'https://fabled10x.com';
+  const appUrl = process.env.AUTH_URL ?? 'https://travisgautier.com';
   if (!apiKey || !from) return;
 
   let subject: string;
@@ -1856,8 +1856,8 @@ const jsonLd = {
   description: meta.summary,
   provider: {
     '@type': 'Organization',
-    name: 'Fabled10X',
-    url: 'https://fabled10x.com',
+    name: 'Travis Gautier',
+    url: 'https://travisgautier.com',
   },
   hasCourseInstance: {
     '@type': 'CourseInstance',

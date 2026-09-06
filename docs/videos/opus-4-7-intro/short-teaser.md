@@ -46,7 +46,7 @@ For YouTube Shorts, Reels, TikTok, X video posts. Vertical 9:16 or square 1:1. S
 
 > "Full breakdown on the channel. First reason for hope in weeks."
 
-[END CARD: "fabled10x" handle, video thumbnail preview]
+[END CARD: "travisgautier" handle, video thumbnail preview]
 
 ---
 

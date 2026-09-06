@@ -4,7 +4,7 @@
 
 ## Context
 
-`/results` is the channel's public social-proof surface: a results wall populated by verified client quotes, optional outcome metrics, and a counts-only aggregate strip. It's the page the homepage and `/about` link into when a viewer asks "does this methodology actually ship anything?" This job is #6 in `docs/future-jobs.md` and implements the "Results wall / testimonials" bullet under Phase 3 (Community & Social Proof) of `docs/fabled10x-website-implementation-plan.md`.
+`/results` is the channel's public social-proof surface: a results wall populated by verified client quotes, optional outcome metrics, and a counts-only aggregate strip. It's the page the homepage and `/about` link into when a viewer asks "does this methodology actually ship anything?" This job is #6 in `docs/future-jobs.md` and implements the "Results wall / testimonials" bullet under Phase 3 (Community & Social Proof) of `docs/website-implementation-plan.md`.
 
 The scope is a new `Testimonial` content type + loader + a single `/results` page + two reusable components (`<Testimonial>`, `<ResultsWall>`) + a small `<TestimonialMetrics>` strip, plus integration embeds on the homepage and `/about`. Submission is **fully editorial** — maintainers and future agents hand-author MDX files under `src/content/testimonials/`. There is no public form, no video embeds, no star-rating aggregation. That decision keeps this job at M/L size by cutting every surface except the single results wall and the two high-traffic embed points.
 
@@ -18,7 +18,7 @@ Out of scope (explicit non-goals): public submission form, star-rating aggregati
 - **Next.js 16 App Router scaffold** — React 19.2.4, Tailwind 4, strict TS, `@/` → `src/`. (`package.json`, `tsconfig.json`, `next.config.ts`)
 - **Content schemas** — `src/content/schemas/{content-tier,content-pillar,episode,source-material,index}.ts`. No `Testimonial` type yet.
 - **Test infra** — Vitest 2.1.8 + jsdom, `@testing-library/jest-dom/vitest` loaded via `src/__tests__/setup.ts`, MSW 2.7 installed, coverage thresholds 70/80/80/80 (`vitest.config.ts`).
-- **Source docs** — `docs/fabled10x-website-implementation-plan.md`, `docs/fabled10x-brand-identity.md`, `docs/future-jobs.md`, `AGENTS.md` (Next.js 16 local-docs reminder).
+- **Source docs** — `docs/website-implementation-plan.md`, `docs/brand-identity.md`, `docs/future-jobs.md`, `AGENTS.md` (Next.js 16 local-docs reminder).
 
 ### Delivered by `website-foundation` (prerequisite — NOT YET SHIPPED when this plan is written)
 This job reuses these `wf` outputs and cannot start its TDD cycles until they exist.
@@ -27,7 +27,7 @@ This job reuses these `wf` outputs and cannot start its TDD cycles until they ex
 - **Content loader utility** (`src/lib/content/loader.ts` from wf 2.2) — generic filesystem discovery + dynamic import + Zod validation. This job's `src/lib/content/testimonials.ts` follows the same shape as `src/lib/content/episodes.ts` and `src/lib/content/cases.ts`.
 - **Zod validators module** (`src/content/schemas/validators.ts` from wf 1.2) — `EpisodeSchema`, `SourceMaterialSchema`, `CaseSchema`. `TestimonialSchema` is added here following the same export style.
 - **Brand design tokens** (`src/app/globals.css` from wf 1.3) — `--color-{ink,parchment,ember,steel,mist,signal}` + semantic aliases. Tailwind class surface: `bg-accent`, `text-muted`, `border-mist`, `text-link`, `bg-parchment`, `font-display`, etc.
-- **Site shell** (`src/components/site/{Header,Footer}.tsx` + `src/app/layout.tsx` from wf 1.4) — mounted root layout with `metadataBase` set to `https://fabled10x.com`.
+- **Site shell** (`src/components/site/{Header,Footer}.tsx` + `src/app/layout.tsx` from wf 1.4) — mounted root layout with `metadataBase` set to `https://travisgautier.com`.
 - **`<Container>` layout primitive** (`src/components/site/Container.tsx` from wf 1.4) — `mx-auto w-full max-w-5xl px-6 md:px-10`.
 - **Homepage** (`src/app/page.tsx` from wf 3.1) — Phase 3.1 of this job modifies it to embed a compact testimonial strip.
 - **`/about` page** (`src/app/about/page.tsx` from wf 3.6) — Phase 3.1 modifies it to embed a full results wall section.

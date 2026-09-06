@@ -199,7 +199,7 @@ Two chained concerns ship as one feature here:
    truth but a prose guide is faster to read.
 
 The seed entry is intentionally a self-referential placeholder: it
-showcases the Fabled10X team's own Party Masters project, which is also
+showcases the Travis Gautier team's own Party Masters project, which is also
 the subject of the `party-masters` case study from `wf` 2.3. This creates
 one valid round-trip through `relatedCaseSlug` without depending on a
 third-party submission.
@@ -270,14 +270,14 @@ export async function getShowcaseEntryBySlug(
 id: showcase-party-masters-team
 slug: party-masters-team
 title: Party Masters — agent-driven venue ops
-summary: The in-house Party Masters discovery build, by the Fabled10X core team — the first project shipped end-to-end with the methodology.
+summary: The in-house Party Masters discovery build, by the Travis Gautier core team — the first project shipped end-to-end with the methodology.
 featured: true
 publishedAt: 2026-04-11
 builder:
-  name: Fabled10X Core Team
-  handle: "@fabled10x"
-  handleUrl: https://github.com/fabled10x
-  company: Fabled10X
+  name: Travis Gautier Core Team
+  handle: "@travisgautier"
+  handleUrl: https://github.com/travisgautier
+  company: Travis Gautier
 stack:
   - Next.js
   - Tailwind
@@ -285,15 +285,15 @@ stack:
   - Vitest
   - TDD pipeline
 heroImage: /showcase/party-masters-team/hero.jpg
-liveUrl: https://fabled10x.com/cases/party-masters
-repoUrl: https://github.com/fabled10x/party-masters
+liveUrl: https://travisgautier.com/cases/party-masters
+repoUrl: https://github.com/travisgautier/party-masters
 relatedCaseSlug: party-masters
 lllEntryUrls: []
 ---
 
 ## The build
 
-Party Masters is the anchor case the Fabled10X methodology was originally
+Party Masters is the anchor case the Travis Gautier methodology was originally
 built around. The discovery phase was documented on-camera and ran through
 the same `/discovery → /red → /green → /refactor` pipeline the rest of the
 channel uses.
@@ -405,7 +405,7 @@ unit test file as a `describe('seed content', …)` block):
 
 #### Seed + Guide
 
-- **Self-referential seed entry** — using the Fabled10X team's own Party Masters project as the seed avoids depending on external submissions during initial development and naturally tests the `relatedCaseSlug` link into `wf`'s case study tree. When real community projects exist, they replace this placeholder.
+- **Self-referential seed entry** — using the Travis Gautier team's own Party Masters project as the seed avoids depending on external submissions during initial development and naturally tests the `relatedCaseSlug` link into `wf`'s case study tree. When real community projects exist, they replace this placeholder.
 - **Seed is `featured: true`** — the Phase 2 index page tests assert that at least one entry renders in the hero grid. A featured seed keeps those tests deterministic without needing a second fixture.
 - **Image is a committed binary, not a build-time download** — reproducible builds matter. Dropping a 1600×900 placeholder JPEG into `public/showcase/party-masters-team/hero.jpg` at feature-implementation time is acceptable even if the asset is later replaced with a real screenshot.
 - **`docs/showcase-authoring.md` instead of inline README comments** — future agents grep `docs/` for authoring conventions. A dedicated doc surfaces cleanly in that search. The content is also short enough that it rarely needs updating.

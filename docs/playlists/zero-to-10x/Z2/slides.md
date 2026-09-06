@@ -263,4 +263,4 @@ Fundamentals aren't optional. They're the reading comprehension for the AI era.
 
 *Spoiler: more than you think. And different from what you expect.*
 
-*[Visual: End card. Z3 thumbnail. Subscribe prompt. Bottom bar: fabled10x.com/learn.]*
+*[Visual: End card. Z3 thumbnail. Subscribe prompt. Bottom bar: travisgautier.com/learn.]*

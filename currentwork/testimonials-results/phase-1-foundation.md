@@ -246,7 +246,7 @@ export async function getTestimonialCounts(): Promise<TestimonialCounts> {
 ---
 id: testimonial-jane-park-agency
 slug: jane-park-agency
-quote: The Fabled10X discovery pipeline cut our pre-sales work by more than half. We went from three-week discoveries to structured five-day ones without sacrificing depth.
+quote: The Travis Gautier discovery pipeline cut our pre-sales work by more than half. We went from three-week discoveries to structured five-day ones without sacrificing depth.
 author:
   name: Jane Park
   title: Founder

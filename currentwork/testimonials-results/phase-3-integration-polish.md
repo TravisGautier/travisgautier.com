@@ -145,21 +145,21 @@ import {
 
 export async function generateMetadata(): Promise<Metadata> {
   const counts = await getTestimonialCounts();
-  const description = `${counts.verified} verified client quotes from teams shipping with the Fabled10X methodology. Outcomes, timelines, and honest feedback.`;
+  const description = `${counts.verified} verified client quotes from teams shipping with the Travis Gautier methodology. Outcomes, timelines, and honest feedback.`;
   return {
-    title: 'Results — Fabled10X',
+    title: 'Results — Travis Gautier',
     description,
     alternates: { canonical: '/results' },
     openGraph: {
-      title: 'Results — Fabled10X',
+      title: 'Results — Travis Gautier',
       description,
       type: 'website',
       url: '/results',
-      images: [{ url: '/og/results.png', width: 1200, height: 630, alt: 'Fabled10X Results' }],
+      images: [{ url: '/og/results.png', width: 1200, height: 630, alt: 'Travis Gautier Results' }],
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Results — Fabled10X',
+      title: 'Results — Travis Gautier',
       description,
       images: ['/og/results.png'],
     },
@@ -173,10 +173,10 @@ function buildJsonLd(
   return {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'Results — Fabled10X',
+    name: 'Results — Travis Gautier',
     description:
-      'Client outcomes and quotes from teams shipping with the Fabled10X methodology.',
-    url: 'https://fabled10x.com/results',
+      'Client outcomes and quotes from teams shipping with the Travis Gautier methodology.',
+    url: 'https://travisgautier.com/results',
     hasPart: testimonials.map((t) => ({
       '@type': 'Review',
       reviewBody: t.quote,
@@ -191,8 +191,8 @@ function buildJsonLd(
       },
       itemReviewed: {
         '@type': 'Organization',
-        name: 'Fabled10X',
-        url: 'https://fabled10x.com',
+        name: 'Travis Gautier',
+        url: 'https://travisgautier.com',
       },
     })),
   };
@@ -225,7 +225,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     // ... existing routes ...
     {
-      url: 'https://fabled10x.com/results',
+      url: 'https://travisgautier.com/results',
       lastModified,
       changeFrequency: 'monthly',
       priority: 0.7,
@@ -287,7 +287,7 @@ Manual, part of `/refactor 3.1`:
 
 `src/app/results/__tests__/page.test.tsx` (extend from 2.2):
 
-- `generateMetadata()` returns a `title` of `'Results — Fabled10X'`
+- `generateMetadata()` returns a `title` of `'Results — Travis Gautier'`
 - `generateMetadata()` returns a description that includes the verified count
 - `generateMetadata()` returns `alternates.canonical === '/results'`
 - OpenGraph payload contains the `/og/results.png` image with 1200×630 dimensions
@@ -302,7 +302,7 @@ Manual, part of `/refactor 3.1`:
 
 `src/app/__tests__/sitemap.test.ts` (extend from `wf` 4.4):
 
-- Sitemap includes an entry with `url === 'https://fabled10x.com/results'`
+- Sitemap includes an entry with `url === 'https://travisgautier.com/results'`
 - The `/results` entry has `priority: 0.7` and `changeFrequency: 'monthly'`
 - `lastModified` matches the newest testimonial's `publishedAt`
 
@@ -330,7 +330,7 @@ Manual, part of `/refactor 3.1`:
 #### SEO + Sitemap + Nav
 
 - **`generateMetadata` instead of a static `metadata` export** — lets the description pull the actual verified count from the loader. If the count grows to 10, 20, 100, the meta description automatically reflects it without a code change.
-- **`CollectionPage` + `Review` structured data** — Google supports both types. Each `Review` gets a nested `author.worksFor` when the testimonial has a company, which enables rich snippets in search results. The `itemReviewed` is always the Fabled10X organization since testimonials are about the methodology itself, not about individual products.
+- **`CollectionPage` + `Review` structured data** — Google supports both types. Each `Review` gets a nested `author.worksFor` when the testimonial has a company, which enables rich snippets in search results. The `itemReviewed` is always the Travis Gautier organization since testimonials are about the methodology itself, not about individual products.
 - **JSON-LD rendered via `dangerouslySetInnerHTML`** — matches the `wf` 4.3 pattern. A script tag with `JSON.stringify` is the canonical way to inline structured data in Next.js App Router.
 - **`/og/results.png` is a placeholder path** — the actual image file is either produced by `wf` 4.3's OG image pipeline or hand-dropped into `public/og/`. If the image doesn't exist when this feature lands, the social card falls back to the site-wide OG image set by the root `metadataBase`. `/refactor 3.1` should confirm the file exists or coordinate with the user to supply it.
 - **`alternates.canonical: '/results'`** — prevents duplicate-content confusion if the page is ever served from a preview URL or a trailing-slash variant.

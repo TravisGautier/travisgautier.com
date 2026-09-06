@@ -254,12 +254,12 @@ You will build and ship a real application across eight episodes.
 
 ### Z35–Z40 · Shipping as a professional
 
-Managing AI agents. Multi-agent workflows. The full **Fabled10X Pipeline** as your graduation project.
+Managing AI agents. Multi-agent workflows. The full **Travis Gautier Pipeline** as your graduation project.
 
 > **"10X" isn't a personality trait.
 > It's what happens when judgment meets leverage.**
 
-*[Visual: Stylized Fabled10X Pipeline diagram — the real one from the brand. Kept small here; full deep-dive is in Act 6.]*
+*[Visual: Stylized Travis Gautier Pipeline diagram — the real one from the brand. Kept small here; full deep-dive is in Act 6.]*
 
 ---
 
@@ -281,4 +281,4 @@ Managing AI agents. Multi-agent workflows. The full **Fabled10X Pipeline** as yo
 
 **Next up: Z2 — What Code Actually Is.**
 
-*[Visual: End card. Subscribe prompt on left. Z2 thumbnail preview on right with runtime badge. Bottom bar: fabled10x.com/learn · @fabled10x. Hold 5 seconds.]*
+*[Visual: End card. Subscribe prompt on left. Z2 thumbnail preview on right with runtime badge. Bottom bar: travisgautier.com/learn · @travisgautier. Hold 5 seconds.]*

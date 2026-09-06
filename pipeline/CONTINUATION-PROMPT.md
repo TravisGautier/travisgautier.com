@@ -4,7 +4,7 @@ Use this when resuming work in a new Claude Code session.
 
 ---
 
-I'm resuming work on fabled10x. Before we do anything:
+I'm resuming work on travisgautier. Before we do anything:
 
 1. Read `pipeline/active/session.yaml` to see the current session state and what's been completed
 2. Read `pipeline/active/knowledge.yaml` for cross-section context

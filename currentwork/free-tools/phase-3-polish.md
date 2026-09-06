@@ -95,7 +95,7 @@ export default async function ToolPage({ params }: PageProps) {
     description: tool.summary,
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web',
-    url: `https://fabled10x.com/tools/${tool.slug}`,
+    url: `https://travisgautier.com/tools/${tool.slug}`,
     offers: {
       '@type': 'Offer',
       price: '0',
@@ -122,9 +122,9 @@ export default async function ToolPage({ params }: PageProps) {
 export const metadata: Metadata = {
   title: 'Free Tools',
   description:
-    'Free calculators for project scoping, pricing, ROI analysis, and discovery timelines. Built by Fabled10X.',
+    'Free calculators for project scoping, pricing, ROI analysis, and discovery timelines. Built by Travis Gautier.',
   openGraph: {
-    title: 'Free Tools · fabled10x',
+    title: 'Free Tools · travisgautier',
     description:
       'Free, no-login calculators for project scoping, pricing, ROI, and discovery timelines.',
     type: 'website',
@@ -132,7 +132,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Free Tools · fabled10x',
+    title: 'Free Tools · travisgautier',
     description:
       'Free, no-login calculators for project scoping, pricing, ROI, and discovery timelines.',
   },
@@ -152,7 +152,7 @@ import { getAllEpisodes } from '@/lib/content/episodes';
 import { getAllCases } from '@/lib/content/cases';
 import { getAllTools } from '@/content/tools/registry';
 
-const BASE_URL = 'https://fabled10x.com';
+const BASE_URL = 'https://travisgautier.com';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [episodes, cases] = await Promise.all([
@@ -271,7 +271,7 @@ every `/tools` route:
 **SEO metadata:**
 - `generateMetadata({ params: { slug: 'pricing' } })` returns a metadata object whose `title` matches the registered tool title, description matches summary, `openGraph.url === '/tools/pricing'`, `alternates.canonical === '/tools/pricing'`
 - `generateMetadata` with an unknown slug returns `{}`
-- `/tools` index `metadata.openGraph.title === 'Free Tools · fabled10x'`
+- `/tools` index `metadata.openGraph.title === 'Free Tools · travisgautier'`
 
 **JSON-LD:**
 - Rendering the page (RTL `render`) produces a DOM containing a `<script type="application/ld+json">` tag whose JSON parses to an object with `'@type': 'SoftwareApplication'` and matching `name`/`description`
@@ -345,7 +345,7 @@ Once Phase 3 ships, the `free-tools` job is complete and ready for its
 
 The next `jobbuild` candidates after `free-tools` ships (per `docs/future-jobs.md`):
 - `storefront-auth` — `/products` tree with auth + checkout
-- `community-showcase` — "Built with Fabled10X" showcase
+- `community-showcase` — "Built with Travis Gautier" showcase
 - `testimonials-results` — testimonial components + results wall
 
 None of these hard-depend on `free-tools`. Pick based on business priority

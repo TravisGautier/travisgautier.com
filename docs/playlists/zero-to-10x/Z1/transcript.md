@@ -126,7 +126,7 @@ Let me stop and say this clearly. This is the act that most courses skip entirel
 
 The judgment layer is where developers actually get made.
 
-**Act 6 is the 10X moment.** Six episodes. This is where you stop being someone who uses AI and become someone who manages AI. Running multiple agents at once. Multi-agent workflows. The full Fabled10X Pipeline as your graduation project.
+**Act 6 is the 10X moment.** Six episodes. This is where you stop being someone who uses AI and become someone who manages AI. Running multiple agents at once. Multi-agent workflows. The full Travis Gautier Pipeline as your graduation project.
 
 "10X" is not a personality trait. It's what happens when a person with good judgment gets leverage they didn't have before. Act 6 is where you get the leverage.
 

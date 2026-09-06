@@ -43,7 +43,7 @@ Design requirements:
   - Row 4: BRIGHT RED-ORANGE (#ef4444) tiny sliver at 1% width, bold label "assistant_text  1.0%"
 - The 1% bar should look comically small next to the other three — this is the point
 - Upper-left corner: all-caps small white text, monospace, reading "THIS IS WHAT TOKEN PLUGINS COMPRESS"
-- Lower-right corner: small text "fabled10x" in the same monospace font
+- Lower-right corner: small text "travisgautier" in the same monospace font
 - All typography in a monospace font (IBM Plex Mono, Fira Code, or similar)
 - No illustrations, no humans, no robots, no AI-cliché imagery, no gradients, no glow
 - Flat, data-journalism aesthetic — NYT / FT / Bloomberg styled

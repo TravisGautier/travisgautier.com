@@ -474,7 +474,7 @@ Same shape as `ProjectScopingCalculator`:
 
 ### Problem
 
-**ROI:** The whole Fabled10X pitch is "one person with an agent team does
+**ROI:** The whole Travis Gautier pitch is "one person with an agent team does
 what a five-person team used to". Prospects want to see that proposition as
 a number. A calculator that takes current human hours per week + hourly cost
 + agent automation percentage + (optional) one-time setup cost and returns

@@ -133,7 +133,7 @@ If you want to steal this, the two skill files are on the blog. The whole thing 
 
 Go make your agents not eat each other.
 
-[END CARD: fabled10x handle, link to pipeline intro video if one exists]
+[END CARD: travisgautier handle, link to pipeline intro video if one exists]
 
 ---
 

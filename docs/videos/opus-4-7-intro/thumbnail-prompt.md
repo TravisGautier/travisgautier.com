@@ -46,7 +46,7 @@ Design requirements:
 - The Opus 4.7 bar should be clearly longer and brightly colored — the other two are desaturated
 - Upper-left corner: bold white sans-serif text "CODING CROWN BACK"
 - Lower-left: small gray monospace text "SWE-bench Pro (April 2026)"
-- Lower-right: small text "fabled10x" in the same monospace font
+- Lower-right: small text "travisgautier" in the same monospace font
 - All data typography in a monospace font (IBM Plex Mono, Fira Code, or similar)
 - No illustrations, no humans, no robots, no AI-cliche imagery, no gradients, no glow
 - Flat, scoreboard aesthetic — ESPN stat graphic, not Medium hero image

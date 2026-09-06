@@ -3,7 +3,7 @@
 **Total Size: M + M + S**
 **Prerequisites: None — this is the foundation. Sections 1.1 / 1.2 / 1.3 are parallel-able.**
 **New Types: None**
-**New Files: `docs/fabled10x-design-system.md`**
+**New Files: `docs/design-system.md`**
 
 Phase 1 swaps the placeholder palette for the real brand tokens, locks the
 spacing + radius scale on an 8px grid with restrained corners, and produces
@@ -204,12 +204,12 @@ components use `p-(--space-5)`, `gap-(--space-3)`, etc.
 ## Feature 1.3: Brand doc rewrite + design-system doc
 
 **Complexity: S** — Update the existing brand-identity doc to point at the
-editorial direction, and add a new `docs/fabled10x-design-system.md` capturing
+editorial direction, and add a new `docs/design-system.md` capturing
 the canonical token list, contrast pairs, and the forbidden-patterns list.
 
 ### Problem
 
-`docs/fabled10x-brand-identity.md` currently describes the old "boutique
+`docs/brand-identity.md` currently describes the old "boutique
 consultancy, muted confident colors, narrative quality" direction. That guidance
 is now stale. New contributors (human or agent) reading the existing doc would
 ship the wrong brand. A complete brand reset needs canonical documentation in
@@ -217,7 +217,7 @@ the repo so the prep doc (currently only in chat) is durable.
 
 ### Implementation
 
-**MODIFY** `docs/fabled10x-brand-identity.md` — rewrite the **Visual Identity
+**MODIFY** `docs/brand-identity.md` — rewrite the **Visual Identity
 Direction** section to read:
 
 ```markdown
@@ -226,7 +226,7 @@ Direction** section to read:
 Boutique editorial brand that happens to teach AI development — built to look
 like nothing else in the space. Every channel teaching AI/coding in 2026
 defaults to neon gradients, dark mode with RGB accents, hype-arrow thumbnails,
-shocked-face hosts, gamer aesthetics. Fabled 10X occupies the opposite corner:
+shocked-face hosts, gamer aesthetics. Travis Gautier occupies the opposite corner:
 classical, restrained, material, editorial.
 
 The aesthetic exists because the content claims a position:
@@ -237,16 +237,16 @@ The aesthetic exists because the content claims a position:
 - **For the serious.** The aesthetic intentionally filters its audience.
 
 Implementation details — tokens, contrast pairs, forbidden patterns — live in
-`docs/fabled10x-design-system.md`.
+`docs/design-system.md`.
 ```
 
 Leave the rest of the doc (voice, mission, philosophy, audience) alone — that
 content is still valid; only the visual direction inverted.
 
-**NEW** `docs/fabled10x-design-system.md` with the following structure:
+**NEW** `docs/design-system.md` with the following structure:
 
 ```markdown
-# Fabled 10X — Design System
+# Travis Gautier — Design System
 
 Canonical reference for the brand stack. Components consume from this list;
 nothing else.
@@ -355,8 +355,8 @@ implementation.
 
 | Action | File |
 |--------|------|
-| MODIFY | `docs/fabled10x-brand-identity.md` |
-| NEW    | `docs/fabled10x-design-system.md` |
+| MODIFY | `docs/brand-identity.md` |
+| NEW    | `docs/design-system.md` |
 
 ---
 
@@ -367,8 +367,8 @@ implementation.
   restrained radius scale.
 - The `prefers-color-scheme: dark` block is gone from `globals.css`.
 - `body` references `var(--color-background)` and `var(--color-foreground)`.
-- `docs/fabled10x-brand-identity.md` reflects the editorial direction.
-- `docs/fabled10x-design-system.md` exists with palette / contrast / typography
+- `docs/brand-identity.md` reflects the editorial direction.
+- `docs/design-system.md` exists with palette / contrast / typography
   / material / composition / asset paths sections.
 - `npm run lint` clean. `npm run build` clean. `npm test` green (no new tests
   in this phase, but the existing smoke test must still pass).

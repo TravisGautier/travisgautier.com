@@ -122,7 +122,7 @@ Centered, very large: "707" in green monospace (#22c55e), huge.
 Below it, smaller white monospace: "tool calls"
 Below that, centered: "6 rules" in smaller green monospace.
 Top-center headline: "ALLOWLIST > CLASSIFIER" in bold white sans-serif.
-Bottom-right small monospace: "fabled10x".
+Bottom-right small monospace: "travisgautier".
 No illustrations, no decoration. Flat. Data-forward.
 ```
 

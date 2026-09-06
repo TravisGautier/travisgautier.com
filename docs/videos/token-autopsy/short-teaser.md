@@ -42,7 +42,7 @@ For YouTube Shorts, Reels, TikTok, X video posts. Vertical 9:16 or square 1:1. S
 
 > "Full autopsy on my channel — link in bio. Tell me what YOUR session distribution looks like."
 
-[END CARD: "fabled10x" handle, video thumbnail preview]
+[END CARD: "travisgautier" handle, video thumbnail preview]
 
 ---
 

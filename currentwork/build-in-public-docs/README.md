@@ -5,14 +5,14 @@
 ## Context
 
 `/build-log` is the channel's "show the work" surface — a public, SEO-indexed
-section of fabled10x.com that renders the agent-driven build process *of the
-site itself* as published content. Viewers who watch a Fabled10X episode about
+section of travisgautier.com that renders the agent-driven build process *of the
+site itself* as published content. Viewers who watch a Travis Gautier episode about
 the TDD pipeline can land on `/build-log/jobs/website-foundation` and read the
 exact plan the agents are executing against, then visit `/build-log/status` to
 see what beat is currently running. The methodology and the artifact are the
 same thing. This job is #8 in `docs/future-jobs.md` and implements the "Full
-documentation of site build process as Fabled10X content" bullet from Phase 4
-("The Meta Play") of `docs/fabled10x-website-implementation-plan.md`.
+documentation of site build process as Travis Gautier content" bullet from Phase 4
+("The Meta Play") of `docs/website-implementation-plan.md`.
 
 The scope is two new loaders (one for the `currentwork/` job tree, one for the
 `pipeline/active/` YAML state) plus four routes (`/build-log` index,
@@ -51,14 +51,14 @@ strings).
 - **`pipeline/active/` YAML state** — `session.yaml` (id, current_phase, current_section, current_agent, current_stage, context_window, completed_sections list, notes) and `knowledge.yaml` (project_context, conventions, patterns, open_questions). Both small (under 4KB), both updated by the TDD pipeline skills as work progresses.
 - **Job alias convention** — aliases live at the top of each `currentwork/{slug}/README.md` as a `**Alias:** {short} — ...` line. They are NOT centralized in `CLAUDE.md`. The loader extracts them per-job from the README.
 - **Test infra** — Vitest 2.1.8 + jsdom, `@testing-library/jest-dom/vitest` loaded via `src/__tests__/setup.ts`, MSW 2.7 installed, coverage thresholds 70/80/80/80 (`vitest.config.ts`).
-- **Source docs** — `docs/fabled10x-website-implementation-plan.md`, `docs/fabled10x-brand-identity.md`, `docs/future-jobs.md`, `AGENTS.md` (Next.js 16 local-docs reminder).
+- **Source docs** — `docs/website-implementation-plan.md`, `docs/brand-identity.md`, `docs/future-jobs.md`, `AGENTS.md` (Next.js 16 local-docs reminder).
 - **`public/llms.txt`** — already populated (will be polished further by `wf` 4.4 first, then mention `/build-log` here in 3.1 — merged polish section).
 
 ### Delivered by `website-foundation` (prerequisite — NOT YET SHIPPED when this plan is written)
 This job reuses these `wf` outputs and cannot start its TDD cycles until they exist.
 
 - **Brand design tokens** (`src/app/globals.css` from wf 1.3) — `--color-{ink,parchment,ember,steel,mist,signal}` + semantic aliases `--color-{background,foreground,muted,accent,link}`. Tailwind class surface: `bg-accent`, `text-muted`, `border-mist`, `text-link`, `bg-parchment`, `font-display`.
-- **Site shell** (`src/components/site/{Header,Footer}.tsx` + `src/app/layout.tsx` from wf 1.4) — mounted root layout with `metadataBase` set to `https://fabled10x.com`.
+- **Site shell** (`src/components/site/{Header,Footer}.tsx` + `src/app/layout.tsx` from wf 1.4) — mounted root layout with `metadataBase` set to `https://travisgautier.com`.
 - **`<Container>` layout primitive** (`src/components/site/Container.tsx` from wf 1.4) — `mx-auto w-full max-w-5xl px-6 md:px-10`, accepts `className` + `as` prop. Used as the page wrapper on every build-log route.
 - **Zod validators module** (`src/content/schemas/validators.ts` from wf 1.2) — `EpisodeSchema`, `SourceMaterialSchema`, `CaseSchema`. `JobSchema`, `SessionStatusSchema`, `KnowledgeFileSchema` are added here following the same export style.
 - **Dynamic sitemap** (`src/app/sitemap.ts` from wf 4.4) — Phase 3.1 of this job (merged polish) appends `/build-log` + `/build-log/status` + every job and phase URL.

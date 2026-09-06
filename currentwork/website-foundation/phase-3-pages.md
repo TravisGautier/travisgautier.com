@@ -19,7 +19,7 @@ statement, latest episode, section entry points, LLL callout, email capture CTA.
 ### Problem
 
 The homepage is the conversion front door. Per the implementation doc:
-"Communicate what Fabled10X is in one screen, drive viewers to the latest
+"Communicate what Travis Gautier is in one screen, drive viewers to the latest
 episode + storefront, capture email." Today it's an `<h1>`. Everything else in
 this job is invisible to a first-time visitor until this page exists.
 
@@ -36,7 +36,7 @@ import { getLatestEpisode } from '@/lib/content/episodes';
 const SECTIONS = [
   { href: '/episodes', title: 'Episodes', description: 'The full channel archive — flagship series, playbooks, shorts.' },
   { href: '/cases', title: 'Case Studies', description: 'Real client projects documented end to end.' },
-  { href: '/about', title: 'About', description: 'The Fabled10X premise and the sister project.' },
+  { href: '/about', title: 'About', description: 'The Travis Gautier premise and the sister project.' },
 ];
 
 export default async function Home() {
@@ -47,7 +47,7 @@ export default async function Home() {
       <section className="border-b border-mist">
         <Container as="div" className="py-24 md:py-32">
           <p className="text-sm uppercase tracking-wide text-accent">
-            The Fabled 10X Developer
+            Travis Gautier
           </p>
           <h1 className="mt-6 font-display text-5xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
             One person.<br />
@@ -146,7 +146,7 @@ import { CONTENT_TIER_LABELS } from '@/content/schemas';
 export const metadata: Metadata = {
   title: 'Episodes',
   description:
-    'The full Fabled10X episode archive — flagship series, playbooks, shorts, and livestreams.',
+    'The full Travis Gautier episode archive — flagship series, playbooks, shorts, and livestreams.',
 };
 
 export default async function EpisodesIndex() {
@@ -338,7 +338,7 @@ import { CASE_STATUS_LABELS } from '@/content/schemas';
 export const metadata: Metadata = {
   title: 'Case Studies',
   description:
-    'Full documented project histories of Fabled10X client work — the proof layer behind the channel narrative.',
+    'Full documented project histories of Travis Gautier client work — the proof layer behind the channel narrative.',
 };
 
 export default async function CasesIndex() {
@@ -515,7 +515,7 @@ export default async function CaseDetail({
 
 The `/about` page is the explicit home for the LLL relationship. Per the
 implementation doc: "acknowledged openly, not loud. The DHH/Rails to Basecamp
-framing." It's also where the Fabled10X premise gets its definitive statement.
+framing." It's also where the Travis Gautier premise gets its definitive statement.
 
 ### Implementation
 
@@ -529,7 +529,7 @@ import { Container } from '@/components/site/Container';
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'The Fabled10X premise, the channel, and the sister project — The Large Language Library.',
+    'The Travis Gautier premise, the channel, and the sister project — The Large Language Library.',
 };
 
 export default function About() {
@@ -538,7 +538,7 @@ export default function About() {
       <h1 className="font-display text-4xl font-semibold tracking-tight">About</h1>
       <section className="mt-8 space-y-6 text-lg leading-relaxed">
         <p>
-          Fabled10X is the documented real-world answer to a question every
+          Travis Gautier is the documented real-world answer to a question every
           technical freelancer is asking: what can a single person actually
           ship when they manage a team of AI agents the way a senior tech lead
           manages a dev team?
@@ -554,7 +554,7 @@ export default function About() {
       <section className="mt-16 rounded-lg border border-mist p-8">
         <h2 className="font-display text-2xl font-semibold">The Large Language Library</h2>
         <p className="mt-4 leading-relaxed">
-          Fabled10X built and champions{' '}
+          Travis Gautier built and champions{' '}
           <Link
             href="https://largelanguagelibrary.ai"
             className="text-link underline-offset-2 hover:underline"
@@ -562,7 +562,7 @@ export default function About() {
             The Large Language Library
           </Link>
           , the open, AI-optimized knowledge base of solved technical problems
-          that comes out of every client engagement. Fabled10X is the brand;
+          that comes out of every client engagement. Travis Gautier is the brand;
           LLL is the infrastructure. The tool is bigger than the brand that
           built it — that&apos;s intentional.
         </p>
@@ -576,7 +576,7 @@ export default function About() {
 
 - **Two sections only** — the premise, and the LLL callout. Nothing else on this page earns its space yet.
 - **LLL section in a bordered card** — visually distinct from the prose but not the primary element. Matches the brand doc's "acknowledged, not loud".
-- **No team section, no credentials section** — Fabled10X is explicitly a "one person + agents" story. A staff list would contradict the brand.
+- **No team section, no credentials section** — Travis Gautier is explicitly a "one person + agents" story. A staff list would contradict the brand.
 
 ### Files
 

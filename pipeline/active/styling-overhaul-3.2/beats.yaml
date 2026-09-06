@@ -7,7 +7,7 @@ current_phase: finish
 claim:
   status: done
   phase_entered_at: "2026-06-06T20:10:00Z"
-  slot_path: "/home/travis/Projects/fabled10x-worktrees/section-styling-overhaul-3.2"
+  slot_path: "/home/travis/Projects/travisgautier.com-worktrees/section-styling-overhaul-3.2"
   branch: "section/styling-overhaul-3.2"
   pid: 353534
   beats:
@@ -15,7 +15,7 @@ claim:
     - { id: detect_state, status: done, classification: "FRESH" }
     - { id: teardown_if_stale, status: na, reason: "state was FRESH" }
     - { id: create_slot, status: done, evidence: "worktree add + node_modules bind-mount" }
-    - { id: provision_test_db, status: na, reason: "fabled10x has no persistence layer" }
+    - { id: provision_test_db, status: na, reason: "travisgautier has no persistence layer" }
     - { id: write_pidfile, status: done, evidence: "353534 written" }
     - { id: verify_branch, status: done, evidence: "section/styling-overhaul-3.2 == origin/main 53004a6" }
     - { id: enter_worktree, status: done, evidence: "EnterWorktree ok" }

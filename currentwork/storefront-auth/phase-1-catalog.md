@@ -9,7 +9,7 @@ Phase 1 delivers the **public** half of the storefront: the `Product`
 content type, the loader, two seed MDX files, and the catalog routes. No
 auth, no payments, no persistence — the Buy button renders but is disabled
 until Phase 3. This phase is shippable on its own: even if Phase 2+3 slip,
-fabled10x.com has a browsable product catalog that indexes well in Google
+travisgautier.com has a browsable product catalog that indexes well in Google
 and links out to coming-soon state.
 
 ---
@@ -199,8 +199,8 @@ export const meta = {
   id: 'prod-workflow-templates',
   slug: 'workflow-templates',
   title: 'Agent Workflow Templates',
-  tagline: 'The exact TDD pipeline templates behind every Fabled10X build.',
-  summary: 'A downloadable set of agent skill manifests, discovery YAML templates, and TDD phase prompts — the same files the Fabled10X channel and storefront are built with.',
+  tagline: 'The exact TDD pipeline templates behind every Travis Gautier build.',
+  summary: 'A downloadable set of agent skill manifests, discovery YAML templates, and TDD phase prompts — the same files the Travis Gautier channel and storefront are built with.',
   category: 'workflow-templates',
   licenseType: 'single-user',
   priceCents: 4900,
@@ -220,7 +220,7 @@ setup.
 
 ## Who this is for
 
-Consultants who want to run the Fabled10X TDD pipeline against their own
+Consultants who want to run the Travis Gautier TDD pipeline against their own
 client projects without piecing it together from the channel.
 
 _Placeholder stub copy. Real product content is a separate concern._
@@ -234,7 +234,7 @@ export const meta = {
   slug: 'discovery-toolkit',
   title: 'Discovery Toolkit',
   tagline: 'Ten ready-to-run discovery templates for new client engagements.',
-  summary: 'Market research prompts, stakeholder interview scripts, MoSCoW templates, and the exact discovery YAML contracts the Fabled10X pipeline consumes.',
+  summary: 'Market research prompts, stakeholder interview scripts, MoSCoW templates, and the exact discovery YAML contracts the Travis Gautier pipeline consumes.',
   category: 'discovery-toolkit',
   licenseType: 'single-user',
   priceCents: 2900,
@@ -353,7 +353,7 @@ import { ProductCard } from '@/components/products/ProductCard';
 export const metadata: Metadata = {
   title: 'Products',
   description:
-    'Workflow templates, discovery toolkits, and the full Fabled10X playbook — the exact assets behind the channel.',
+    'Workflow templates, discovery toolkits, and the full Travis Gautier playbook — the exact assets behind the channel.',
 };
 
 export default async function ProductsPage() {
@@ -367,7 +367,7 @@ export default async function ProductsPage() {
           Products
         </h1>
         <p className="mt-4 text-lg text-muted">
-          Every asset the Fabled10X channel and case studies are built with —
+          Every asset the Travis Gautier channel and case studies are built with —
           bundled, documented, and licensed for solo consultants and agencies.
         </p>
       </header>

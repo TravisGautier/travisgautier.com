@@ -1,4 +1,4 @@
-# Fabled10X — Launch Strategy & Growth Plan
+# Travis Gautier — Launch Strategy & Growth Plan
 
 **Document Version:** 1.0
 **Created:** March 2026
@@ -9,8 +9,8 @@
 ## PHASE 0: PRE-LAUNCH FOUNDATION (4-6 Weeks Before First Video)
 
 ### Brand Asset Lockdown
-- [ ] Secure @Fabled10X handle on: YouTube, X, TikTok, Instagram, GitHub, LinkedIn
-- [x] Secure domain: fabled10x.com (live). fabled10x.dev remains an optional future alias.
+- [ ] Secure @Travis Gautier handle on: YouTube, X, TikTok, Instagram, GitHub, LinkedIn
+- [x] Secure domain: travisgautier.com (live). travisgautier.dev remains an optional future alias.
 - [ ] Channel banner, profile image, consistent bio across all platforms
 - [ ] YouTube "About" section written and polished
 - [ ] Channel trailer: not needed at launch (bad one is worse than none)
@@ -40,7 +40,7 @@ Become a known, contributing member BEFORE dropping YouTube links.
 **Approach:** Share real insights, be genuinely helpful, build reputation. Answer questions with actual methodology (e.g., pricing framework, milestone payments) and mention documenting the process. Don't drop YouTube links — earn the right first.
 
 ### Email List (Optional But High-Leverage)
-Simple landing page at fabled10x.com:
+Simple landing page at travisgautier.com:
 - Channel name + tagline
 - Brief description of what's coming
 - Email signup for launch notification
@@ -79,7 +79,7 @@ Landing the client and selling the discovery phase.
 "How I Price Custom Software — Real Numbers, Real Project"
 - Designed to be SEARCHABLE (people search "how to price software projects")
 - Brings in new viewers who haven't seen the series
-- Introduces Fabled10X world to search-driven audience
+- Introduces Travis Gautier world to search-driven audience
 
 ### Day 7 — Episode 3
 Discovery call deep-dive closes week 1.

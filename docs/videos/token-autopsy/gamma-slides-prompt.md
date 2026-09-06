@@ -1,4 +1,4 @@
-# Gamma.ai Prompt — Companion Slides for fabled10x Video
+# Gamma.ai Prompt — Companion Slides for travisgautier Video
 
 Paste the block below into gamma.ai to generate the deck. Edit the numbers and quotes only if your data changes; the structure is tuned to match the video beats.
 
@@ -6,7 +6,7 @@ Paste the block below into gamma.ai to generate the deck. Edit the numbers and q
 
 ## PROMPT (paste this into gamma.ai)
 
-Create a 14-slide presentation titled **"Where Your Claude Code Tokens Actually Go — A Session Autopsy"** that serves as on-screen companion slides for a 9–10 minute YouTube video on the fabled10x channel (audience: engineers using Claude Code for AI-assisted development).
+Create a 14-slide presentation titled **"Where Your Claude Code Tokens Actually Go — A Session Autopsy"** that serves as on-screen companion slides for a 9–10 minute YouTube video on the travisgautier channel (audience: engineers using Claude Code for AI-assisted development).
 
 **Tone and style:**
 - Forensic, data-first, no hype language ("amazing," "insane," "mind-blowing" — none of it)
@@ -21,7 +21,7 @@ Create a 14-slide presentation titled **"Where Your Claude Code Tokens Actually 
 **Slide 1 — Title**
 - Title: "Where Your Claude Code Tokens Actually Go"
 - Subtitle: "A 152K-token, 850-turn session autopsy"
-- Tag line at bottom: "fabled10x — building with AI, openly"
+- Tag line at bottom: "travisgautier — building with AI, openly"
 
 **Slide 2 — The Hook**
 - Single statistic, centered huge: **1.0%**
@@ -119,7 +119,7 @@ Create a 14-slide presentation titled **"Where Your Claude Code Tokens Actually 
 **Slide 14 — Outro**
 - Heading: "Try it on your own session"
 - Body: Path to JSONLs (`~/.claude/projects/`) + "Run the script, post your distribution in the comments."
-- Channel handle bottom-right: "fabled10x — AI building AI, openly."
+- Channel handle bottom-right: "travisgautier — AI building AI, openly."
 
 **Strict rules for Gamma:**
 - Preserve the exact numeric values above. Do not paraphrase 38.4% → "about 40%"; leave the precision.

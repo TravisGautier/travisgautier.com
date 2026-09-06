@@ -6,7 +6,7 @@ Paste the block below into gamma.ai to generate the deck. Edit the scan numbers 
 
 ## PROMPT (paste this into gamma.ai)
 
-Create a 12-slide presentation titled **"Two Ways to Reduce Claude Code Permission Prompts"** that serves as on-screen companion slides for a ~5-minute YouTube video on the fabled10x channel (audience: engineers using Claude Code, AI agent workflows, and security-conscious devs).
+Create a 12-slide presentation titled **"Two Ways to Reduce Claude Code Permission Prompts"** that serves as on-screen companion slides for a ~5-minute YouTube video on the travisgautier channel (audience: engineers using Claude Code, AI agent workflows, and security-conscious devs).
 
 **Tone and style:**
 - Data-first, no hype language ("amazing," "game-changing," "mind-blowing" — none of it)
@@ -22,7 +22,7 @@ Create a 12-slide presentation titled **"Two Ways to Reduce Claude Code Permissi
 **Slide 1 — Title**
 - Title: "Two Ways to Reduce Claude Code Permission Prompts"
 - Subtitle: "One uses an AI classifier. The other uses a list. Here's the tradeoff."
-- Tag line at bottom: "fabled10x — building with AI, openly"
+- Tag line at bottom: "travisgautier — building with AI, openly"
 - Date: April 2026
 
 **Slide 2 — The Problem**
@@ -136,7 +136,7 @@ Create a 12-slide presentation titled **"Two Ways to Reduce Claude Code Permissi
   1. **Auto mode** is elegant for the long tail. Token tax on the hot path.
   2. **`/fewer-permission-prompts`** is boring but free, auditable, team-shareable.
   3. **If you only use one, use the allowlist.** A classifier that costs tokens to decide if `ls` is safe is a tax you pay forever.
-- Channel handle bottom-right: "fabled10x — building with AI, openly"
+- Channel handle bottom-right: "travisgautier — building with AI, openly"
 
 **Strict rules for Gamma:**
 - Preserve the exact numeric values above (707, 262, 171, 112, 100, 51, 11). Do not round or paraphrase.

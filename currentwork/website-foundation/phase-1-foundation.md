@@ -287,10 +287,10 @@ to `<html>` (already partially done in the scaffold) and add the `metadataBase`:
 
 ```tsx
 export const metadata: Metadata = {
-  metadataBase: new URL('https://fabled10x.com'),
+  metadataBase: new URL('https://travisgautier.com'),
   title: {
-    default: 'fabled10x',
-    template: '%s · fabled10x',
+    default: 'travisgautier',
+    template: '%s · travisgautier',
   },
   description: 'One person. An agent team. Full SaaS delivery.',
 };
@@ -417,7 +417,7 @@ export function Footer() {
           <p className="font-semibold text-foreground">Sister project</p>
           <p className="mt-1">
             The structured AI knowledge base built and championed by
-            Fabled10X lives at{' '}
+            Travis Gautier lives at{' '}
             <Link
               href="https://largelanguagelibrary.ai"
               className="text-link underline-offset-2 hover:underline"

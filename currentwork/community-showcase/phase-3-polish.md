@@ -57,22 +57,22 @@ it stays a const rather than becoming `generateMetadata`:
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Built with Fabled10X',
+  title: 'Built with Travis Gautier',
   description:
-    'Community projects shipped with the Fabled10X methodology — in-house work, agent-driven builds, and case studies from the field.',
+    'Community projects shipped with the Travis Gautier methodology — in-house work, agent-driven builds, and case studies from the field.',
   openGraph: {
-    title: 'Built with Fabled10X',
+    title: 'Built with Travis Gautier',
     description:
-      'Community projects shipped with the Fabled10X methodology — in-house work, agent-driven builds, and case studies from the field.',
+      'Community projects shipped with the Travis Gautier methodology — in-house work, agent-driven builds, and case studies from the field.',
     url: '/showcase',
     type: 'website',
-    siteName: 'Fabled10X',
+    siteName: 'Travis Gautier',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Built with Fabled10X',
+    title: 'Built with Travis Gautier',
     description:
-      'Community projects shipped with the Fabled10X methodology.',
+      'Community projects shipped with the Travis Gautier methodology.',
   },
   alternates: {
     canonical: '/showcase',
@@ -104,7 +104,7 @@ export async function generateMetadata({
       description: entry.summary,
       url: canonical,
       type: 'article',
-      siteName: 'Fabled10X',
+      siteName: 'Travis Gautier',
       images: [
         {
           url: entry.heroImage,
@@ -142,9 +142,9 @@ export default async function ShowcaseDetailPage({ params }: PageProps) {
     '@type': 'CreativeWork',
     name: entry.title,
     description: entry.summary,
-    url: `https://fabled10x.com/showcase/${entry.slug}`,
+    url: `https://travisgautier.com/showcase/${entry.slug}`,
     datePublished: entry.publishedAt,
-    image: `https://fabled10x.com${entry.heroImage}`,
+    image: `https://travisgautier.com${entry.heroImage}`,
     author: {
       '@type': 'Person',
       name: entry.builder.name,
@@ -185,7 +185,7 @@ import { getAllEpisodes } from '@/lib/content/episodes';
 import { getAllCases } from '@/lib/content/cases';
 import { getAllShowcaseEntries } from '@/lib/content/showcase'; // ← new
 
-const BASE = 'https://fabled10x.com';
+const BASE = 'https://travisgautier.com';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [episodes, cases, showcase] = await Promise.all([
@@ -280,7 +280,7 @@ regressions before closing the feature. Common issues to watch for:
 #### Sitemap + nav
 
 - `src/app/__tests__/sitemap.test.ts` (extends whatever `wf` 4.4 shipped):
-  - Sitemap includes `https://fabled10x.com/showcase`
+  - Sitemap includes `https://travisgautier.com/showcase`
   - Sitemap includes one URL per showcase slug returned by the mocked `getAllShowcaseEntries`
   - Entries have the expected `priority` (0.8 for index, 0.6 for details)
 - Header component test:
@@ -295,12 +295,12 @@ regressions before closing the feature. Common issues to watch for:
 #### Metadata + JSON-LD
 
 - **`generateMetadata` on the detail page, static const on the index** — the detail page needs per-slug metadata (titles, OG images, canonical URLs) so it has to be a function. The index is a single static page so a const is enough. Matches Next.js idioms.
-- **`openGraph.url` and `alternates.canonical` as absolute-path strings** — Next.js resolves these against `metadataBase` (set to `https://fabled10x.com` in the root layout by `wf` 1.4). Writing relative paths keeps the doc portable if the production URL ever changes.
+- **`openGraph.url` and `alternates.canonical` as absolute-path strings** — Next.js resolves these against `metadataBase` (set to `https://travisgautier.com` in the root layout by `wf` 1.4). Writing relative paths keeps the doc portable if the production URL ever changes.
 - **`openGraph.type: 'article'` on detail, `'website'` on index** — semantic distinction. Social crawlers use this to decide whether to render "a link to a site" or "a link to a published piece".
 - **JSON-LD built as a plain object + `JSON.stringify`** — the `CreativeWork` schema is small enough that hand-building the object is readable; a schema.org helper library would be overkill. Matches the `wf` 4.3 inline-JSON-LD precedent.
 - **Spread-conditional for `author.url` and `author.affiliation`** — optional fields only appear in the payload when data exists. Validators at schema.org will flag a `null` or empty string as a soft warning; omission is cleaner.
 - **`keywords: entry.stack`** — reuses the tech stack as a keyword list for structured data. Cheap way to give crawlers extra signal without inventing new metadata.
-- **Absolute URLs inside JSON-LD (`https://fabled10x.com/…`)** — schema.org requires absolute URLs for `url` and `image`. The rest of the page (Next.js metadata) uses path-relative URLs that `metadataBase` resolves; JSON-LD can't lean on `metadataBase`.
+- **Absolute URLs inside JSON-LD (`https://travisgautier.com/…`)** — schema.org requires absolute URLs for `url` and `image`. The rest of the page (Next.js metadata) uses path-relative URLs that `metadataBase` resolves; JSON-LD can't lean on `metadataBase`.
 - **`width: 1600, height: 900` hardcoded in OpenGraph** — matches the 16:9 aspect ratio the authoring guide mandates for hero images. If the hero dimension policy changes, both the guide and this constant update together.
 - **JSON-LD only on detail pages, not the index** — index page is a "collection" and mapping it to `CollectionPage` adds complexity for marginal SEO benefit. Can be added later if it matters.
 - **Canonical URL on both pages** — prevents duplicate-content penalties if the pages are ever accessed via query strings or tracking parameters.
@@ -311,7 +311,7 @@ regressions before closing the feature. Common issues to watch for:
 - **Parallel loader calls in `Promise.all`** — the sitemap does three independent async reads. Parallelizing keeps build-time sitemap generation fast even as content grows.
 - **Showcase detail priority of 0.6, below episodes (0.7)** — episodes are the flagship content; showcase entries are secondary social proof. Signals relative importance to crawlers without being aggressive.
 - **`lastModified: s.publishedAt`** — showcase entries don't track a separate `updatedAt` field. Using `publishedAt` as the modification time is accurate for now (entries are static), and adding `updatedAt` to the schema can wait until real editing behavior emerges.
-- **Nav link as "Showcase" (not "Community" or "Built with Fabled10X")** — concise, one-word, fits nav chrome. The page itself carries the longer "Built with Fabled10X" framing in the `<h1>`.
+- **Nav link as "Showcase" (not "Community" or "Built with Travis Gautier")** — concise, one-word, fits nav chrome. The page itself carries the longer "Built with Travis Gautier" framing in the `<h1>`.
 - **`pathname.startsWith('/showcase')` for active state** — both the index and the detail pages should highlight the Showcase nav link. `startsWith` handles both.
 - **No nav dropdown for showcase sub-entries** — the list would be too long and introduces keyboard-trap risk. Visitors browse via the index, not the nav.
 - **`llms.txt` edit is minimal** — mention the new route, nothing else. The file is already curated by `wf` 4.4 and this job doesn't own the file's overall structure.

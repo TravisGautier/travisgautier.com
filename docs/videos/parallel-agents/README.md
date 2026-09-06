@@ -1,6 +1,6 @@
 # Video: Parallel Agents (Git Worktree Concurrency)
 
-Working folder for the fabled10x video **"I'm Running Four Claude Code Agents at Once. Here's the Three Hundred Lines of Git Plumbing That Makes It Safe."**
+Working folder for the travisgautier video **"I'm Running Four Claude Code Agents at Once. Here's the Three Hundred Lines of Git Plumbing That Makes It Safe."**
 
 Video framing: practitioner report on a concurrency-coordination layer bolted onto an existing TDD pipeline. The story is not the pipeline itself (different video). The story is: git worktrees + a flocked JSON registry + section-scoped branches = the cheapest multi-agent isolation primitive that actually works. No Redis. No queue. No orchestrator daemon. A lockfile and a discipline.
 

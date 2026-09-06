@@ -1,4 +1,4 @@
-# Future Jobs — fabled10x
+# Future Jobs — travisgautier
 
 **Purpose:** a self-contained catalogue of every `/jobbuild` target identified
 from `docs/website-implementation-plan.md` that has **not yet** been
@@ -205,15 +205,15 @@ N/A — this job IS the rewrite. The plan already lives at
 
 ---
 
-## 5. `community-showcase` — "Built with Fabled10X" feature
+## 5. `community-showcase` — "Built with Travis Gautier" feature
 
 ### Source
-Phase 3 of the implementation-plan doc: "Built with Fabled10X" community
+Phase 3 of the implementation-plan doc: "Built with Travis Gautier" community
 showcase".
 
 ### Scope
 Build a community showcase section where community members can submit their
-own projects built using the Fabled10X methodology. Each submission becomes a
+own projects built using the Travis Gautier methodology. Each submission becomes a
 public page with project description, builder profile, screenshots, and
 outbound links.
 
@@ -240,10 +240,10 @@ outbound links.
 ```
 /jobbuild community-showcase
 
-Build the "Built with Fabled10X" community showcase per Phase 3 of the
+Build the "Built with Travis Gautier" community showcase per Phase 3 of the
 implementation-plan doc. New content type + loader + route tree + a submission
 flow (editorial or PR-based — decide in jobbuild). Each showcase entry is a
-public page documenting a community project built using the Fabled10X
+public page documenting a community project built using the Travis Gautier
 methodology. No user accounts, no commenting, no upvoting.
 ```
 
@@ -336,10 +336,10 @@ acceptance. Does not build the cohort delivery platform itself.
 
 ### Source
 Phase 4 of the implementation-plan doc: "Full documentation of site build
-process as Fabled10X content" under The Meta Play.
+process as Travis Gautier content" under The Meta Play.
 
 ### Scope
-The fabled10x.com site itself is built by the same agent workflow being
+The travisgautier.com site itself is built by the same agent workflow being
 documented on the channel. This job builds a section of the site that
 surfaces that workflow: a live view of `currentwork/` job progress, the TDD
 pipeline's beat status, and completed sections rendered as published content
@@ -373,7 +373,7 @@ brand doc's "show the work" principle argues for public.
 ```
 /jobbuild build-in-public-docs
 
-Build a /build-log section of fabled10x.com that reads currentwork/ and
+Build a /build-log section of travisgautier.com that reads currentwork/ and
 pipeline/active/ directly and renders them as published content — a live view
 of the agent-driven build process that ships the site itself. Phase 4 of the
 implementation-plan doc ("The Meta Play"). Read-only, no editing from the
@@ -402,8 +402,8 @@ pills, and "from the library" inline callouts inside episode and case bodies.
 - Cross-domain referral tracking (so LLL knows where traffic came from)
 
 ### Out of scope
-- Bidirectional integration (LLL linking back to fabled10x is LLL's concern)
-- Editing LLL entries from fabled10x
+- Bidirectional integration (LLL linking back to travisgautier is LLL's concern)
+- Editing LLL entries from travisgautier
 
 ### Dependencies
 - `website-foundation` Phase 4.2 crosslink component
@@ -478,7 +478,7 @@ not become jobs:
 
 - **Handle-locking across platforms** — social account creation, one-time
   operational work, tracked elsewhere.
-- **Domain secured** — already done (`fabled10x.com` live).
+- **Domain secured** — already done (`travisgautier.com` live).
 - **`/llms.txt`** — already live, polished as part of `website-foundation`
   Phase 4.4.
 - **Email platform decision** — already decided: Resend.

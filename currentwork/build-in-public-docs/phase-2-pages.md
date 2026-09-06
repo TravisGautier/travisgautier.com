@@ -365,7 +365,7 @@ import { getJobsRollup } from '@/lib/build-log/pipeline-state';
 export const metadata: Metadata = {
   title: 'Build log',
   description:
-    'A live view of the agent-driven build process behind fabled10x.com — every job plan, every phase, every section the TDD pipeline has shipped or is about to ship.',
+    'A live view of the agent-driven build process behind travisgautier.com — every job plan, every phase, every section the TDD pipeline has shipped or is about to ship.',
 };
 
 function firstParagraph(context: string): string {
@@ -384,7 +384,7 @@ export default async function BuildLogIndexPage() {
       <header className="mb-10">
         <h1 className="text-4xl font-display mb-3">Build log</h1>
         <p className="text-lg text-muted max-w-2xl">
-          The agent-driven build process behind fabled10x.com, rendered as
+          The agent-driven build process behind travisgautier.com, rendered as
           published content. Every job has a plan, every plan has phases,
           every phase has features the TDD pipeline ships through.
         </p>
@@ -872,7 +872,7 @@ import {
 export const metadata: Metadata = {
   title: 'Pipeline status · Build log',
   description:
-    'Live view of the fabled10x TDD pipeline — current section, completed sections, and per-job progress, read directly from session.yaml at build time.',
+    'Live view of the travisgautier TDD pipeline — current section, completed sections, and per-job progress, read directly from session.yaml at build time.',
 };
 
 function extractSectionId(

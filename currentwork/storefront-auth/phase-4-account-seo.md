@@ -480,13 +480,13 @@ export default async function ProductDetailPage({ params }: PageProps) {
     description: meta.summary,
     category: PRODUCT_CATEGORY_LABELS[meta.category],
     image: meta.heroImageUrl,
-    brand: { '@type': 'Brand', name: 'Fabled10X' },
+    brand: { '@type': 'Brand', name: 'Travis Gautier' },
     offers: {
       '@type': 'Offer',
       price: (meta.priceCents / 100).toFixed(2),
       priceCurrency: meta.currency.toUpperCase(),
       availability: 'https://schema.org/InStock',
-      url: `https://fabled10x.com/products/${meta.slug}`,
+      url: `https://travisgautier.com/products/${meta.slug}`,
     },
   };
 
@@ -512,7 +512,7 @@ import { getAllEpisodes } from '@/lib/content/episodes';
 import { getAllCases } from '@/lib/content/cases';
 import { getAllProducts } from '@/lib/content/products';
 
-const BASE_URL = 'https://fabled10x.com';
+const BASE_URL = 'https://travisgautier.com';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [episodes, cases, products] = await Promise.all([
@@ -576,7 +576,7 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
     ],
-    sitemap: 'https://fabled10x.com/sitemap.xml',
+    sitemap: 'https://travisgautier.com/sitemap.xml',
   };
 }
 ```
@@ -761,7 +761,7 @@ Expected common issues + fixes:
 **MODIFY** `src/app/products/[slug]/__tests__/page.test.tsx` (extend Phase 1 tests):
 
 - Rendered HTML contains a `<script type="application/ld+json">` tag.
-- The JSON-LD parses to an object with `@type: 'Product'`, correct `name`, `offers.price`, `offers.priceCurrency`, and a `https://fabled10x.com/products/{slug}` URL.
+- The JSON-LD parses to an object with `@type: 'Product'`, correct `name`, `offers.price`, `offers.priceCurrency`, and a `https://travisgautier.com/products/{slug}` URL.
 
 **NEW** `src/components/site/__tests__/Header.test.tsx`:
 

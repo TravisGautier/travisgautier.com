@@ -8,7 +8,7 @@ claim:
   status: done
   phase_entered_at: "2026-06-06T00:00:00Z"
   phase_exited_at: "2026-06-06T00:00:00Z"
-  slot_path: "/home/travis/Projects/fabled10x-worktrees/section-styling-overhaul-4.1"
+  slot_path: "/home/travis/Projects/travisgautier.com-worktrees/section-styling-overhaul-4.1"
   branch: "section/styling-overhaul-4.1"
   pid: 611618
   beats:

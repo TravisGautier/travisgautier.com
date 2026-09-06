@@ -1,6 +1,6 @@
 # Video: Token Autopsy
 
-Working folder for the fabled10x video **"Where Your Claude Code Tokens Actually Go — A Session Autopsy"**.
+Working folder for the travisgautier video **"Where Your Claude Code Tokens Actually Go — A Session Autopsy"**.
 
 Video framing: a forensic breakdown of where tokens actually go in a real Claude Code pipeline session, with ranked levers for real savings and one optimization I almost shipped and didn't.
 

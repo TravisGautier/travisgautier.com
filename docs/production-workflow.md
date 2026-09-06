@@ -1,4 +1,4 @@
-# Fabled10X — Production Workflow & Technical Setup
+# Travis Gautier — Production Workflow & Technical Setup
 
 **Document Version:** 1.0
 **Created:** March 2026
@@ -197,7 +197,7 @@ If PipeWire capture fails, wlrobs provides "Wayland output (dmabuf)" source:
 
 **Scene 1: "Full Code" (75% of stream time)**
 - Main coding monitor fills canvas
-- Small Fabled10X branded overlay (stream title, now-playing widget)
+- Small Travis Gautier branded overlay (stream title, now-playing widget)
 - Optional small facecam corner
 
 **Scene 2: "Split View"**
@@ -209,7 +209,7 @@ If PipeWire capture fails, wlrobs provides "Wayland output (dmabuf)" source:
 - Code blocks, specific UI elements, error messages
 
 **Scene 4: "Break"**
-- Holding screen with Fabled10X branding
+- Holding screen with Travis Gautier branding
 - Lo-fi music continues
 - "Be right back" message
 

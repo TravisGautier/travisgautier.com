@@ -11,7 +11,7 @@
 
 ## Positioning
 
-The Fabled10X Pipeline playlist shows the integrated system — 105 beats, YAML contracts, skill chain, full orchestration. Not everyone needs the full system. Most people need tactical techniques they can apply to their next feature, their next prompt, their next review session.
+The Travis Gautier Pipeline playlist shows the integrated system — 105 beats, YAML contracts, skill chain, full orchestration. Not everyone needs the full system. Most people need tactical techniques they can apply to their next feature, their next prompt, their next review session.
 
 This playlist is the tactical toolbox. Eight episodes, each a discrete technique pulled from real projects. How to review AI output the way a staff engineer reviews a junior's PR. How to prompt for a database schema that doesn't need three rewrites. How to turn a wireframe into a working feature in one session. How to produce a 40-page technical specification that clients actually read.
 
@@ -23,11 +23,11 @@ Each episode is standalone. Pick the ones that solve a problem you have today. N
 - Technical founders who need enterprise-grade documentation but don't want to write it from scratch
 - Freelancers and consultants who want to produce higher-quality client deliverables with AI
 - Engineering managers curious about how "managing AI agents" compares to managing humans
-- Anyone who watched The Fabled10X Pipeline playlist and wants the bite-sized versions
+- Anyone who watched The Travis Gautier Pipeline playlist and wants the bite-sized versions
 
 ### What This Playlist Is NOT
 
-- Not the full Fabled10X Pipeline methodology (see that playlist for the integrated system)
+- Not the full Travis Gautier Pipeline methodology (see that playlist for the integrated system)
 - Not a "prompt engineering" playlist — these are tactics grounded in real deliverables, not abstract prompt patterns
 - Not theoretical — every episode is built around an actual artifact from the Party Masters client build
 
@@ -98,7 +98,7 @@ The skills of engineering management transfer directly to managing AI agents. De
 - AI-specific review checklist on screen
 
 #### Source materials
-- CLAUDE.md from fabled10x (project config as team norms)
+- CLAUDE.md from travisgautier (project config as team norms)
 - .claude/skills/ directory structure (skills as standard operating procedures)
 - Real prompt examples — weak vs strong delegation
 - Engineering management resources (The Manager's Path, Staff Engineer, etc. — brief citations)
@@ -456,7 +456,7 @@ AI can turn a clear wireframe into a working, stylable, tested feature in a sing
 **CREDIBILITY EPISODE — and the bridge to the Zero to 10X curriculum. This episode diagnoses the failure modes; the curriculum treats them. Where every other tactics episode sells a technique, this one sells a learning path.**
 
 #### Thesis
-Every Agent Team Tactics episode shows what works. This one shows what didn't — and then shows where to go next. There is a specific set of skills AI doesn't replace, won't replace with the next model release, and probably won't replace in this decade. They are teachable. The rest of the Fabled10X ecosystem points at them, but the **Zero to 10X curriculum** is where they actually get taught, in sequence, for free, from the ground up.
+Every Agent Team Tactics episode shows what works. This one shows what didn't — and then shows where to go next. There is a specific set of skills AI doesn't replace, won't replace with the next model release, and probably won't replace in this decade. They are teachable. The rest of the Travis Gautier ecosystem points at them, but the **Zero to 10X curriculum** is where they actually get taught, in sequence, for free, from the ground up.
 
 If you watched the previous seven episodes and felt, "these tactics are great but I don't have the judgment underneath them" — this episode tells you why, and tells you where to go.
 
@@ -540,12 +540,12 @@ If you watched the previous seven episodes and felt, "these tactics are great bu
 - T5 structure-first spec approach used in curriculum Z25–Z26
 - "The tactics in this playlist assume the judgment layer. The curriculum builds the judgment layer."
 
-### The Fabled10X Pipeline crossover
+### The Travis Gautier Pipeline crossover
 - T1 "Manage AI Agents Like a Dev Team Lead" is the mindset layer under Pipeline P6's 105-beat system
 - T4 "Docs Before Code" is the tactical cousin of Pipeline P4 "Tests Before Code" — both are specification forcing functions
 - T5 "40-Page Technical Specification" is the narrative version of Pipeline P5's YAML contracts — same principle, different output format
 - T8 "When AI Fails" parallels Pipeline P8 "Where AI Fails — What the Pipeline Catches" — this one frames around human intervention, that one frames around system coverage
-- "If you want the integrated system, watch The Fabled10X Pipeline playlist. If you want discrete tactics, this playlist is your toolbox."
+- "If you want the integrated system, watch The Travis Gautier Pipeline playlist. If you want discrete tactics, this playlist is your toolbox."
 
 ### Building Party Masters tie-ins
 - T3 uses the real Party Masters data dictionary

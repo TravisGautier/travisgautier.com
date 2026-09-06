@@ -1,6 +1,6 @@
 # Opus 4.7 Just Dropped. Here's What Actually Changed.
 
-*Companion piece to the fabled10x video of the same name. This is the text version for search indexing and anyone who'd rather read than watch.*
+*Companion piece to the travisgautier video of the same name. This is the text version for search indexing and anyone who'd rather read than watch.*
 
 ---
 
@@ -112,7 +112,7 @@ That gap between what's commercially available and what exists behind closed doo
 - Anthropic announcement: [anthropic.com/news/claude-opus-4-7](https://www.anthropic.com/news/claude-opus-4-7)
 - Migration guide: [platform.claude.com/docs/en/about-claude/models/migration-guide](https://platform.claude.com/docs/en/about-claude/models/migration-guide)
 - Full video: [YouTube link]
-- fabled10x channel: [channel link]
+- travisgautier channel: [channel link]
 
 ---
 

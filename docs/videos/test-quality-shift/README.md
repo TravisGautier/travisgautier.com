@@ -1,6 +1,6 @@
 # Video: Test-Quality Shift (Opus 4.6 → 4.7)
 
-Working folder for the fabled10x video **"Opus 4.7 Made My Test-Quality Floor Obsolete."**
+Working folder for the travisgautier video **"Opus 4.7 Made My Test-Quality Floor Obsolete."**
 
 Video framing: practitioner-observed shift in how the model writes tests across a model swap. Same TDD scaffolding, same engineer, same kind of work — 4.6 averaged ~17 tests per section, 4.7 averages ~69. The qualitative shift (permission matrix, STRIDE breadth, contract exhaustiveness) is the story. Pipeline gets a one-line acknowledgment, not a tour.
 

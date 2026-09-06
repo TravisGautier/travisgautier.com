@@ -29,7 +29,7 @@ Software development is the first domain. It will not be the last.
 - Not a Stack Overflow clone with voting and reputation
 - Not limited to software development
 - Not dependent on any single company, model, or platform
-- Not Fabled10X — though Fabled10X built it and champions it
+- Not Travis Gautier — though Travis Gautier built it and champions it
 
 ---
 
@@ -44,15 +44,15 @@ Software development is the first domain. It will not be the last.
 
 ---
 
-## RELATIONSHIP TO FABLED10X
+## RELATIONSHIP TO TRAVIS GAUTIER
 
-Fabled10X built LLL and promotes it. That relationship is known but not loud.
+Travis Gautier built LLL and promotes it. That relationship is known but not loud.
 
-Fabled10X seeds LLL with real content from real projects. Fabled10X documents the building of LLL as channel content. Fabled10X promotes LLL to its audience. But LLL belongs to everyone — its own domain, its own GitHub org, its own identity, its own community.
+Travis Gautier seeds LLL with real content from real projects. Travis Gautier documents the building of LLL as channel content. Travis Gautier promotes LLL to its audience. But LLL belongs to everyone — its own domain, its own GitHub org, its own identity, its own community.
 
 The connection is analogous to DHH building Rails and Basecamp promoting it. The tool becomes bigger than the brand that built it. That is the goal.
 
-LLL does not generate revenue. Fabled10X does. LLL generates credibility, community, and contribution to the AI ecosystem. That is its entire purpose.
+LLL does not generate revenue. Travis Gautier does. LLL generates credibility, community, and contribution to the AI ecosystem. That is its entire purpose.
 
 ---
 
@@ -290,7 +290,7 @@ All five council members review the submission in parallel. They are examining t
 The `submitting_model` field records which AI generated the entry. This is part of the permanent record. Over time, the corpus reveals which models are surfacing novel knowledge and which fields they are contributing to. That metadata is itself valuable to AI researchers.
 
 ### Plugin Spec
-Published as an open standard. Any AI coding tool can implement `/lll-submit`. Fabled10X builds the Claude Code plugin first. The community builds the rest on the open spec.
+Published as an open standard. Any AI coding tool can implement `/lll-submit`. Travis Gautier builds the Claude Code plugin first. The community builds the rest on the open spec.
 
 ---
 
@@ -483,7 +483,7 @@ largelanguagelibrary.ai/
 ├── /schema               (Public schema documentation and version history)
 ├── /api                  (API documentation)
 ├── /governance           (Council composition, rubric, changelog, statistics)
-├── /about                (Mission, Fabled10X relationship, invitation to build)
+├── /about                (Mission, Travis Gautier relationship, invitation to build)
 ├── /plugin               (Plugin spec, open standard documentation — Phase 2)
 └── /llms.txt
 ```
@@ -517,7 +517,7 @@ LLL launches with content. An empty knowledge base is not a knowledge base.
 - Discovery phase methodology decisions
 
 ### Ongoing Pipeline
-Every Fabled10X client project feeds LLL automatically.
+Every Travis Gautier client project feeds LLL automatically.
 
 ### Launch Target
 25–50 high-quality entries at launch. Each goes through the full council pipeline. The governance scores are part of the public record from day one.
@@ -553,7 +553,7 @@ Every Fabled10X client project feeds LLL automatically.
 - [ ] Cloudflare DNS and CDN configured
 
 ### Phase 2 — Plugin and Community (Month 2-3)
-- [ ] Announced via Fabled10X YouTube and X
+- [ ] Announced via Travis Gautier YouTube and X
 - [ ] Plugin spec published as open standard
 - [ ] Claude Code plugin built and released
 - [ ] Contributor reputation scoring implemented
@@ -563,7 +563,7 @@ Every Fabled10X client project feeds LLL automatically.
 - [ ] Submitting model breakdown added to governance stats
 
 ### Phase 3 — Protocol (Month 4+)
-- [ ] Cursor and Codex plugins — Fabled10X or community-built on open spec
+- [ ] Cursor and Codex plugins — Travis Gautier or community-built on open spec
 - [ ] Fine-tuned local validator model trained and published
 - [ ] Schema published as independent open standard
 - [ ] Field expansion based on community demand
@@ -599,7 +599,7 @@ LLL is open source forever. The code is free. The brand is protected.
 
 ### Growth
 - Entries published per week
-- Community contributor count (non-Fabled10X)
+- Community contributor count (non-Travis Gautier)
 - Submitting model diversity (which AI tools are contributing)
 - Fields covered
 - API endpoint requests per month
@@ -624,7 +624,7 @@ LLL is open source forever. The code is free. The brand is protected.
 **Tagline:** *"What survives the context window."*
 **Logo:** Three classical Roman columns enclosed in angle brackets `< ||| >`
 
-LLL has its own visual identity, separate from Fabled10X. The connection to Fabled10X is acknowledged in the about page and nowhere else. LLL should outlive any single contributor, brand, or organization.
+LLL has its own visual identity, separate from Travis Gautier. The connection to Travis Gautier is acknowledged in the about page and nowhere else. LLL should outlive any single contributor, brand, or organization.
 
 ---
 

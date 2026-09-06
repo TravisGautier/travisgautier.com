@@ -1,6 +1,6 @@
 # Claude Ships an AI Classifier for Permissions. You Should Still Write an Allowlist.
 
-*Companion piece to the fabled10x video of the same name. This is the text version for search indexing and anyone who'd rather read than watch.*
+*Companion piece to the travisgautier video of the same name. This is the text version for search indexing and anyone who'd rather read than watch.*
 
 ---
 
@@ -118,7 +118,7 @@ I don't think the marketing will ever say this explicitly, because "use our new 
 - Claude Code docs — permission modes: [docs.claude.com/claude-code](https://docs.claude.com/en/docs/claude-code)
 - `/fewer-permission-prompts` skill (ships in Claude Code by default)
 - Full video: [YouTube link]
-- fabled10x channel: [channel link]
+- travisgautier channel: [channel link]
 
 ---
 

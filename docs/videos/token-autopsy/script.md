@@ -1,4 +1,4 @@
-# fabled10x Video: "Where Your Claude Code Tokens Actually Go"
+# travisgautier Video: "Where Your Claude Code Tokens Actually Go"
 
 ## Premise
 
@@ -143,7 +143,7 @@ Pie chart with "assistant prose: 1.0%" sliver highlighted in red. Headline overl
 - No AI-generated enthusiasm. Flat, forensic, "here's what I found" tone.
 - Screen-recording with voiceover beats face-cam for this one — the data IS the visual.
 - Don't name-shame caveman. It's a real tool with real uses (conversational workflows). It's just mismatched to tool-heavy pipeline workflows. Frame as "wrong tool for this job" not "bad tool."
-- Fabled10x audience cares about AI-building-AI workflows — this fits the "delivery" pillar: how we build with Claude.
+- Travis Gautier audience cares about AI-building-AI workflows — this fits the "delivery" pillar: how we build with Claude.
 
 ## Open questions before production
 

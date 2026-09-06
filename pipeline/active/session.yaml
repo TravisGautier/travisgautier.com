@@ -149,7 +149,7 @@ completed_sections:
     pushed: true
     posture: docs-only
     notes: 'Final section of styling-overhaul Phase 8 (Asset Pipeline). Finalized
-      docs/fabled10x-design-system.md with real shipped asset paths (individual font
+      docs/design-system.md with real shipped asset paths (individual font
       rows, apple 180×180, hero floatbg.png), an Off-site brand surfaces section (3
       og:image routes @1200×630 + Satori clip-path note + /thumb-preview @1280×720
       + accent glyphs), Regeneration notes, and expanded Implementation references.
@@ -217,7 +217,7 @@ completed_sections:
 
       WORKTREE mode. Slot section-build-log-overhaul-3.2 from origin/main fbdcc79.
 
-      PWTC N/A (fabled10x static). node_modules bind-mounted; .env.local symlinked.
+      PWTC N/A (travisgautier static). node_modules bind-mounted; .env.local symlinked.
 
 
       DEFERRED: <code className="font-mono text-(--color-oxblood)"> appears 3x
@@ -296,7 +296,7 @@ completed_sections:
 
       Session-yaml conflict resolved manually (additive): took main''s base, prepended
 
-      this entry, kept concurrent_jobs []. PWTC N/A (fabled10x static). node_modules
+      this entry, kept concurrent_jobs []. PWTC N/A (travisgautier static). node_modules
 
       bind-mounted; .env.local symlinked.
 
@@ -402,7 +402,7 @@ completed_sections:
 
       floatbg + tier/series header + single h1 DropAccent size=thumbnail +
 
-      fabled10x.com footer) driven by ?title&series&tier&accent&photo. Gated by
+      travisgautier.com footer) driven by ?title&series&tier&accent&photo. Gated by
 
       `if (process.env.NODE_ENV !== ''development'') return notFound();` (FIRST
 
@@ -473,7 +473,7 @@ completed_sections:
 
       -> marble panel + Cinzel title + Oxblood accent (? episodes, . cases) +
 
-      ''fabled10x.com'' footer. Routes render ONLY public fields (episode meta.title/
+      ''travisgautier.com'' footer. Routes render ONLY public fields (episode meta.title/
 
       series/episodeNumber; case meta.title/client) — never Case.contractValue or
 
@@ -751,7 +751,7 @@ completed_sections:
       (the LiveStatus rework happened at finish per the 1.3 knowledge note).
 
 
-      WORKTREE mode (CLAIM 6 done + provision_test_db N/A — fabled10x static, no
+      WORKTREE mode (CLAIM 6 done + provision_test_db N/A — travisgautier static, no
 
       Postgres). Slot section-build-log-overhaul-1.4 on branch
 
@@ -878,7 +878,7 @@ completed_sections:
 
       Pipeline run in WORKTREE mode (CLAIM beats 1-7: 6 done + 1 N/A for
 
-      provision_test_db; slot at /home/travis/Projects/fabled10x-worktrees/
+      provision_test_db; slot at /home/travis/Projects/travisgautier.com-worktrees/
 
       section-build-log-overhaul-1.3 on branch section/build-log-overhaul-1.3
 
@@ -888,7 +888,7 @@ completed_sections:
 
       completed_sections entry — manually restored at FIN-23 per never-halt rule.
 
-      PWTC N/A (fabled10x is static — no Postgres). node_modules bind-mounted
+      PWTC N/A (travisgautier is static — no Postgres). node_modules bind-mounted
 
       from main; .env.local symlinked.
 
@@ -1091,7 +1091,7 @@ completed_sections:
 
       ''# Substack embed (email-funnel — supersedes self-hosted Resend funnel)''
 
-      + ''NEXT_PUBLIC_SUBSTACK_EMBED_URL=https://fabled10x.substack.com/embed''.
+      + ''NEXT_PUBLIC_SUBSTACK_EMBED_URL=https://travisgautier.substack.com/embed''.
 
       Mirrors cohort-enrollment-2.2 / storefront-auth-2.x per-source-section
 
@@ -1162,7 +1162,7 @@ completed_sections:
 
       branch section/email-funnel-1.5 from origin/main 601ae42 ef-1.1).
 
-      PWTC N/A (fabled10x has no docker/db infra). Env-symlink loop fell
+      PWTC N/A (travisgautier has no docker/db infra). Env-symlink loop fell
 
       through silently — no .env / .env.local / .env.db in main (static
 
@@ -1184,7 +1184,7 @@ completed_sections:
 
       Operator action items (carried forward from ef-1.1, still outstanding):
 
-      (1) confirm fabled10x.substack.com/embed exists OR create the
+      (1) confirm travisgautier.substack.com/embed exists OR create the
 
       publication; (2) populate NEXT_PUBLIC_SUBSTACK_EMBED_URL in .env.local
 
@@ -1348,7 +1348,7 @@ completed_sections:
 
       branch section/styling-overhaul-7.3 from origin/main 1cb2d4a). PWTC
 
-      N/A (fabled10x has no docker/db infra). Env-symlink loop fell through
+      N/A (travisgautier has no docker/db infra). Env-symlink loop fell through
 
       silently — no .env / .env.local / .env.db in main (static site).
 
@@ -1416,15 +1416,15 @@ completed_sections:
 
       use-client) wrapping Substack embed iframe in Bone edge=subtle p-(--space-5).
 
-      UTM params: utm_source=fabled10x.com, utm_medium=embed,
+      UTM params: utm_source=travisgautier.com, utm_medium=embed,
 
       utm_campaign=pillar:{pillar}, utm_content={source}. iframe title=Subscribe
 
-      to fabled10x on Substack, loading=lazy, className=block w-full
+      to travisgautier on Substack, loading=lazy, className=block w-full
 
       min-h-[150px] bg-(--color-bone) border-0. Fallback (env unset): anchor
 
-      to https://substack.com/@fabled10x with target=_blank rel=noopener,
+      to https://substack.com/@travisgautier with target=_blank rel=noopener,
 
       also wrapped in Bone. Drops buttonLabel and placeholder props (no caller
 
@@ -1486,7 +1486,7 @@ completed_sections:
 
       provision_test_db; slot at $WORKTREES/section-email-funnel-1.1 on branch
 
-      section/email-funnel-1.1 from origin/main 1cb2d4a). PWTC N/A (fabled10x
+      section/email-funnel-1.1 from origin/main 1cb2d4a). PWTC N/A (travisgautier
 
       has no docker/db infra). node_modules bind-mounted; no env files in main
 
@@ -1495,7 +1495,7 @@ completed_sections:
 
       Operator action items (out of TDD scope): (1) confirm publication URL
 
-      at fabled10x.substack.com/embed exists; (2) migrate existing Resend
+      at travisgautier.substack.com/embed exists; (2) migrate existing Resend
 
       audience via CSV export -> Substack import OR ask subscribers to
 
@@ -1607,7 +1607,7 @@ completed_sections:
 
       on branch section/styling-overhaul-7.2 from origin/main ccf153a so-7.1).
 
-      PWTC N/A (fabled10x has no docker/db infra). Env-symlink loop fell
+      PWTC N/A (travisgautier has no docker/db infra). Env-symlink loop fell
 
       through silently — no .env / .env.local / .env.db in main (static site).
 
@@ -1891,7 +1891,7 @@ completed_sections:
 
       on branch section/styling-overhaul-6.3 from origin/main f40160d).
 
-      PWTC N/A (fabled10x has no docker/db infra). Env-symlink loop fell
+      PWTC N/A (travisgautier has no docker/db infra). Env-symlink loop fell
 
       through silently — no .env / .env.local / .env.db in main (static
 
@@ -2222,7 +2222,7 @@ completed_sections:
 
       section/styling-overhaul-5.3 from origin/main e10e344 so-5.2).
 
-      PWTC N/A (fabled10x has no docker/db infra). Env-symlink loop
+      PWTC N/A (travisgautier has no docker/db infra). Env-symlink loop
 
       fell through silently — no .env / .env.local / .env.db in main
 
@@ -2310,7 +2310,7 @@ completed_sections:
       \ 0 tsc errors, production build pass (all pages render).\nNo new skipped tests;\
       \ 60 skipped baseline unchanged.\n\nPipeline run in worktree mode (CLAIM beats\
       \ 1-7 all done, slot at\n$WORKTREES/section-styling-overhaul-5.2 on branch\n\
-      section/styling-overhaul-5.2 from origin/main 48b8645 so-5.1). PWTC\nN/A (fabled10x\
+      section/styling-overhaul-5.2 from origin/main 48b8645 so-5.1). PWTC\nN/A (travisgautier\
       \ has no docker/db infra). Env-symlink loop fell through\nsilently — no .env\
       \ / .env.local / .env.db in main repo (static site).\n\nBlocker cleared: styling-overhaul\
       \ Phase 5 (Component Primitives) is\nnow 2/4 complete (5.1 Button + 5.2 StatusBadge).\
@@ -2620,7 +2620,7 @@ completed_sections:
 
       uses Tailwind `inline-flex items-baseline ${className}` + inline gap
 
-      from sizeScale + aria-label=''Fabled 10X''. Inner <span aria-hidden>
+      from sizeScale + aria-label=''Travis Gautier''. Inner <span aria-hidden>
 
       renders ''FABLED'' in var(--font-display) weight 900 uppercase
 
@@ -4080,7 +4080,7 @@ completed_sections:
 
       shippable standalone. Phase 2.1 (Postgres + Drizzle) is the next
 
-      sa section — first persistence layer in fabled10x.
+      sa section — first persistence layer in travisgautier.
 
       '
   - id: build-in-public-docs-3.1
@@ -4162,7 +4162,7 @@ completed_sections:
     files_new: 8
     files_modified: 4
     pushed: true
-    notes: 'First persistence layer in fabled10x. Establishes 4 Drizzle tables
+    notes: 'First persistence layer in travisgautier. Establishes 4 Drizzle tables
 
       (users/sessions/verification_tokens/purchases) with UNIQUE + FK cascade +
 
@@ -4704,11 +4704,11 @@ completed_sections:
       vertical-rhythm tokens.
 
       '
-notes: 'fabled10x project initialized on 2026-04-11.
+notes: 'travisgautier project initialized on 2026-04-11.
 
   Skills ported from partymasters (see pipeline/TECH-DECISIONS.md).
 
-  Next step: run `/jobbuild` against docs/fabled10x-website-implementation-plan.md
+  Next step: run `/jobbuild` against docs/website-implementation-plan.md
 
   to seed the first job under currentwork/.
 

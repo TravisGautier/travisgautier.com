@@ -1,6 +1,6 @@
 # Video: Opus 4.7 Intro
 
-Working folder for the fabled10x video **"Opus 4.7 Just Dropped. Here's What Actually Changed."**
+Working folder for the travisgautier video **"Opus 4.7 Just Dropped. Here's What Actually Changed."**
 
 Video framing: six-weeks-of-pain opener (rate-limit crisis, Opus 4.6 quality collapse) → Opus 4.7 as the first real reason for hope in weeks. Benchmarks + vibes comparison of Claude Opus 4.7 vs 4.6 vs GPT-5.4 vs Gemini 3.1 Pro. Tokenizer caveat threaded in, not the thesis. Close on Mythos.
 
@@ -33,7 +33,7 @@ Time-sensitive: model dropped April 16, 2026. Window for relevance is ~1 week.
 1. **Length:** 7:00-7:30. Cold open grew to ~0:55 to land the six-weeks-of-pain setup before pivoting to hope.
 2. **Format:** Screen-recording with voiceover. Benchmark tables, terminal output, Claude Code demos as the visual. Face-cam optional for intro/outro only.
 3. **Angle:** Six-weeks-of-pain → hope pivot. Pessimism is the internet's default mood toward Claude right now. This video pushes against that without overclaiming. Release is hours old — we only have hope, not vindication.
-4. **Tone:** Travis's casual/profane spoken voice. Em-dashes fine. Profanity lands naturally where it lands. Avoid AI vocab (delve, navigate, leverage, framework, paradigm, robust, groundbreaking, "testament to," "it's worth noting"). See `feedback_fabled10x_voice.md` in memory.
+4. **Tone:** Travis's casual/profane spoken voice. Em-dashes fine. Profanity lands naturally where it lands. Avoid AI vocab (delve, navigate, leverage, framework, paradigm, robust, groundbreaking, "testament to," "it's worth noting"). See `feedback_travisgautier_voice.md` in memory.
 5. **Mythos angle:** Include as the closing narrative hook. Anthropic shipped 4.7 while conceding it doesn't match their unreleased model. The gap between what they'll sell you and what they have is the story.
 6. **Test-coverage evidence (04-16 partymasters):** 4.6-era sections averaged ~30 tests, 4.7-era ~69. Permission matrix went 8 → 30 on comparable CRUD (ad-6.2 vs ad-7.1). STRIDE density also up. Use in blog, social post, slides. State n=1 caveat honestly.
 7. **LLL crosslink:** Optional. If the durable principle (model benchmarks converge on reasoning, diverge on agentic tasks) generalizes, it could be an LLL entry.

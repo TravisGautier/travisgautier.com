@@ -110,7 +110,7 @@ the homepage hero and a single section-divider variant.
 ### Problem
 
 The brushstroke seam is the visual signature of the channel — the move that
-distinguishes a Fabled 10X surface from any other AI-channel surface in 2026.
+distinguishes a Travis Gautier surface from any other AI-channel surface in 2026.
 If it's implemented inline in the homepage hero, the same composition can't
 be reused in og:images, thumb-preview, or section dividers. The composition
 needs to be a primitive: one SVG mask, one set of props, one place to tune
@@ -411,7 +411,7 @@ describe('brand forbidden-pattern sentinel', () => {
   should see *why*, not just *what*. The pattern name + reason +
   source snippet + file path are enough to triage without searching docs.
 - **Glob via `node:fs/promises`.** Node 22+ ships the async glob in
-  stable; no external dependency. fabled10x is on Node 22 per the project
+  stable; no external dependency. travisgautier is on Node 22 per the project
   baseline.
 
 ### Files

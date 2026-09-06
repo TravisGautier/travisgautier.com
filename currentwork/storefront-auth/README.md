@@ -4,10 +4,10 @@
 
 ## Context
 
-`/products` is the monetization layer of fabled10x.com and the only place on
+`/products` is the monetization layer of travisgautier.com and the only place on
 the site that requires authentication. Everything else — `/episodes`, `/cases`,
 `/tools`, `/about` — stays open. This job is #3 in `docs/future-jobs.md` and
-Phase 2 of `docs/fabled10x-website-implementation-plan.md` under "Products —
+Phase 2 of `docs/website-implementation-plan.md` under "Products —
 Storefront".
 
 The scope is the complete `/products` route tree plus every piece of
@@ -45,7 +45,7 @@ resolved with the user:
 - **Next.js 16.2.3 App Router scaffold** — React 19.2.4, Tailwind 4, strict TS, `@/` → `src/`. (`package.json`, `tsconfig.json`, `next.config.ts`)
 - **Content schemas** — `src/content/schemas/{content-tier,content-pillar,episode,source-material,index}.ts`
 - **Test infra** — Vitest 2.1.8 + jsdom, `@testing-library/jest-dom/vitest` loaded via `src/__tests__/setup.ts`, MSW 2.7 installed, coverage thresholds 70/80/80/80 (`vitest.config.ts`)
-- **Source docs** — `docs/fabled10x-website-implementation-plan.md`, `docs/future-jobs.md`, `docs/fabled10x-brand-identity.md`
+- **Source docs** — `docs/website-implementation-plan.md`, `docs/future-jobs.md`, `docs/brand-identity.md`
 
 ### Delivered by `website-foundation` (prerequisite — NOT YET SHIPPED when this plan is written)
 This job reuses these `wf` outputs and cannot start until they exist.
@@ -91,7 +91,7 @@ This job reuses these `wf` outputs and cannot start until they exist.
 
 **Size guide**: S = few hours, single file. M = half day, 2-3 files. L = full day, 4+ files. XL = multi-day, new content type + loader + UI.
 
-Total rough job size: **XL** — the biggest job in the fabled10x backlog by
+Total rough job size: **XL** — the biggest job in the travisgautier backlog by
 feature count and by the breadth of new infrastructure (DB + auth + payments
 + fulfillment, all net-new).
 
@@ -279,14 +279,14 @@ Required before the matching phase can be verified end-to-end. All are server-on
 
 | Variable                             | Phase | Purpose                                                                |
 |--------------------------------------|-------|------------------------------------------------------------------------|
-| `DATABASE_URL`                       | 2.1   | Postgres connection string, e.g. `postgres://fabled10x:dev@localhost:5432/fabled10x` |
+| `DATABASE_URL`                       | 2.1   | Postgres connection string, e.g. `postgres://travisgautier:dev@localhost:5432/travisgautier` |
 | `POSTGRES_USER`                      | 2.1   | Consumed by `docker-compose.yml` for local dev                         |
 | `POSTGRES_PASSWORD`                  | 2.1   | Consumed by `docker-compose.yml`                                       |
 | `POSTGRES_DB`                        | 2.1   | Consumed by `docker-compose.yml`                                       |
 | `AUTH_SECRET`                        | 2.2   | Random 32-byte secret for Auth.js — generate via `openssl rand -base64 32` |
-| `AUTH_URL`                           | 2.2   | Absolute URL, e.g. `http://localhost:3000` in dev, `https://fabled10x.com` in prod |
+| `AUTH_URL`                           | 2.2   | Absolute URL, e.g. `http://localhost:3000` in dev, `https://travisgautier.com` in prod |
 | `RESEND_API_KEY`                     | 2.2   | Magic-link email sender — already required by `wf` 4.1                 |
-| `AUTH_RESEND_FROM`                   | 2.2   | e.g. `no-reply@fabled10x.com`                                          |
+| `AUTH_RESEND_FROM`                   | 2.2   | e.g. `no-reply@travisgautier.com`                                          |
 | `STRIPE_SECRET_KEY`                  | 3.1   | Stripe API secret key                                                   |
 | `STRIPE_WEBHOOK_SECRET`              | 3.2   | Webhook signature verification                                          |
 | `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | 3.1   | Client-visible key — currently unused (Checkout redirect), kept for Phase 2 of Elements |

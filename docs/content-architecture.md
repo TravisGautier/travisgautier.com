@@ -1,4 +1,4 @@
-# Fabled10X — Content Architecture
+# Travis Gautier — Content Architecture
 
 **Document Version:** 1.0
 **Created:** March 2026
@@ -47,7 +47,7 @@ Office Hours, "Roast My Scope" community episodes, Stack Reviews, case study bre
 - 3,000 dual DJ/rental businesses, only 2 dedicated competitors
 - eWebmin stagnating on 2009 architecture, DJ Intelligence aging after 23 years
 - Competitive research using AI agents (eWebmin analysis, Goodshuffle Pro pricing breakdown at $99 advertised but $217 with add-ons, DJEP migration patterns)
-- Key insight: The first thing a Fabled10X does isn't code — it's research
+- Key insight: The first thing a Travis Gautier does isn't code — it's research
 - Source materials: ewebmin-crm-industry-analysis.md, event-management-software-alternatives-2025.md, dj-intelligence-platform-analysis.md
 
 **Episode 2 — Landing the Client**
@@ -147,7 +147,7 @@ Office Hours, "Roast My Scope" community episodes, Stack Reviews, case study bre
 - Milestone payment trigger — payoff episode
 
 #### ACT 4: "THE FEEDBACK LOOP" (Episodes 18-21)
-*What separates Fabled10X from every other AI build channel.*
+*What separates Travis Gautier from every other AI build channel.*
 
 **Episode 18 — 25 Items of Raw Feedback**
 - Andy's actual feedback document
@@ -250,7 +250,7 @@ Office Hours, "Roast My Scope" community episodes, Stack Reviews, case study bre
 
 **ACT 5: THE JUDGMENT LAYER (Z27–Z34)** — Human-level skills AI can't provide. *The T8 anchor.*
 
-**ACT 6: THE 10X MOMENT (Z35–Z40)** — Shipping as a professional. Managing AI agents. The Fabled10X Pipeline as graduation project.
+**ACT 6: THE 10X MOMENT (Z35–Z40)** — Shipping as a professional. Managing AI agents. The Travis Gautier Pipeline as graduation project.
 
 Full 40-episode list and cross-playlist integration in the linked playlist doc.
 
@@ -270,7 +270,7 @@ Full 40-episode list and cross-playlist integration in the linked playlist doc.
 
 ### "Agent Team Tactics" (AI Workflow Methodology)
 
-*8-episode tactical toolbox. Discrete techniques for managing AI agents as a team, reviewing their output, and producing specific artifact types (schemas, specs, proposals, features). Sister playlist to The Fabled10X Pipeline — Pipeline is the integrated system, this is the tactical building blocks.*
+*8-episode tactical toolbox. Discrete techniques for managing AI agents as a team, reviewing their output, and producing specific artifact types (schemas, specs, proposals, features). Sister playlist to The Travis Gautier Pipeline — Pipeline is the integrated system, this is the tactical building blocks.*
 
 *Full playlist plan with outlines, shot notes, and production checklist: [docs/playlists/agent-team-tactics.md](../playlists/agent-team-tactics.md)*
 
@@ -291,7 +291,7 @@ Full 40-episode list and cross-playlist integration in the linked playlist doc.
 - T7 — "From Wireframe to Working Feature in One Session"
 - T8 — "When AI Fails — The Parts I Had to Fix Myself" *(credibility episode)*
 
-### "The Fabled10X Pipeline" (AI Engineering Methodology)
+### "The Travis Gautier Pipeline" (AI Engineering Methodology)
 
 *15-episode playlist. AI development is the wild west — no standards, no methodology. This is the channel's definitive answer to "how should this actually work?"*
 
@@ -343,7 +343,7 @@ Full 40-episode list and cross-playlist integration in the linked playlist doc.
 - "My client's network of 200 contacts is worth $400K in customer acquisition value."
 - "This single feature — the quote builder — justifies the entire $34K investment."
 
-#### The Fabled10X Pipeline
+#### The Travis Gautier Pipeline
 - "AI development is the wild west. I built 105 checkpoints so my agents can't cut corners." (→ P6)
 - "Everyone's vibecoding. I'm running a TDD pipeline. Here's why my code ships and theirs doesn't." (→ P1)
 - "This YAML file is the difference between AI that codes and AI that engineers." (→ P5)
@@ -366,7 +366,7 @@ Full 40-episode list and cross-playlist integration in the linked playlist doc.
 ### Format
 - **Schedule:** 1-2 nights per week (e.g., Tuesday/Thursday at 9-10 PM)
 - **Duration:** 3-4 hours per session
-- **Visual:** Dark mode everything, minimal clean overlay, small optional facecam, Fabled10X branding widget
+- **Visual:** Dark mode everything, minimal clean overlay, small optional facecam, Travis Gautier branding widget
 - **Audio:** Lo-fi/ambient background music, calm conversational commentary, thinking-out-loud style
 - **Pace:** Slow and real. Not performative. Working with company.
 - **Series name:** "Night Builds" or "Late Night Agents"
@@ -374,7 +374,7 @@ Full 40-episode list and cross-playlist integration in the linked playlist doc.
 ### What Gets Built on Stream
 1. **Real client project features** — connects directly to flagship series
 2. **Community-requested tools** — engagement loop
-3. **Fabled10X internal tools** — digital products being built live
+3. **Travis Gautier internal tools** — digital products being built live
 4. **Pipeline runs** — run `/pipeline` on a real section start-to-finish, audience watches discovery → red → green → refactor → finish in real time. Clip highlights for Pipeline sub-series episodes and Shorts
 
 ### Stream Layout (OBS Scenes)
