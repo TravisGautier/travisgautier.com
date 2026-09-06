@@ -6,6 +6,7 @@ import { Container } from '@/components/site/Container';
 import { MarkdownDocument } from '@/components/build-log/MarkdownDocument';
 import { PhaseNav } from '@/components/build-log/PhaseNav';
 import { getAllJobs, getJobBySlug } from '@/lib/build-log/jobs';
+import { site, publisherJsonLd } from '@/lib/site';
 
 export const dynamicParams = false;
 
@@ -65,16 +66,12 @@ export default async function JobPage({
     '@type': 'TechArticle',
     headline: job.title,
     description,
-    url: `https://fabled10x.com/build-log/jobs/${slug}`,
-    author: {
-      '@type': 'Organization',
-      name: 'Fabled10X',
-      url: 'https://fabled10x.com',
-    },
+    url: `${site.url}/build-log/jobs/${slug}`,
+    author: publisherJsonLd(),
     isPartOf: {
       '@type': 'CollectionPage',
       name: 'Build log',
-      url: 'https://fabled10x.com/build-log',
+      url: `${site.url}/build-log`,
     },
   };
 

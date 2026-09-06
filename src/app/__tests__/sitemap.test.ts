@@ -22,6 +22,7 @@ import { getAllJobs } from '@/lib/build-log/jobs';
 import { getAllProducts } from '@/lib/content/products';
 import { getAllCohorts } from '@/lib/content/cohorts';
 import sitemap from '../sitemap';
+import { site } from '@/lib/site';
 
 const mockGetAllEpisodes = vi.mocked(getAllEpisodes);
 const mockGetAllCases = vi.mocked(getAllCases);
@@ -152,27 +153,27 @@ describe('sitemap', () => {
   it('unit_sitemap_includes_static_routes', async () => {
     const result = await sitemap();
     const urls = result.map((r) => r.url);
-    expect(urls).toContain('https://fabled10x.com/');
-    expect(urls).toContain('https://fabled10x.com/episodes');
-    expect(urls).toContain('https://fabled10x.com/cases');
-    expect(urls).toContain('https://fabled10x.com/about');
+    expect(urls).toContain(`${site.url}/`);
+    expect(urls).toContain(`${site.url}/episodes`);
+    expect(urls).toContain(`${site.url}/cases`);
+    expect(urls).toContain(`${site.url}/about`);
   });
 
   it('unit_sitemap_includes_episodes', async () => {
     const result = await sitemap();
     const urls = result.map((r) => r.url);
-    expect(urls).toContain('https://fabled10x.com/episodes/ep-slug');
+    expect(urls).toContain(`${site.url}/episodes/ep-slug`);
   });
 
   it('unit_sitemap_includes_cases', async () => {
     const result = await sitemap();
     const urls = result.map((r) => r.url);
-    expect(urls).toContain('https://fabled10x.com/cases/case-slug');
+    expect(urls).toContain(`${site.url}/cases/case-slug`);
   });
 
   it('unit_sitemap_lastModified_from_publishedAt', async () => {
     const result = await sitemap();
-    const ep = result.find((r) => r.url === 'https://fabled10x.com/episodes/ep-slug');
+    const ep = result.find((r) => r.url === `${site.url}/episodes/ep-slug`);
     expect(ep?.lastModified).toBeInstanceOf(Date);
     expect((ep!.lastModified as Date).toISOString()).toBe('2026-03-15T00:00:00.000Z');
   });
@@ -180,7 +181,7 @@ describe('sitemap', () => {
   it('unit_sitemap_all_absolute_urls', async () => {
     const result = await sitemap();
     result.forEach((entry) => {
-      expect(entry.url).toMatch(/^https:\/\/fabled10x\.com\//);
+      expect(entry.url).toMatch(/^https:\/\/travisgautier\.com\//);
     });
   });
 
@@ -207,13 +208,13 @@ describe('sitemap', () => {
     // 4 pre-existing static routes + 2 build-log static routes + 1 products + 1 cohorts static route
     expect(result).toHaveLength(8);
     const urls = result.map((r) => r.url);
-    expect(urls).toContain('https://fabled10x.com/');
-    expect(urls).toContain('https://fabled10x.com/episodes');
-    expect(urls).toContain('https://fabled10x.com/cases');
-    expect(urls).toContain('https://fabled10x.com/about');
-    expect(urls).toContain('https://fabled10x.com/build-log');
-    expect(urls).toContain('https://fabled10x.com/build-log/status');
-    expect(urls).toContain('https://fabled10x.com/cohorts');
+    expect(urls).toContain(`${site.url}/`);
+    expect(urls).toContain(`${site.url}/episodes`);
+    expect(urls).toContain(`${site.url}/cases`);
+    expect(urls).toContain(`${site.url}/about`);
+    expect(urls).toContain(`${site.url}/build-log`);
+    expect(urls).toContain(`${site.url}/build-log/status`);
+    expect(urls).toContain(`${site.url}/cohorts`);
   });
 
   // --- Phase 3.1: Build-log routes ---
@@ -221,26 +222,26 @@ describe('sitemap', () => {
   it('int_sitemap_includes_build_log_index', async () => {
     const result = await sitemap();
     const urls = result.map((r) => r.url);
-    expect(urls).toContain('https://fabled10x.com/build-log');
+    expect(urls).toContain(`${site.url}/build-log`);
   });
 
   it('int_sitemap_includes_build_log_status', async () => {
     const result = await sitemap();
     const urls = result.map((r) => r.url);
-    expect(urls).toContain('https://fabled10x.com/build-log/status');
+    expect(urls).toContain(`${site.url}/build-log/status`);
   });
 
   it('int_sitemap_includes_job_urls', async () => {
     const result = await sitemap();
     const urls = result.map((r) => r.url);
-    expect(urls).toContain('https://fabled10x.com/build-log/jobs/website-foundation');
+    expect(urls).toContain(`${site.url}/build-log/jobs/website-foundation`);
   });
 
   it('int_sitemap_includes_phase_urls', async () => {
     const result = await sitemap();
     const urls = result.map((r) => r.url);
-    expect(urls).toContain('https://fabled10x.com/build-log/jobs/website-foundation/phase-1-foundation');
-    expect(urls).toContain('https://fabled10x.com/build-log/jobs/website-foundation/phase-2-content-loader');
+    expect(urls).toContain(`${site.url}/build-log/jobs/website-foundation/phase-1-foundation`);
+    expect(urls).toContain(`${site.url}/build-log/jobs/website-foundation/phase-2-content-loader`);
   });
 
   it('infra_sitemap_no_duplicate_urls', async () => {
@@ -255,22 +256,22 @@ describe('sitemap', () => {
     mockGetAllProducts.mockResolvedValue([] as unknown as Awaited<ReturnType<typeof getAllProducts>>);
     const result = await sitemap();
     const urls = result.map((r) => r.url);
-    expect(urls).toContain('https://fabled10x.com/build-log');
-    expect(urls).toContain('https://fabled10x.com/build-log/status');
+    expect(urls).toContain(`${site.url}/build-log`);
+    expect(urls).toContain(`${site.url}/build-log/status`);
     expect(urls.filter((u) => u.includes('/build-log/jobs/'))).toEqual([]);
   });
 
   it('data_sitemap_all_absolute', async () => {
     const result = await sitemap();
     result.forEach((entry) => {
-      expect(entry.url).toMatch(/^https:\/\/fabled10x\.com\//);
+      expect(entry.url).toMatch(/^https:\/\/travisgautier\.com\//);
     });
   });
 
   it('edge_sitemap_missing_publishedAt', async () => {
     mockGetAllEpisodes.mockResolvedValue([MOCK_EPISODE_NO_DATE]);
     const result = await sitemap();
-    const ep = result.find((r) => r.url === 'https://fabled10x.com/episodes/ep-no-date');
+    const ep = result.find((r) => r.url === `${site.url}/episodes/ep-no-date`);
     expect(ep).toBeDefined();
     // lastModified should be undefined, NOT Invalid Date or NaN
     if (ep?.lastModified !== undefined) {
@@ -284,14 +285,14 @@ describe('sitemap', () => {
   it('unit_sitemap_includes_products_static', async () => {
     const result = await sitemap();
     const urls = result.map((r) => r.url);
-    expect(urls).toContain('https://fabled10x.com/products');
+    expect(urls).toContain(`${site.url}/products`);
   });
 
   it('unit_sitemap_includes_product_urls', async () => {
     const result = await sitemap();
     const urls = result.map((r) => r.url);
-    expect(urls).toContain('https://fabled10x.com/products/workflow-templates');
-    expect(urls).toContain('https://fabled10x.com/products/discovery-toolkit');
+    expect(urls).toContain(`${site.url}/products/workflow-templates`);
+    expect(urls).toContain(`${site.url}/products/discovery-toolkit`);
   });
 
   it('unit_sitemap_excludes_gated_routes', async () => {
@@ -307,20 +308,20 @@ describe('sitemap', () => {
   it('int_sitemap_still_includes_episodes_with_products', async () => {
     const result = await sitemap();
     const urls = result.map((r) => r.url);
-    expect(urls).toContain('https://fabled10x.com/episodes/ep-slug');
+    expect(urls).toContain(`${site.url}/episodes/ep-slug`);
   });
 
   it('int_sitemap_still_includes_cases_with_products', async () => {
     const result = await sitemap();
     const urls = result.map((r) => r.url);
-    expect(urls).toContain('https://fabled10x.com/cases/case-slug');
+    expect(urls).toContain(`${site.url}/cases/case-slug`);
   });
 
   it('edge_sitemap_empty_products', async () => {
     mockGetAllProducts.mockResolvedValue([] as unknown as Awaited<ReturnType<typeof getAllProducts>>);
     const result = await sitemap();
     const urls = result.map((r) => r.url);
-    expect(urls).toContain('https://fabled10x.com/products');
+    expect(urls).toContain(`${site.url}/products`);
     expect(urls.filter((u) => u.includes('/products/'))).toEqual([]);
   });
 
@@ -329,7 +330,7 @@ describe('sitemap', () => {
     const productUrls = result.filter((r) => r.url.includes('/products/')).map((r) => r.url);
     expect(productUrls.length).toBeGreaterThan(0);
     productUrls.forEach((url) => {
-      expect(url).toMatch(/^https:\/\/fabled10x\.com\//);
+      expect(url).toMatch(/^https:\/\/travisgautier\.com\//);
     });
   });
 
@@ -338,14 +339,14 @@ describe('sitemap', () => {
   it('integration_sitemap_contains_cohorts_index', async () => {
     const result = await sitemap();
     const urls = result.map((r) => r.url);
-    expect(urls).toContain('https://fabled10x.com/cohorts');
+    expect(urls).toContain(`${site.url}/cohorts`);
   });
 
   it('integration_sitemap_contains_per_cohort_urls', async () => {
     const result = await sitemap();
     const urls = result.map((r) => r.url);
-    expect(urls).toContain('https://fabled10x.com/cohorts/ai-delivery-2026-q3');
-    expect(urls).toContain('https://fabled10x.com/cohorts/workflow-mastery-2026-q4');
+    expect(urls).toContain(`${site.url}/cohorts/ai-delivery-2026-q3`);
+    expect(urls).toContain(`${site.url}/cohorts/workflow-mastery-2026-q4`);
   });
 
   it('infra_sitemap_excludes_gated_apply_routes', async () => {
@@ -384,7 +385,7 @@ describe('sitemap', () => {
     mockGetAllCohorts.mockResolvedValue([] as unknown as Awaited<ReturnType<typeof getAllCohorts>>);
     const result = await sitemap();
     const urls = result.map((r) => r.url);
-    expect(urls).toContain('https://fabled10x.com/cohorts');
+    expect(urls).toContain(`${site.url}/cohorts`);
     expect(urls.filter((u) => u.match(/\/cohorts\/[^/]+$/))).toEqual([]);
   });
 

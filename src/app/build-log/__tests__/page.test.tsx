@@ -73,6 +73,7 @@ import { getAllJobs } from '@/lib/build-log/jobs';
 import { getJobsRollup } from '@/lib/build-log/pipeline-state';
 import BuildLogIndexPage, { metadata } from '../page';
 import type { Job, JobRollupEntry } from '@/content/schemas';
+import { site } from '@/lib/site';
 
 const mockGetAllJobs = vi.mocked(getAllJobs);
 const mockGetJobsRollup = vi.mocked(getJobsRollup);
@@ -303,7 +304,7 @@ describe('/build-log index page', () => {
     const script = container.querySelector('script[type="application/ld+json"]');
     const payload = JSON.parse(script!.innerHTML);
     expect(payload.name).toBe('Build log');
-    expect(payload.url).toBe('https://fabled10x.com/build-log');
+    expect(payload.url).toBe(`${site.url}/build-log`);
   });
 
   it('infra_index_json_ld_valid_json', async () => {
@@ -329,9 +330,9 @@ describe('/build-log index page', () => {
     const { container } = await renderPage();
     const script = container.querySelector('script[type="application/ld+json"]');
     const payload = JSON.parse(script!.innerHTML);
-    expect(payload.url).toMatch(/^https:\/\/fabled10x\.com\//);
+    expect(payload.url).toMatch(/^https:\/\/travisgautier\.com\//);
     if (payload.isPartOf?.url) {
-      expect(payload.isPartOf.url).toMatch(/^https:\/\/fabled10x\.com/);
+      expect(payload.isPartOf.url).toMatch(/^https:\/\/travisgautier\.com/);
     }
   });
 

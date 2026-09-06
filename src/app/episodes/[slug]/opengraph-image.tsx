@@ -7,6 +7,7 @@ import {
   scaleTitle,
 } from '@/lib/og/og-image';
 import { getEpisodeBySlug } from '@/lib/content/episodes';
+import { site } from '@/lib/site';
 
 export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
@@ -19,7 +20,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
   if (!entry) {
     return new ImageResponse(
       buildOgComposition({
-        tag: 'fabled10x',
+        tag: site.domain,
         titleLines: ['Episode'],
         accent: '?',
         fontSize: 72,

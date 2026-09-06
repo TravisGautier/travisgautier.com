@@ -65,6 +65,7 @@ import { render, screen } from '@testing-library/react';
 import { describe, it, expect, beforeEach } from 'vitest';
 import { notFound } from 'next/navigation';
 import { getAllCohorts, getCohortBySlug } from '@/lib/content/cohorts';
+import { site } from '@/lib/site';
 import CohortDetailPage, {
   dynamicParams,
   generateStaticParams,
@@ -269,7 +270,7 @@ describe('CohortDetailPage (styling-overhaul-7.5) — brand reskin', () => {
 
     const provider = ld.provider as Record<string, unknown>;
     expect(provider['@type']).toBe('Organization');
-    expect(provider.name).toBe('Fabled10X');
+    expect(provider.name).toBe(site.name);
 
     const ci = ld.hasCourseInstance as Record<string, unknown>;
     expect(ci['@type']).toBe('CourseInstance');

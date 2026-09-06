@@ -77,6 +77,7 @@ import PhasePage, {
   generateStaticParams,
 } from '../page';
 import type { Job, JobPhase } from '@/content/schemas';
+import { site } from '@/lib/site';
 
 const mockGetAllJobs = vi.mocked(getAllJobs);
 const mockGetJobBySlug = vi.mocked(getJobBySlug);
@@ -346,7 +347,7 @@ describe('/build-log/jobs/[slug]/[phase] page', () => {
     const script = container.querySelector('script[type="application/ld+json"]');
     const payload = JSON.parse(script!.innerHTML);
     expect(payload.isPartOf?.['@type']).toBe('TechArticle');
-    expect(payload.isPartOf?.url).toBe('https://fabled10x.com/build-log/jobs/demo-job');
+    expect(payload.isPartOf?.url).toBe(`${site.url}/build-log/jobs/demo-job`);
   });
 
   it('infra_phase_detail_json_ld_valid_json', async () => {
@@ -363,7 +364,7 @@ describe('/build-log/jobs/[slug]/[phase] page', () => {
     const { container } = await renderPage('demo-job', 'phase-1-foundation');
     const script = container.querySelector('script[type="application/ld+json"]');
     const payload = JSON.parse(script!.innerHTML);
-    expect(payload.isPartOf?.url).toMatch(/^https:\/\/fabled10x\.com\//);
+    expect(payload.isPartOf?.url).toMatch(/^https:\/\/travisgautier\.com\//);
   });
 
   it('sec_information_disclosure_phase_body_no_executable_script', async () => {

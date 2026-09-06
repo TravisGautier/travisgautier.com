@@ -15,6 +15,7 @@ vi.mock('next/link', () => ({
 import { render, screen } from '@testing-library/react';
 import { metadata } from '../layout';
 import RootLayout from '../layout';
+import { site } from '@/lib/site';
 
 // metadata.icons shapes for assertion (Next.js IconDescriptor).
 interface IconEntry {
@@ -79,7 +80,7 @@ describe('layout metadata.icons (styling-overhaul-8.1)', () => {
   /// Tests checklist item: 9 — integration: existing metadata preserved alongside icons
   it('i_metadata_preserves_existing_fields_alongside_icons: metadataBase/openGraph/twitter/robots/title/description intact', () => {
     expect(metadata.metadataBase).toBeInstanceOf(URL);
-    expect((metadata.title as { default: string }).default).toBe('fabled10x');
+    expect((metadata.title as { default: string }).default).toBe(site.name);
     expect(metadata.description).toBe('One person. An agent team. Full SaaS delivery.');
     expect(metadata.openGraph).toBeDefined();
     expect(metadata.twitter).toBeDefined();

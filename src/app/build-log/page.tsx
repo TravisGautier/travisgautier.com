@@ -6,25 +6,26 @@ import { JobCard } from '@/components/build-log/JobCard';
 import { JobsRollupTable } from '@/components/build-log/JobsRollupTable';
 import { getAllJobs } from '@/lib/build-log/jobs';
 import { getJobsRollup } from '@/lib/build-log/pipeline-state';
+import { site } from '@/lib/site';
 
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'Build log',
   description:
-    "A live view of the agent-driven build process behind fabled10x.com — every job plan, every phase, every section the TDD pipeline has shipped or is about to ship.",
+    `A live view of the agent-driven build process behind ${site.domain} — every job plan, every phase, every section the TDD pipeline has shipped or is about to ship.`,
   openGraph: {
-    title: 'Build log · fabled10x',
+    title: `Build log · ${site.name}`,
     description:
-      'The agent-driven build process behind fabled10x.com, rendered as published content.',
+      `The agent-driven build process behind ${site.domain}, rendered as published content.`,
     type: 'website',
     url: '/build-log',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Build log · fabled10x',
+    title: `Build log · ${site.name}`,
     description:
-      'The agent-driven build process behind fabled10x.com, rendered as published content.',
+      `The agent-driven build process behind ${site.domain}, rendered as published content.`,
   },
   alternates: {
     canonical: '/build-log',
@@ -36,12 +37,12 @@ const jsonLd = {
   '@type': 'CollectionPage',
   name: 'Build log',
   description:
-    'The agent-driven build process behind fabled10x.com, rendered as published content.',
-  url: 'https://fabled10x.com/build-log',
+    `The agent-driven build process behind ${site.domain}, rendered as published content.`,
+  url: `${site.url}/build-log`,
   isPartOf: {
     '@type': 'WebSite',
-    name: 'fabled10x',
-    url: 'https://fabled10x.com',
+    name: site.name,
+    url: site.url,
   },
 };
 
@@ -117,7 +118,7 @@ export default async function BuildLogIndexPage() {
             <span className="label">Build Log</span>
             <h1 className="display-1 mt-(--space-3)">Build log</h1>
             <p className="body-1 mt-(--space-4) max-w-prose text-(--color-muted)">
-              The agent-driven build process behind fabled10x.com, rendered as
+              The agent-driven build process behind {site.domain}, rendered as
               published content. Every job has a plan, every plan has phases,
               every phase has features the TDD pipeline ships through.
             </p>

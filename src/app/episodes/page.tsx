@@ -3,11 +3,12 @@ import { EditorialCard, Marble, Section } from '@/components/brand';
 import { Container } from '@/components/site/Container';
 import { getAllEpisodes } from '@/lib/content/episodes';
 import { toRoman } from '@/lib/format/roman';
+import { site } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Episodes',
   description:
-    'The full Fabled10X episode archive — flagship series, playbooks, shorts, and livestreams.',
+    `The full ${site.name} episode archive — flagship series, playbooks, shorts, and livestreams.`,
 };
 
 export default async function EpisodesIndex() {

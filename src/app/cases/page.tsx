@@ -3,11 +3,12 @@ import { EditorialCard, Marble, Section } from '@/components/brand';
 import { Container } from '@/components/site/Container';
 import { getAllCases } from '@/lib/content/cases';
 import { CASE_STATUS_LABELS } from '@/content/schemas';
+import { site } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Case Studies',
   description:
-    'Full documented project histories of Fabled10X client work — the proof layer behind the channel narrative.',
+    `Full documented project histories of ${site.name} client work — the proof layer behind the channel narrative.`,
 };
 
 export default async function CasesIndex() {

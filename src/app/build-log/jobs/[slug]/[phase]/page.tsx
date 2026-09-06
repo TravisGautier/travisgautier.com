@@ -6,6 +6,7 @@ import { Container } from '@/components/site/Container';
 import { MarkdownDocument } from '@/components/build-log/MarkdownDocument';
 import { PhaseNav } from '@/components/build-log/PhaseNav';
 import { getAllJobs, getJobBySlug, getJobPhase } from '@/lib/build-log/jobs';
+import { site, publisherJsonLd } from '@/lib/site';
 
 export const dynamicParams = false;
 
@@ -88,16 +89,12 @@ export default async function PhasePage({
     '@type': 'TechArticle',
     headline: `${phaseTitle} · ${job.title}`,
     description: phaseDescription(ph, job.title),
-    url: `https://fabled10x.com/build-log/jobs/${slug}/${phase}`,
-    author: {
-      '@type': 'Organization',
-      name: 'Fabled10X',
-      url: 'https://fabled10x.com',
-    },
+    url: `${site.url}/build-log/jobs/${slug}/${phase}`,
+    author: publisherJsonLd(),
     isPartOf: {
       '@type': 'TechArticle',
       name: job.title,
-      url: `https://fabled10x.com/build-log/jobs/${slug}`,
+      url: `${site.url}/build-log/jobs/${slug}`,
     },
   };
 

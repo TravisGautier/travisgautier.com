@@ -71,6 +71,7 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import { notFound } from 'next/navigation';
 import { getAllCases, getCaseBySlug } from '@/lib/content/cases';
 import { getAllEpisodes } from '@/lib/content/episodes';
+import { site } from '@/lib/site';
 import CaseDetail, {
   dynamicParams,
   generateStaticParams,
@@ -451,8 +452,8 @@ describe('CaseDetail (styling-overhaul-7.3) — brand reskin', () => {
     expect(parsed.name).toBe('Test Case Title');
     expect(parsed.creator).toBeDefined();
     expect(parsed.creator['@type']).toBe('Organization');
-    expect(parsed.creator.name).toBe('Fabled10X');
-    expect(parsed.creator.url).toBe('https://fabled10x.com');
+    expect(parsed.creator.name).toBe(site.name);
+    expect(parsed.creator.url).toBe(`${site.url}`);
     expect(parsed.about).toBe('Test Client LLC');
   });
 

@@ -15,25 +15,26 @@ vi.mock('next/link', () => ({
 import { render, screen } from '@testing-library/react';
 import { metadata } from '../layout';
 import RootLayout from '../layout';
+import { site } from '@/lib/site';
 
 describe('layout metadata', () => {
   // --- Unit: metadataBase ---
 
   it('unit_metadata_base_url', () => {
     expect(metadata.metadataBase).toBeInstanceOf(URL);
-    expect(metadata.metadataBase?.toString()).toBe('https://fabled10x.com/');
+    expect(metadata.metadataBase?.toString()).toBe(`${site.url}/`);
   });
 
   // --- Unit: title template ---
 
   it('unit_metadata_title_default', () => {
     const title = metadata.title as { default: string; template: string };
-    expect(title.default).toBe('fabled10x');
+    expect(title.default).toBe('Travis Gautier');
   });
 
   it('unit_metadata_title_template', () => {
     const title = metadata.title as { default: string; template: string };
-    expect(title.template).toBe('%s · fabled10x');
+    expect(title.template).toBe(site.titleTemplate);
   });
 
   // --- Integration: description preserved ---
@@ -54,7 +55,7 @@ describe('layout metadata', () => {
       images?: Array<string | { url: string }> | string | { url: string };
     };
     expect(og.type).toBe('website');
-    expect(og.siteName).toBe('fabled10x');
+    expect(og.siteName).toBe(site.name);
     expect(og.images).toBeDefined();
   });
 
@@ -62,7 +63,7 @@ describe('layout metadata', () => {
     expect(metadata.twitter).toBeDefined();
     const twitter = metadata.twitter as { card?: string; creator?: string };
     expect(twitter.card).toBe('summary_large_image');
-    expect(twitter.creator).toMatch(/Fabled10X/i);
+    expect(twitter.creator).toBe(site.twitterHandle);
   });
 
   it('unit_layout_metadata_robots', () => {

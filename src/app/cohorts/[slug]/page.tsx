@@ -6,6 +6,7 @@ import { Container } from '@/components/site/Container';
 import { getAllCohorts, getCohortBySlug } from '@/lib/content/cohorts';
 import { CohortDetailHero } from '@/components/cohorts/CohortDetailHero';
 import { WaitlistForm } from '@/components/cohorts/WaitlistForm';
+import { publisherJsonLd } from '@/lib/site';
 
 type RouteParams = {
   params: Promise<{ slug: string }>;
@@ -48,11 +49,7 @@ export default async function CohortDetailPage({ params }: RouteParams) {
     '@type': 'Course',
     name: meta.title,
     description: meta.summary,
-    provider: {
-      '@type': 'Organization',
-      name: 'Fabled10X',
-      url: 'https://fabled10x.com',
-    },
+    provider: publisherJsonLd(),
     hasCourseInstance: {
       '@type': 'CourseInstance',
       courseMode: 'Online',

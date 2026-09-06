@@ -7,6 +7,7 @@ import {
   scaleTitle,
 } from '@/lib/og/og-image';
 import { getCaseBySlug } from '@/lib/content/cases';
+import { site } from '@/lib/site';
 
 export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
@@ -20,7 +21,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
     return new ImageResponse(
       buildOgComposition({
         tag: 'Case',
-        titleLines: ['fabled10x'],
+        titleLines: [site.name],
         accent: '.',
         fontSize: 72,
       }),

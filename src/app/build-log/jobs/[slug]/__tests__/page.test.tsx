@@ -79,6 +79,7 @@ import JobPage, {
   generateStaticParams,
 } from '../page';
 import type { Job, JobPhase } from '@/content/schemas';
+import { site } from '@/lib/site';
 
 const mockGetAllJobs = vi.mocked(getAllJobs);
 const mockGetJobBySlug = vi.mocked(getJobBySlug);
@@ -289,7 +290,7 @@ describe('/build-log/jobs/[slug] page', () => {
     const script = container.querySelector('script[type="application/ld+json"]');
     const payload = JSON.parse(script!.innerHTML);
     expect(payload.isPartOf?.['@type']).toBe('CollectionPage');
-    expect(payload.isPartOf?.url).toBe('https://fabled10x.com/build-log');
+    expect(payload.isPartOf?.url).toBe(`${site.url}/build-log`);
   });
 
   it('infra_job_overview_json_ld_valid_json', async () => {
@@ -304,7 +305,7 @@ describe('/build-log/jobs/[slug] page', () => {
     const { container } = await renderPage('demo-job');
     const script = container.querySelector('script[type="application/ld+json"]');
     const payload = JSON.parse(script!.innerHTML);
-    expect(payload.url).toMatch(/^https:\/\/fabled10x\.com\//);
+    expect(payload.url).toMatch(/^https:\/\/travisgautier\.com\//);
   });
 
   it('data_job_overview_metadata_canonical_relative', async () => {

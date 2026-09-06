@@ -4,6 +4,7 @@ import { Marble, Section } from '@/components/brand';
 import { Container } from '@/components/site/Container';
 import { BuyButton } from '@/components/products/BuyButton';
 import { getAllProducts, getProductBySlug } from '@/lib/content/products';
+import { site } from '@/lib/site';
 import {
   PRODUCT_CATEGORY_LABELS,
   PRODUCT_LICENSE_LABELS,
@@ -65,13 +66,13 @@ export default async function ProductDetailPage({ params }: PageProps) {
     description: meta.summary,
     category: PRODUCT_CATEGORY_LABELS[meta.category],
     ...(meta.heroImageUrl ? { image: meta.heroImageUrl } : {}),
-    brand: { '@type': 'Brand', name: 'Fabled10X' },
+    brand: { '@type': 'Brand', name: site.name },
     offers: {
       '@type': 'Offer',
       price: (meta.priceCents / 100).toFixed(2),
       priceCurrency: meta.currency.toUpperCase(),
       availability: 'https://schema.org/InStock',
-      url: `https://fabled10x.com/products/${meta.slug}`,
+      url: `${site.url}/products/${meta.slug}`,
     },
   };
 

@@ -11,25 +11,26 @@ import {
 } from '@/lib/build-log/pipeline-state';
 import { getLiveWorktrees } from '@/lib/build-log/worktree-state';
 import { extractSectionId } from '@/lib/build-log/normalize';
+import { site } from '@/lib/site';
 
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'Pipeline status · Build log',
   description:
-    'Live view of the fabled10x TDD pipeline — current section, completed sections, and per-job progress, read directly from session.yaml at build time.',
+    `Live view of the ${site.name} TDD pipeline — current section, completed sections, and per-job progress, read directly from session.yaml at build time.`,
   openGraph: {
-    title: 'Pipeline status · fabled10x',
+    title: `Pipeline status · ${site.name}`,
     description:
-      'Live view of the fabled10x TDD pipeline — current section, completed sections, and per-job progress.',
+      `Live view of the ${site.name} TDD pipeline — current section, completed sections, and per-job progress.`,
     type: 'website',
     url: '/build-log/status',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pipeline status · fabled10x',
+    title: `Pipeline status · ${site.name}`,
     description:
-      'Live view of the fabled10x TDD pipeline — current section, completed sections, per-job progress.',
+      `Live view of the ${site.name} TDD pipeline — current section, completed sections, per-job progress.`,
   },
   alternates: {
     canonical: '/build-log/status',
@@ -41,12 +42,12 @@ const jsonLd = {
   '@type': 'CollectionPage',
   name: 'Pipeline status',
   description:
-    'Live view of the fabled10x TDD pipeline — current section, completed sections, and per-job progress.',
-  url: 'https://fabled10x.com/build-log/status',
+    `Live view of the ${site.name} TDD pipeline — current section, completed sections, and per-job progress.`,
+  url: `${site.url}/build-log/status`,
   isPartOf: {
     '@type': 'WebSite',
-    name: 'fabled10x',
-    url: 'https://fabled10x.com',
+    name: site.name,
+    url: site.url,
   },
 };
 

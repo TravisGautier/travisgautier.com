@@ -71,6 +71,7 @@ import {
 } from '@/lib/build-log/pipeline-state';
 import { getLiveWorktrees } from '@/lib/build-log/worktree-state';
 import StatusPage, { metadata } from '../page';
+import { site } from '@/lib/site';
 import type {
   SessionStatus,
   KnowledgeFile,
@@ -132,7 +133,7 @@ function makeSession(overrides: Partial<SessionStatus> = {}): SessionStatus {
 function makeKnowledge(overrides: Partial<KnowledgeFile> = {}): KnowledgeFile {
   return {
     version: 1,
-    project: 'fabled10x',
+    project: 'travisgautier',
     description: undefined,
     projectContext: undefined,
     openQuestions: undefined,
@@ -432,7 +433,7 @@ describe('/build-log/status page', () => {
     const payload = JSON.parse(script!.innerHTML);
     expect(payload['@type']).toBe('CollectionPage');
     expect(payload.name).toBe('Pipeline status');
-    expect(payload.url).toBe('https://fabled10x.com/build-log/status');
+    expect(payload.url).toBe(`${site.url}/build-log/status`);
   });
 
   it('infra_status_json_ld_valid_json', async () => {

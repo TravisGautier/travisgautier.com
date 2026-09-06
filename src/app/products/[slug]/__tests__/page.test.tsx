@@ -58,6 +58,7 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import { notFound } from 'next/navigation';
 import { getAllProducts, getProductBySlug } from '@/lib/content/products';
 import { PRODUCT_CATEGORY_LABELS, PRODUCT_LICENSE_LABELS } from '@/content/schemas';
+import { site } from '@/lib/site';
 import ProductDetailPage, {
   dynamicParams,
   generateStaticParams,
@@ -268,13 +269,13 @@ describe('ProductDetailPage (styling-overhaul-7.5) — brand reskin', () => {
       PRODUCT_CATEGORY_LABELS[MOCK_PRODUCT_FULL.meta.category],
     );
     expect(parsed.brand).toBeDefined();
-    expect(parsed.brand.name).toBe('Fabled10X');
+    expect(parsed.brand.name).toBe(site.name);
     expect(parsed.offers).toBeDefined();
     expect(parsed.offers.price).toBe('49.00');
     expect(parsed.offers.priceCurrency).toBe('USD');
     expect(parsed.offers.availability).toBe('https://schema.org/InStock');
     expect(parsed.offers.url).toBe(
-      'https://fabled10x.com/products/alpha-product',
+      `${site.url}/products/alpha-product`,
     );
   });
 

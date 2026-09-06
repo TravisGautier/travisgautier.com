@@ -3,6 +3,7 @@ import { Cinzel, Inter, JetBrains_Mono } from "next/font/google";
 import { Header } from '@/components/site/Header';
 import { Footer } from '@/components/site/Footer';
 import "./globals.css";
+import { site } from '@/lib/site';
 
 const cinzel = Cinzel({
   variable: "--font-display",
@@ -26,12 +27,12 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://fabled10x.com'),
+  metadataBase: new URL(site.url),
   title: {
-    default: 'fabled10x',
-    template: '%s · fabled10x',
+    default: site.name,
+    template: site.titleTemplate,
   },
-  description: 'One person. An agent team. Full SaaS delivery.',
+  description: site.tagline,
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
@@ -42,12 +43,12 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    siteName: 'fabled10x',
+    siteName: site.name,
     images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',
-    creator: '@Fabled10X',
+    creator: site.twitterHandle,
   },
   robots: {
     index: true,

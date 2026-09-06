@@ -4,13 +4,14 @@ import { Bone, Marble, Section } from '@/components/brand';
 import { Container } from '@/components/site/Container';
 import { getCohortBuckets } from '@/lib/content/cohorts';
 import { CohortCard } from '@/components/cohorts/CohortCard';
+import { site } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Cohorts',
   description:
-    'Join a Fabled10X cohort — intensive programs for solo consultants and small agencies running AI-driven delivery workflows.',
+    `Join a ${site.name} cohort — intensive programs for solo consultants and small agencies running AI-driven delivery workflows.`,
   openGraph: {
-    title: 'Fabled10X Cohorts',
+    title: `${site.name} Cohorts`,
     description:
       'Intensive programs for solo consultants and small agencies running AI-driven delivery workflows.',
   },

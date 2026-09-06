@@ -8,6 +8,7 @@ import { LllCrosslinks } from '@/components/crosslinks/LllCrosslinks';
 import { getAllCases, getCaseBySlug } from '@/lib/content/cases';
 import { getAllEpisodes } from '@/lib/content/episodes';
 import { CASE_STATUS_LABELS } from '@/content/schemas';
+import { publisherJsonLd } from '@/lib/site';
 
 export const dynamicParams = false;
 
@@ -82,11 +83,7 @@ export default async function CaseDetail({
     '@type': 'CreativeWork',
     name: meta.title,
     description: meta.summary,
-    creator: {
-      '@type': 'Organization',
-      name: 'Fabled10X',
-      url: 'https://fabled10x.com',
-    },
+    creator: publisherJsonLd(),
     about: meta.client,
   };
 

@@ -4,8 +4,9 @@ import { getAllCases } from '@/lib/content/cases';
 import { getAllJobs } from '@/lib/build-log/jobs';
 import { getAllProducts } from '@/lib/content/products';
 import { getAllCohorts } from '@/lib/content/cohorts';
+import { site } from '@/lib/site';
 
-const BASE_URL = 'https://fabled10x.com';
+const BASE_URL = site.url;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [episodes, cases, jobs, products, cohorts] = await Promise.all([

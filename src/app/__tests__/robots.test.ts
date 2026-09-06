@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import robots from '../robots';
+import { site } from '@/lib/site';
 
 describe('robots', () => {
   // --- Unit ---
@@ -15,7 +16,7 @@ describe('robots', () => {
 
   it('unit_robots_sitemap_reference', () => {
     const result = robots();
-    expect(result.sitemap).toBe('https://fabled10x.com/sitemap.xml');
+    expect(result.sitemap).toBe(`${site.url}/sitemap.xml`);
   });
 
   // --- Infrastructure ---
