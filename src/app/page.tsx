@@ -11,6 +11,7 @@ import { Container } from '@/components/site/Container';
 import { EmailCapture } from '@/components/capture/EmailCapture';
 import { getLatestEpisode } from '@/lib/content/episodes';
 import { site } from '@/lib/site';
+import { PortalHero } from '@/components/hero';
 
 const LIBRARY = [
   {
@@ -44,12 +45,12 @@ export default async function Home() {
 
   return (
     <>
-      <section className="relative isolate overflow-hidden border-b border-(--edge-color-subtle)">
+      <PortalHero />
+      <section id="content" className="relative isolate overflow-hidden border-b border-(--edge-color-subtle)">
         <Image
           src="/hero/floatbg.png"
           alt=""
           fill
-          priority
           sizes="100vw"
           aria-hidden="true"
           className="-z-10 object-cover object-right opacity-35 mix-blend-multiply pointer-events-none select-none"

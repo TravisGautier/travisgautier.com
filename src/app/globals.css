@@ -98,6 +98,20 @@ body {
   background-position: center;
 }
 
+/* Home hero (src/components/hero): when the page opens with the portal scene,
+   float the site header over it on a translucent marble scrim. Browsers without
+   :has() simply show the header above the scene. */
+body:has(> main > [data-hero-root]:first-child) > header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  background-color: color-mix(in oklab, var(--color-marble) 78%, transparent);
+  background-image: none;
+  border-bottom-color: var(--edge-color-subtle);
+}
+
 @layer components {
   .display-1 {
     font-family: var(--font-display), serif;

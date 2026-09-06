@@ -49,6 +49,11 @@ vi.mock('@/components/capture/EmailCapture', () => ({
   ),
 }));
 
+// The hero is a client component that probes WebGL; stub it in jsdom.
+vi.mock('@/components/hero', () => ({
+  PortalHero: () => <section data-hero-root data-testid="portal-hero" />,
+}));
+
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect, beforeEach } from 'vitest';
 import { getLatestEpisode } from '@/lib/content/episodes';
@@ -93,6 +98,13 @@ const MOCK_EPISODE = {
 async function renderHome() {
   const jsx = await Home();
   return render(jsx);
+}
+
+// The intro <section id="content"> that follows the portal hero.
+function introSection(): HTMLElement {
+  const s = document.getElementById('content');
+  if (!s) throw new Error('No #content section found');
+  return s as HTMLElement;
 }
 
 // Walk up to the closest <section> ancestor of an element.
@@ -156,8 +168,8 @@ describe('Homepage (styling-overhaul-7.1) — brand reskin', () => {
   });
 
   it('unit_hero_border_uses_edge_color_subtle: hero <section> border uses --edge-color-subtle (not border-mist)', async () => {
-    const { container } = await renderHome();
-    const hero = container.querySelector('section');
+    await renderHome();
+    const hero = introSection();
     expect(hero).not.toBeNull();
     expect(hero!.className).toMatch(/border-\(--edge-color-subtle\)/);
     expect(hero!.className).not.toMatch(/\bborder-mist\b/);
@@ -423,11 +435,11 @@ describe('Homepage (styling-overhaul-7.1) — brand reskin', () => {
   });
 
   it('a11y_hero_image_alt_empty_and_aria_hidden: decorative hero image has alt="" AND aria-hidden=true', async () => {
-    const { container } = await renderHome();
+    await renderHome();
     // next/image rewrites src into a /_next/image?url=... URL, so we match
     // on the decorative-image signature (alt="" + aria-hidden=true) inside
     // the hero <section> instead of on the literal src path.
-    const hero = container.querySelector('section');
+    const hero = introSection();
     expect(hero).not.toBeNull();
     const heroImg = hero!.querySelector('img[alt=""][aria-hidden="true"]');
     expect(heroImg).not.toBeNull();
@@ -630,5 +642,35 @@ describe('Homepage (styling-overhaul-7.1) — brand reskin', () => {
       (a) => a.getAttribute('href'),
     );
     expect(hrefs).not.toContain('/about');
+  });
+});
+
+describe('Home — portal hero composition', () => {
+  beforeEach(() => {
+    mockGetLatestEpisode.mockResolvedValue(null);
+  });
+
+  it('int_portal_hero_precedes_intro_h1: PortalHero renders first, before the h1 intro section', async () => {
+    await renderHome();
+    const hero = screen.getByTestId('portal-hero');
+    const h1 = screen.getByRole('heading', { level: 1 });
+    expect(hero.compareDocumentPosition(h1) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(hero.hasAttribute('data-hero-root')).toBe(true);
+  });
+
+  it('a11y_intro_section_is_skip_target: the section after the hero carries id="content"', async () => {
+    await renderHome();
+    const intro = introSection();
+    expect(intro.id).toBe('content');
+  });
+
+  it('infra_page_imports_portal_hero_from_hero_module', () => {
+    expect(PAGE_SOURCE).toMatch(/import\s*\{\s*PortalHero\s*\}\s*from\s*['"]@\/components\/hero['"]/);
+    expect(PAGE_SOURCE).toMatch(/<PortalHero\s*\/>/);
+  });
+
+  it('perf_intro_image_no_longer_priority: floatbg is below the fold and must not be priority-loaded', () => {
+    const introImage = PAGE_SOURCE.slice(PAGE_SOURCE.indexOf('/hero/floatbg.png'), PAGE_SOURCE.indexOf('/hero/floatbg.png') + 400);
+    expect(introImage).not.toMatch(/\bpriority\b/);
   });
 });
