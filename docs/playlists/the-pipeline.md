@@ -1,4 +1,4 @@
-# The Fabled10X Pipeline — Playlist Plan
+# The Pipeline — Playlist Plan
 
 **Series:** Playbook (Tier 2)
 **Primary Pillar:** Workflow — "How do you manage AI agents on complex projects?"

@@ -1,7 +1,7 @@
 # Future Jobs — fabled10x
 
 **Purpose:** a self-contained catalogue of every `/jobbuild` target identified
-from `docs/fabled10x-website-implementation-plan.md` that has **not yet** been
+from `docs/website-implementation-plan.md` that has **not yet** been
 built. Drop this file into a new context window and use any entry below as a
 self-sufficient brief for `/jobbuild`.
 
@@ -54,7 +54,7 @@ business priority.
 ## 2. `free-tools` — `/tools` section with calculator widgets
 
 ### Source
-Phase 2 of `docs/fabled10x-website-implementation-plan.md` under "Free
+Phase 2 of `docs/website-implementation-plan.md` under "Free
 Interactive Tools": "Free, no-auth, SEO-friendly utilities that attract
 developers and consultants. Top-of-funnel with email capture on output."
 
@@ -104,7 +104,7 @@ short description of each.
 
 Build the /tools section: an index page plus four stateless calculator widgets
 (project scoping, pricing, ROI, discovery timeline) per Phase 2 of
-docs/fabled10x-website-implementation-plan.md. Each tool is a client-side React
+docs/website-implementation-plan.md. Each tool is a client-side React
 component under /tools/[tool-slug] with its own route. Tools reuse the
 <EmailCapture> component from website-foundation for result-delivery CTAs. No
 auth, no server-side state, no payments.
@@ -115,7 +115,7 @@ auth, no server-side state, no payments.
 ## 3. `storefront-auth` — `/products` tree with auth + checkout
 
 ### Source
-Phase 2 of `docs/fabled10x-website-implementation-plan.md` under "Products —
+Phase 2 of `docs/website-implementation-plan.md` under "Products —
 Storefront": "Monetization layer. Auth lives here and only here."
 
 ### Scope
@@ -466,7 +466,7 @@ ranking) and a built-in static JSON index during jobbuild. Deliverables:
 indexing build step, /search route with results, and keyboard-accessible
 search UI. Skip until content volume (10+ episodes or 5+ cases) justifies.
 Cites the "Search implementation" open question in
-docs/fabled10x-website-implementation-plan.md.
+docs/website-implementation-plan.md.
 ```
 
 ---

@@ -297,7 +297,7 @@ Full 40-episode list and cross-playlist integration in the linked playlist doc.
 
 *Pedagogical structure: each skill is introduced as a standalone tool before the pipeline is ever shown as a whole. The pipeline reveal is the payoff, not the introduction.*
 
-*Full playlist plan with outlines, shot notes, and production checklist: [docs/playlists/the-fabled10x-pipeline.md](../playlists/the-fabled10x-pipeline.md)*
+*Full playlist plan with outlines, shot notes, and production checklist: [docs/playlists/the-pipeline.md](../playlists/the-pipeline.md)*
 
 #### PLAYLIST ARC
 

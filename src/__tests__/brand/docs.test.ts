@@ -2,8 +2,8 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 
-const brandIdentityPath = join(process.cwd(), 'docs/fabled10x-brand-identity.md');
-const designSystemPath = join(process.cwd(), 'docs/fabled10x-design-system.md');
+const brandIdentityPath = join(process.cwd(), 'docs/brand-identity.md');
+const designSystemPath = join(process.cwd(), 'docs/design-system.md');
 const globalsCssPath = join(process.cwd(), 'src/app/globals.css');
 
 const safeRead = (p: string): string => (existsSync(p) ? readFileSync(p, 'utf8') : '');
@@ -40,16 +40,17 @@ describe('brand identity doc — Visual Identity Direction (so-1.3)', () => {
     expect(visualIdentitySection).toMatch(/neon|gamer|gradient|hype/i);
   });
 
-  it('unit_brand_identity_visual_references_design_system_doc: section points at docs/fabled10x-design-system.md', () => {
-    expect(visualIdentitySection).toMatch(/fabled10x-design-system\.md/);
+  it('unit_brand_identity_visual_references_design_system_doc: section points at docs/design-system.md', () => {
+    expect(visualIdentitySection).toMatch(/docs\/design-system\.md/);
   });
 });
 
 describe('brand identity doc — preserved sections (regression guards)', () => {
   it('unit_brand_identity_preserves_channel_identity: Channel Identity section intact', () => {
     expect(brandIdentity).toMatch(/##\s+Channel Identity/);
-    expect(brandIdentity).toMatch(/Fabled10X/);
-    expect(brandIdentity).toMatch(/fabled10x\.com/);
+    expect(brandIdentity).toMatch(/Travis Gautier/);
+    expect(brandIdentity).toMatch(/travisgautier\.com/);
+    expect(brandIdentity).toMatch(/formerly.*Fabled10X/i);
   });
 
   it('unit_brand_identity_preserves_mission: Mission Statement section intact', () => {
@@ -70,7 +71,7 @@ describe('brand identity doc — preserved sections (regression guards)', () => 
 });
 
 describe('design system doc — file + Palette section (so-1.3)', () => {
-  it('unit_design_system_file_exists: docs/fabled10x-design-system.md exists and is non-empty', () => {
+  it('unit_design_system_file_exists: docs/design-system.md exists and is non-empty', () => {
     expect(existsSync(designSystemPath)).toBe(true);
     expect(designSystem.length).toBeGreaterThan(0);
   });
@@ -209,7 +210,7 @@ describe('design system doc — Implementation references', () => {
 
 describe('brand docs — cross-doc + globals.css integrity (integration)', () => {
   it('integration_brand_docs_cross_reference: brand-identity points at design-system.md AND target file exists', () => {
-    expect(visualIdentitySection).toMatch(/fabled10x-design-system\.md/);
+    expect(visualIdentitySection).toMatch(/docs\/design-system\.md/);
     expect(existsSync(designSystemPath)).toBe(true);
   });
 
@@ -234,12 +235,12 @@ describe('brand docs — cross-doc + globals.css integrity (integration)', () =>
 });
 
 describe('brand docs — infrastructure', () => {
-  it('infra_brand_identity_file_exists: docs/fabled10x-brand-identity.md exists on disk', () => {
+  it('infra_brand_identity_file_exists: docs/brand-identity.md exists on disk', () => {
     expect(existsSync(brandIdentityPath)).toBe(true);
     expect(brandIdentity.length).toBeGreaterThan(0);
   });
 
-  it('infra_design_system_file_exists: docs/fabled10x-design-system.md exists on disk', () => {
+  it('infra_design_system_file_exists: docs/design-system.md exists on disk', () => {
     expect(existsSync(designSystemPath)).toBe(true);
     expect(designSystem.length).toBeGreaterThan(0);
   });

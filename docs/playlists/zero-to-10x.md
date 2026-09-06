@@ -1742,7 +1742,7 @@ The full Pipeline playlist methodology, applied to a feature you build end-to-en
 - The final shipped feature running in the deployed app
 
 #### Source materials
-- The full Fabled10X Pipeline playlist (docs/playlists/the-fabled10x-pipeline.md)
+- The full Fabled10X Pipeline playlist (docs/playlists/the-pipeline.md)
 - Fabled10x skills directory
 - The graduation project spec (create and link)
 - The completed graduation project commits

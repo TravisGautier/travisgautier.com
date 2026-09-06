@@ -1,28 +1,29 @@
-# Fabled10X — Brand Identity & Positioning
+# Travis Gautier — Brand Identity & Positioning
 
-**Document Version:** 1.0
-**Created:** March 2026
-**Purpose:** Foundational brand reference for The Fabled 10X Developer YouTube channel and business ecosystem
+**Document Version:** 2.0
+**Created:** March 2026 · **Rebranded:** September 2026
+**Purpose:** Foundational brand reference for the Travis Gautier YouTube channel, site, and business ecosystem
 
 ---
 
 ## Channel Identity
 
-**Full Name:** The Fabled 10X Developer
-**Short Name / Handle:** Fabled10X
-**Handle Across Platforms:** @Fabled10X (YouTube, X, TikTok, Instagram, GitHub, LinkedIn)
-**Domain:** fabled10x.com (primary, live). fabled10x.dev is an optional future alias — not currently secured or in use.
+**Full Name:** Travis Gautier
+**Handle Across Platforms:** @TravisGautier (YouTube, X, TikTok, Instagram, GitHub, LinkedIn)
+**Domain:** travisgautier.com (primary, live)
 
-**YouTube Channel Name:** The Fabled 10X Developer
-**YouTube Handle:** @Fabled10X
+**YouTube Channel Name:** Travis Gautier
+**YouTube Handle:** @TravisGautier
 
-The full name is used for the YouTube channel, video intros for new viewers, and formal references. The shorthand "Fabled10X" is the logo lockup, watermark, social handle, and what the community uses in conversation.
+The real name is the brand. It is the logo lockup, the watermark, the social handle, and what the community uses in conversation. The `{tg}` monogram is the compact mark used for the favicon, avatars, and the wordmark suffix.
+
+Formerly published as Fabled10X (fabled10x.com, March–September 2026). The old domain and GitHub org permanently redirect here; the name was retired to avoid confusion with an unrelated AI model release.
 
 ---
 
 ## Mission Statement
 
-Fabled10X shows freelancers and small agency teams how to use AI agent teams to scope, build, and deliver complex SaaS projects — end to end — without a traditional dev team.
+Travis Gautier shows freelancers and small agency teams how to use AI agent teams to scope, build, and deliver complex SaaS projects — end to end — without a traditional dev team.
 
 ---
 
@@ -47,15 +48,13 @@ A documented, real-world case study of using AI agent teams to run a legitimate 
 
 ---
 
-## The Name — Why It Works
+## Why the Real Name
 
-"10x developer" is one of the most debated concepts in tech. Every engineering team talks about it. Every hiring manager wants one. The prevailing wisdom is that it's a myth — hence "fabled."
+A personal brand is the honest container for this content. The channel's authority comes from one practitioner's project files, client calls, and feedback reports — so the practitioner's name is the brand. There is no mascot, no invented company, no clever wordplay to explain.
 
-The twist: the myth is being made real, but not through raw coding talent or 80-hour weeks. It's through strategic AI agent management, professional consulting process, and disciplined project delivery.
-
-**For tech-aware audience:** Immediate hook — they know the 10x reference and are curious about the claim.
-**For business audience:** "10X" means massive output, which is exactly what they want.
-**"Fabled" adds:** Storytelling brand energy, irreverence toward AI hype, narrative quality.
+**For tech-aware audience:** A named practitioner with receipts is more credible than a slogan.
+**For business audience:** They hire people, not brands. The name on the channel is the name on the contract.
+**What the name signals:** Accountability, continuity across projects, and a body of work that compounds under one identity.
 
 ---
 
@@ -68,7 +67,7 @@ You don't prompt AI. You manage it. You assign roles, set context, review output
 The Party Masters project works not because of genius, but because of a discovery toolkit, folder structure, phase plan, interview scripts, and feedback triage systems. AI executes; process ensures quality. Anyone can learn process.
 
 ### 3. "Ship the whole thing or it doesn't count."
-The internet is full of half-built AI demos. Fabled10X only covers projects that go from zero to delivered. If the client isn't using it and you haven't been paid, it's not a case study — it's a hobby.
+The internet is full of half-built AI demos. This channel only covers projects that go from zero to delivered. If the client isn't using it and you haven't been paid, it's not a case study — it's a hobby.
 
 ### 4. "The client doesn't care how you built it."
 Andy didn't hire because of Claude or GPT. He hired because his business problems were understood, his workflows were mapped, and a system was delivered that saves him 50+ hours a month. The AI is invisible to the client. The value is visible.
@@ -96,10 +95,10 @@ Anyone can use AI to build a simple tool. The opportunity is in complex, multi-s
 - "Building what dev teams build — without the dev team."
 - "The AI-powered agency playbook. Real projects. Real clients. Real money."
 - "Complex SaaS projects. AI agent teams. No traditional dev team required."
-- "From myth to method."
+- "Solo SaaS delivery."
 
 Primary recommendation for YouTube banner: "One person. An agent team. Full SaaS delivery."
-Punchy logo lockup: "From myth to method."
+Site kicker: "Travis Gautier · Solo SaaS delivery."
 
 ---
 
@@ -108,7 +107,7 @@ Punchy logo lockup: "From myth to method."
 Boutique editorial brand that happens to teach AI development — built to look
 like nothing else in the space. Every channel teaching AI/coding in 2026
 defaults to neon gradients, dark mode with RGB accents, hype-arrow thumbnails,
-shocked-face hosts, gamer aesthetics. Fabled 10X occupies the opposite corner:
+shocked-face hosts, gamer aesthetics. Travis Gautier occupies the opposite corner:
 classical, restrained, material, editorial.
 
 The aesthetic exists because the content claims a position:
@@ -118,8 +117,13 @@ The aesthetic exists because the content claims a position:
   takes time to think rather than reacting to trends.
 - **For the serious.** The aesthetic intentionally filters its audience.
 
-Implementation details — tokens, contrast pairs, forbidden patterns — live in
-`docs/fabled10x-design-system.md`.
+The one deliberate exception is the home-page hero: an interactive WebGL scene of
+an open-air marble temple whose central portal leads to the two halves of the
+work. It is rendered in the same material language (marble, parchment, stone,
+cloud) with two confined accent glows for the two destinations.
+
+Implementation details — tokens, contrast pairs, forbidden patterns, hero scene
+exceptions — live in `docs/design-system.md`.
 
 ---
 
@@ -143,7 +147,7 @@ Most AI content falls into two camps:
 1. **Hype:** "AI will replace all developers!" — no real projects shown
 2. **Trivial demos:** "I built a landing page in 60 seconds!" — nothing complex or client-facing
 
-**Fabled10X occupies the empty middle ground:** The messy, strategic reality of scoping a real client project, handling discovery, making architectural decisions, managing deliverables, pricing the work, and actually shipping something a business will pay $34K+ for.
+**Travis Gautier occupies the empty middle ground:** The messy, strategic reality of scoping a real client project, handling discovery, making architectural decisions, managing deliverables, pricing the work, and actually shipping something a business will pay $34K+ for.
 
 ### Why This Channel Is Defensible
 - **Real receipts:** Actual project files, client interactions, feedback, real money on the table

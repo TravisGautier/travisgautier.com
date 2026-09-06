@@ -1,4 +1,4 @@
-# Fabled 10X — Design System
+# Travis Gautier — Design System
 
 Canonical reference for the brand stack. Components consume from this list;
 nothing else.

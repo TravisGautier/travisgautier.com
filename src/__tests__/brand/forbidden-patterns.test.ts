@@ -157,7 +157,7 @@ function isSkipped(file: string): boolean {
 //   scrim utility. A two-stop translucent cream wash over a marble texture
 //   image, used for text-legibility over photos/textures. Brand-approved as
 //   a "scrim" (functional readability overlay), distinct from decorative
-//   color sweeps the rule targets. See docs/fabled10x-design-system.md
+//   color sweeps the rule targets. See docs/design-system.md
 //   § Material Language → Exceptions.
 const PATTERN_ALLOW_PATHS: Record<string, string[]> = {
   'CSS linear-gradient': ['src/app/globals.css'],
