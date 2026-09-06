@@ -5,7 +5,7 @@ export const defaultResendHandlers = [
   http.post('https://api.resend.com/emails', () =>
     HttpResponse.json({
       id: 'email_test_default',
-      from: 'no-reply@fabled10x.com',
+      from: 'no-reply@travisgautier.com',
     }),
   ),
 ];

@@ -63,7 +63,7 @@ describe('AdminLayout', () => {
   });
 
   it('unit_layout_non_admin_renders_forbidden: session email not in allowlist renders Forbidden', async () => {
-    process.env.ADMIN_EMAILS = 'root@fabled10x.com';
+    process.env.ADMIN_EMAILS = 'root@travisgautier.com';
     mockAuth.mockResolvedValueOnce({ user: { email: 'intruder@example.com' } });
     await renderLayout();
     expect(screen.getByText(/forbidden/i)).toBeInTheDocument();
@@ -103,7 +103,7 @@ describe('AdminLayout', () => {
   // --- Security ---
 
   it('sec_elevation_allowlist_bypass_with_random_email: random signed-in email denied', async () => {
-    process.env.ADMIN_EMAILS = 'root@fabled10x.com';
+    process.env.ADMIN_EMAILS = 'root@travisgautier.com';
     mockAuth.mockResolvedValueOnce({ user: { email: 'intruder@example.com' } });
     await renderLayout();
     expect(screen.getByText(/forbidden/i)).toBeInTheDocument();

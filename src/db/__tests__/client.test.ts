@@ -17,7 +17,7 @@ describe('db client', () => {
   });
 
   it('unit_client_exports_db_and_schema: importing @/db/client exposes `db` and `schema` bindings', async () => {
-    process.env.DATABASE_URL = 'postgres://fabled10x:dev@localhost:5432/fabled10x';
+    process.env.DATABASE_URL = 'postgres://travisgautier:dev@localhost:5432/travisgautier';
     const mod = await import('@/db/client');
     expect(mod).toHaveProperty('db');
     expect(mod).toHaveProperty('schema');

@@ -2,13 +2,13 @@
 
 # CLAUDE.md
 
-This file provides guidance to Claude Code when working with the fabled10x codebase.
+This file provides guidance to Claude Code when working with the travisgautier.com codebase.
 
 ## Project Overview
 
-fabled10x is the brand and marketing site for the Fabled10X YouTube channel and social media presence. It's a Next.js 16 App Router site that backs the channel with episode pages, project case studies, free interactive tools, and a storefront. Built and maintained by AI agents.
+travisgautier.com is the brand and marketing site for the Travis Gautier YouTube channel and social media presence (formerly published as Fabled10X; that name is retired — never reintroduce it). It's a Next.js 16 App Router site that backs the channel with episode pages, project case studies, free interactive tools, and a storefront. Built and maintained by AI agents.
 
-Its secondary job is to promote **The Large Language Library** (LLL) — a sister project at `largelanguagelibrary.ai` (separate repo, separate GitHub org). LLL is the public, AI-optimized knowledge base; fabled10x is the channel brand. The two are linked, but not the same project. See `docs/large-language-library-implementation-plan.md` for the LLL spec.
+Its secondary job is to promote **The Large Language Library** (LLL) — a sister project at `largelanguagelibrary.ai` (separate repo, separate GitHub org). LLL is the public, AI-optimized knowledge base; travisgautier.com is the channel brand. The two are linked, but not the same project. See `docs/large-language-library-implementation-plan.md` for the LLL spec.
 
 Primary outputs:
 - **YouTube channel** — flagship series, playbooks, shorts, livestreams
@@ -134,4 +134,6 @@ Future jobs (not yet started) and their planned aliases are tracked in `docs/fut
 
 **Git commits** — Commit after every feature implementation. Keep messages concise (1-2 lines). No footer, no co-author section.
 
-**No persistence layer** — fabled10x is static. Content lives in typed files under `src/content/`. If persistence is added later, add a migration plan to `pipeline/TECH-DECISIONS.md` first.
+**Persistence** — content is static (typed MDX under `src/content/`); the storefront, auth sessions and cohort enrollment use Postgres via Drizzle (`src/db/`, migrations in `src/db/migrations/`). Schema changes go through `npm run db:generate` + a migration, never ad-hoc SQL.
+
+**Brand strings** — never hardcode the site name, domain, or handles; import `site` from `src/lib/site.ts`. `src/__tests__/brand/legacy-brand.test.ts` fails on any reintroduction of the retired name, and `secrets-sentinel.test.ts` fails on credential-shaped strings anywhere in docs or source.

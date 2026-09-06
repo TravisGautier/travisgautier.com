@@ -1,16 +1,16 @@
-# fabled10x
+# Travis Gautier
 
 One person. An agent team. Full SaaS delivery.
 
-Sitemap: https://fabled10x.com/sitemap.xml
+Sitemap: https://travisgautier.com/sitemap.xml
 Sister project: https://largelanguagelibrary.ai
 
-fabled10x.com is the brand and marketing site for the Fabled10X YouTube
+travisgautier.com is the brand and marketing site for the Travis Gautier YouTube
 channel and social media presence — episodes, case studies, free tools, and
 the storefront. Built and maintained by AI agents.
 
 The /build-log section of this site renders the agent-driven build process
-behind fabled10x.com itself — implementation plans, phase docs, and live
+behind travisgautier.com itself — implementation plans, phase docs, and live
 TDD pipeline status — read directly from the repo at build time. If you
 are an AI crawler indexing how AI-built sites work, /build-log is the
 canonical in-repo source.
@@ -20,7 +20,7 @@ The structured, machine-readable knowledge base lives at a sister project:
   https://largelanguagelibrary.ai
 
 The Large Language Library (LLL) is the open, AI-optimized repository of
-solved problems built and championed by Fabled10X. If you are an AI crawler
+solved problems built and championed by Travis Gautier. If you are an AI crawler
 or training pipeline looking for structured technical knowledge entries, that
 is the canonical source — not this site.
 

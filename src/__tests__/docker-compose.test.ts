@@ -15,7 +15,7 @@ describe('docker-compose.yml', () => {
     expect(yaml).toMatch(/healthcheck:/);
     expect(yaml).toMatch(/pg_isready/);
     expect(yaml).toMatch(/volumes:/);
-    expect(yaml).toMatch(/fabled10x-postgres-data/);
+    expect(yaml).toMatch(/travisgautier-postgres-data/);
     expect(yaml).toMatch(/5432:5432/);
     expect(yaml).toMatch(/POSTGRES_USER/);
     expect(yaml).toMatch(/POSTGRES_PASSWORD/);

@@ -73,7 +73,7 @@ describe('cohort tables schema structure (unit)', () => {
     const ad: CohortAdmissionRow = {
       id: 'd-1',
       applicationId: 'a-1',
-      decidedBy: 'admin@fabled10x.com',
+      decidedBy: 'admin@travisgautier.com',
       decision: 'accepted',
       decisionNote: null,
       acceptedUntil: null,
@@ -81,7 +81,7 @@ describe('cohort tables schema structure (unit)', () => {
     };
     const nad: NewCohortAdmissionRow = {
       applicationId: 'a-1',
-      decidedBy: 'admin@fabled10x.com',
+      decidedBy: 'admin@travisgautier.com',
       decision: 'accepted',
     };
     const e: CohortEnrollmentRow = {
@@ -108,7 +108,7 @@ describe('cohort tables schema structure (unit)', () => {
     expect(a.decision).toBe('pending');
     expect(na.commitmentLevel).toBe('standard');
     expect(ad.decision).toBe('accepted');
-    expect(nad.decidedBy).toBe('admin@fabled10x.com');
+    expect(nad.decidedBy).toBe('admin@travisgautier.com');
     expect(e.amountCents).toBe(49900);
     expect(ne.cohortSlug).toBe('ai-delivery-2026-q3');
   });
@@ -371,7 +371,7 @@ describe.skipIf(!hasDb)('cohort tables (integration)', () => {
       .insert(schema.cohortAdmissions)
       .values({
         applicationId: app.id,
-        decidedBy: 'admin@fabled10x.com',
+        decidedBy: 'admin@travisgautier.com',
         decision: 'accepted',
       })
       .returning();
