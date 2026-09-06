@@ -10,6 +10,7 @@ import {
 import { Container } from '@/components/site/Container';
 import { EmailCapture } from '@/components/capture/EmailCapture';
 import { getLatestEpisode } from '@/lib/content/episodes';
+import { site } from '@/lib/site';
 
 const LIBRARY = [
   {
@@ -56,7 +57,7 @@ export default async function Home() {
         <HeroBackdrop />
         <Section rhythm="lg">
           <Container className="flex flex-col gap-(--space-5) md:max-w-prose">
-            <span className="label">The Fabled 10X Developer</span>
+            <span className="label">{site.heroKicker}</span>
             <h1 className="display-1">
               One person.<br />
               An agent team.<br />

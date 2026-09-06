@@ -2,11 +2,12 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { Marble, Section, DropAccent } from '@/components/brand';
 import { Container } from '@/components/site/Container';
+import { site } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'The Fabled10X premise, the channel, and the sister project — The Large Language Library.',
+    `The ${site.name} premise, the channel, and the sister project — The Large Language Library.`,
 };
 
 export default function About() {
@@ -16,11 +17,11 @@ export default function About() {
         <Container width="prose">
           <span className="label">The Channel</span>
           <h1 className="display-1 mt-(--space-3)">
-            <DropAccent glyph=".">The Fabled 10X Developer</DropAccent>
+            <DropAccent glyph=".">{site.name}</DropAccent>
           </h1>
           <div className="mt-(--space-7) build-log-prose">
             <p>
-              Fabled10X is the documented real-world answer to a question every
+              This channel is the documented real-world answer to a question every
               technical freelancer is asking: what can one person actually ship
               when they manage a team of AI agents the way a senior tech lead
               manages a dev team?
@@ -34,12 +35,12 @@ export default function About() {
             </p>
             <h2>The Large Language Library</h2>
             <p>
-              Fabled10X built and champions{' '}
+              {site.name} built and champions{' '}
               <Link href="https://largelanguagelibrary.ai">
                 The Large Language Library
               </Link>
               , the open, AI-optimized knowledge base of solved technical
-              problems that comes out of every client engagement. Fabled10X is
+              problems that comes out of every client engagement. {site.name} is
               the brand; LLL is the infrastructure. The tool is bigger than the
               brand that built it — that&apos;s intentional.
             </p>

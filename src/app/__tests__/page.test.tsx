@@ -53,6 +53,7 @@ import { render, screen } from '@testing-library/react';
 import { describe, it, expect, beforeEach } from 'vitest';
 import { getLatestEpisode } from '@/lib/content/episodes';
 import Home from '../page';
+import { site } from '@/lib/site';
 
 const mockGetLatestEpisode = vi.mocked(getLatestEpisode);
 
@@ -119,7 +120,7 @@ describe('Homepage (styling-overhaul-7.1) — brand reskin', () => {
 
   it('unit_hero_label_class: hero kicker uses .label utility (not text-sm uppercase text-accent)', async () => {
     await renderHome();
-    const kicker = screen.getByText('The Fabled 10X Developer');
+    const kicker = screen.getByText(site.heroKicker);
     expect(kicker.className).toMatch(/\blabel\b/);
     expect(kicker.className).not.toMatch(/\btext-sm\b/);
     expect(kicker.className).not.toMatch(/\btext-accent\b/);
@@ -367,7 +368,7 @@ describe('Homepage (styling-overhaul-7.1) — brand reskin', () => {
 
   it('int_block_render_order: hero → latest → library → sister-project in DOM order', async () => {
     await renderHome();
-    const heroKicker = screen.getByText('The Fabled 10X Developer');
+    const heroKicker = screen.getByText(site.heroKicker);
     const latestKicker = screen.getByText('Latest Episode');
     const libraryHeading = screen.getByRole('heading', {
       level: 2,

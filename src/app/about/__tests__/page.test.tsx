@@ -19,7 +19,7 @@ describe('About (brand reskin 7.6)', () => {
   it('unit_about_h1_renders', () => {
     render(<About />);
     const h1 = screen.getByRole('heading', { level: 1 });
-    expect(h1).toHaveTextContent(/the fabled 10x developer/i);
+    expect(h1).toHaveTextContent(/travis gautier/i);
   });
 
   it('unit_about_eyebrow_label', () => {

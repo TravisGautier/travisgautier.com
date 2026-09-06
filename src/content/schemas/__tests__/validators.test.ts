@@ -150,7 +150,7 @@ const VALID_CASE_FULL = {
   startedAt: '2026-01-15T00:00:00Z',
   shippedAt: '2026-03-30T00:00:00Z',
   contractValue: 15000,
-  heroImageUrl: 'https://fabled10x.com/images/party-masters-hero.jpg',
+  heroImageUrl: 'https://travisgautier.com/images/party-masters-hero.jpg',
 };
 
 // ── Unit Tests ──────────────────────────────────────────────────────
@@ -213,7 +213,7 @@ describe('CaseSchema', () => {
     expect(result.startedAt).toBe('2026-01-15T00:00:00Z');
     expect(result.shippedAt).toBe('2026-03-30T00:00:00Z');
     expect(result.contractValue).toBe(15000);
-    expect(result.heroImageUrl).toBe('https://fabled10x.com/images/party-masters-hero.jpg');
+    expect(result.heroImageUrl).toBe('https://travisgautier.com/images/party-masters-hero.jpg');
   });
 });
 
@@ -489,16 +489,16 @@ const LIVE_SESSION_FIXTURE = {
     { section: 'website-foundation-1.1', completedAt: '2026-04-11' },
     { section: 'website-foundation-4.1', completedAt: '2026-04-12' },
   ],
-  notes: 'fabled10x project initialized on 2026-04-11.',
+  notes: 'travisgautier project initialized on 2026-04-11.',
 };
 
 // Hand-built fixture matching the live pipeline/active/knowledge.yaml structure.
 const LIVE_KNOWLEDGE_FIXTURE = {
   version: 1,
-  project: 'fabled10x',
+  project: 'travisgautier',
   description: 'Cross-section knowledge store.',
   projectContext: {
-    purpose: 'fabled10x is the brand/marketing site for Fabled10X.',
+    purpose: 'travisgautier is the brand/marketing site for Travis Gautier.',
     stack: { framework: 'Next.js 16.2.3 (App Router)', runtime: 'React 19.2.4' },
     contentModel: { location: 'src/content/schemas/' },
   },
@@ -764,7 +764,7 @@ const SESSION_FIXTURE_14 = {
       name: 'derive-live-status helper',
     },
   ],
-  notes: 'fabled10x build-log-overhaul in flight.',
+  notes: 'travisgautier build-log-overhaul in flight.',
 };
 
 describe('SessionStatusSchema — 1.4 concurrentJobs', () => {
@@ -990,7 +990,7 @@ describe('KnowledgeFileSchema', () => {
 
   it('unit_knowledge_file_passthrough: accepts unknown top-level keys, preserves them', () => {
     const result = KnowledgeFileSchema.parse({
-      project: 'fabled10x',
+      project: 'travisgautier',
       futureKey: 'whatever',
     } as Record<string, unknown>);
     expect((result as Record<string, unknown>).futureKey).toBe('whatever');
@@ -1007,8 +1007,8 @@ describe('KnowledgeFileSchema', () => {
   it('integration_knowledge_yaml_parses: KnowledgeFileSchema accepts live-file shape (hand-built fixture)', () => {
     const result = KnowledgeFileSchema.parse(LIVE_KNOWLEDGE_FIXTURE);
     expect(result.version).toBe(1);
-    expect(result.project).toBe('fabled10x');
-    expect(result.projectContext?.purpose).toContain('fabled10x');
+    expect(result.project).toBe('travisgautier');
+    expect(result.projectContext?.purpose).toContain('travisgautier');
   });
 });
 
@@ -1063,7 +1063,7 @@ const VALID_PRODUCT_MINIMAL: ProductInput = {
   id: 'prod-workflow-templates',
   slug: 'workflow-templates',
   title: 'Agent Workflow Templates',
-  tagline: 'The exact TDD pipeline templates behind every Fabled10X build.',
+  tagline: 'The exact TDD pipeline templates behind every Travis Gautier build.',
   summary: 'A downloadable set of agent skill manifests, discovery YAML templates, and TDD phase prompts.',
   category: 'workflow-templates',
   licenseType: 'single-user',
@@ -1078,7 +1078,7 @@ const VALID_PRODUCT_MINIMAL: ProductInput = {
 
 const VALID_PRODUCT_FULL: ProductInput = {
   ...VALID_PRODUCT_MINIMAL,
-  heroImageUrl: 'https://fabled10x.com/images/workflow-templates-hero.jpg',
+  heroImageUrl: 'https://travisgautier.com/images/workflow-templates-hero.jpg',
 };
 
 // ── Unit Tests ──────────────────────────────────────────────────────
@@ -1097,7 +1097,7 @@ describe('ProductSchema', () => {
 
   it('unit_product_full: accepts a fully-populated record with heroImageUrl', () => {
     const result = ProductSchema.parse(VALID_PRODUCT_FULL);
-    expect(result.heroImageUrl).toBe('https://fabled10x.com/images/workflow-templates-hero.jpg');
+    expect(result.heroImageUrl).toBe('https://travisgautier.com/images/workflow-templates-hero.jpg');
   });
 
   it('unit_product_input_type: ProductInput type is usable for building valid records', () => {
