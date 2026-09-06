@@ -40,9 +40,9 @@ Roman/Greek numerals, curly braces used decoratively, carved letterforms,
 brushstroke / painted edges, subtle material satin.
 
 **Forbidden**: gradients, drop shadows that look like UI, glowing circuits,
-neural meshes, robot icons, lightning bolts, rockets, gears, sparkles, 3D
-rendering, isometric perspective, pure black, pure white, pure red, any
-saturated primary other than Oxblood.
+neural meshes, robot icons, lightning bolts, rockets, gears, sparkles,
+isometric perspective, pure black, pure white, pure red, any saturated
+primary other than Oxblood.
 
 **Exceptions — scrims**: a translucent color wash layered over a texture or
 photograph for text legibility is brand-approved. Same shape as the
@@ -55,6 +55,17 @@ per-pattern in `src/__tests__/brand/forbidden-patterns.test.ts`. A scrim is
 always: same hue across both stops, low alpha range, functional purpose
 (legibility). Anything else — color shifts, decorative purpose — is still
 forbidden.
+
+**Exceptions — the hero scene**: the home page opens with a WebGL scene of an
+open-air marble temple whose central portal leads to the two halves of the
+work (`src/components/hero/`). Its sky, fog, cloud sea and stone are rendered
+in Marble / Parchment / Bone values; the two portal faces carry the venture
+accents — gold (#B8942E family, "The Work") and purple (#7C52D4 family, "The
+Library"). Those two accents are confined to the portal glow, the 2px progress
+rule, the focus ring and the active label colour, and never appear elsewhere
+in the UI. The scene is the one place three-dimensional rendering is allowed;
+it passes the museum test because it *is* the museum — columns, architrave,
+stone steps, cloud. Details in § Hero scene.
 
 Test: if the element could appear on an object pulled from a museum or
 archaeological dig, it belongs. If it could appear on an AI startup's About
@@ -84,6 +95,8 @@ headline isn't legible at that scale, the design fails.
 | Android Chrome 192 | `public/android-chrome-192.png` |
 | Android Chrome 512 | `public/android-chrome-512.png` |
 | Hero texture (default) | `public/hero/floatbg.png` |
+| Hero scene fallback still (16:9) | `public/hero/portal-still.jpg` |
+| GPU benchmark data (detect-gpu, self-hosted) | `public/benchmarks/` |
 | Cinzel Black TTF | `public/fonts/Cinzel-Black.ttf` |
 | Inter Regular TTF | `public/fonts/Inter-Regular.ttf` |
 | Inter SemiBold TTF | `public/fonts/Inter-SemiBold.ttf` |
@@ -148,6 +161,33 @@ Example: `http://localhost:3000/thumb-preview?title=Ship%20it%20alone&series=Zer
 - Section + divider — `src/components/brand/Section.tsx`, `src/components/brand/SectionDivider.tsx`
 - Open Graph image module — `src/lib/og/og-image.tsx`
 - Sentinels — `src/__tests__/brand/{forbidden-patterns,tokens,type-scale,fonts,spacing}.test.ts`
+- Hero scene — `src/components/hero/PortalHero.tsx`, `src/components/hero/engine/index.ts`, `src/components/hero/engine/palette.ts`, `src/components/hero/hero.module.css`
+
+## Hero scene
+
+The portal scene is the single sanctioned exception to the flat material
+language. It lives entirely under `src/components/hero/` and is loaded as a
+client-only chunk; the page's first paint is a marble panel with the wordmark.
+
+| Element | Value | Notes |
+|---|---|---|
+| Sky (gold side) | zenith 0.86/0.80/0.68 · horizon 0.97/0.95/0.91 | warm daylight, no sky tint outside the palette |
+| Sky (purple side) | zenith 0.52/0.44/0.62 · horizon 0.86/0.80/0.86 | dusk mauve |
+| Fog / clear | 0.94/0.91/0.85 → 0.86/0.80/0.84 | lerped by orbit position |
+| Stone | Marble-family hexes in `engine/palette.ts` | pillars, steps, floor, architrave |
+| Portal gold | #B8942E family | "The Work" → `/episodes` |
+| Portal purple | #7C52D4 family | "The Library" → largelanguagelibrary.ai |
+| Overlay type | `display-3` / `label` / `body-3` | Cinzel + Inter, site tokens only |
+
+Quality tiers (`src/components/hero/quality.ts`): 0 = no WebGL or blocklisted →
+static still + plain links; 1 = phones / low core count (no shadows, 50
+particles, 8 pillars); 2 = default desktop (1024 shadow map, 100 particles);
+3 = high-end (2048 shadow map, 200 particles, fluted pillars, two cloud
+layers). A benchmark lookup that times out degrades to tier 2, never to 0. A
+runtime FPS monitor steps down once if the first 120 frames average under
+~45 fps. `prefers-reduced-motion` freezes shader time, particles, the portal
+bob and camera easing. The scene pauses whenever it leaves the viewport or the
+tab is hidden, and disposes every GPU resource on unmount.
 
 ## Regeneration notes
 

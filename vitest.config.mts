@@ -34,6 +34,7 @@ export default defineConfig({
         'node_modules/',
         '.next/',
         'src/__tests__/**',
+        'src/components/hero/engine/renderer.ts',
         '**/*.config.*',
         '**/*.d.ts',
       ],

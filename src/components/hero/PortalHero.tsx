@@ -34,6 +34,8 @@ export function PortalHero({ quality, loadEngine }: PortalHeroProps = {}) {
   const [engineKey, setEngineKey] = useState(0);
   const [finePointer, setFinePointer] = useState(false);
   const [entering, setEntering] = useState<Side | null>(null);
+  const routerRef = useRef(router);
+  routerRef.current = router;
 
   useEffect(() => {
     try {
@@ -62,11 +64,16 @@ export function PortalHero({ quality, loadEngine }: PortalHeroProps = {}) {
       navTimer.current = setTimeout(() => {
         navTimer.current = null;
         if (dest.external) window.location.assign(dest.href);
-        else router.push(dest.href);
+        else routerRef.current.push(dest.href);
       }, TRANSITION_NAV_DELAY_MS);
     },
-    [router],
+    [],
   );
+
+  const enterRef = useRef(enter);
+  enterRef.current = enter;
+  const cancelRef = useRef(cancelEnter);
+  cancelRef.current = cancelEnter;
 
   useEffect(() => () => cancelEnter(), [cancelEnter]);
 
@@ -92,8 +99,8 @@ export function PortalHero({ quality, loadEngine }: PortalHeroProps = {}) {
           onReady: () => setMode('scene'),
           onContextLost: () => setMode('contextLost'),
           onContextRestored: () => setEngineKey((k) => k + 1),
-          onPortalActivate: (side) => enter(side),
-          onEscape: cancelEnter,
+          onPortalActivate: (side) => enterRef.current(side),
+          onEscape: () => cancelRef.current(),
         });
         engineRef.current = engine;
       } catch {
@@ -106,7 +113,7 @@ export function PortalHero({ quality, loadEngine }: PortalHeroProps = {}) {
       engine?.dispose();
       engineRef.current = null;
     };
-  }, [engineKey, store, quality, loadEngine, enter, cancelEnter]);
+  }, [engineKey, store, quality, loadEngine]);
 
   const restore = () => {
     setMode('loading');
