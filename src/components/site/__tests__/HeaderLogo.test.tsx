@@ -28,16 +28,16 @@ const SOURCE = readFileSync(
 describe('HeaderLogo', () => {
   it('unit_headerlogo_renders_single_home_link', () => {
     render(<HeaderLogo />);
-    const link = screen.getByRole('link', { name: 'Fabled 10X' });
+    const link = screen.getByRole('link', { name: 'Travis Gautier' });
     expect(link).toHaveAttribute('href', '/');
   });
 
   it('a11y_headerlogo_one_combined_aria_label', () => {
-    // 9.7: screen readers announce "Fabled 10X, link" once — pfp is
+    // 9.7: screen readers announce "Travis Gautier, link" once — pfp is
     // decorative (alt=""), Logo's inner parts are aria-hidden.
     render(<HeaderLogo />);
     expect(
-      screen.getAllByRole('link', { name: 'Fabled 10X' }),
+      screen.getAllByRole('link', { name: 'Travis Gautier' }),
     ).toHaveLength(1);
   });
 

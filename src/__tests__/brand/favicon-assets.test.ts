@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 // ── Favicon + asset-pipeline sentinel (styling-overhaul-8.1) ──────────────
 //
 // Asserts the committed brand asset set exists and is well-formed:
-//   - public/favicon.svg (32×32 {10x} mark, brand colors)
+//   - public/favicon.svg (32×32 {tg} mark, brand colors)
 //   - public/apple-touch-icon.png (180), android-chrome-{192,512}.png
 //   - public/fonts/{Cinzel-Black,Inter-Regular,Inter-SemiBold,Inter-Bold}.ttf
 //
@@ -59,9 +59,9 @@ describe('favicon.svg — content (styling-overhaul-8.1)', () => {
   });
 
   /// Tests checklist item: 1
-  it('unit_favicon_svg_contains_10x_mark: text content includes the {10x} curly-brace mark', () => {
+  it('unit_favicon_svg_contains_tg_mark: text content includes the {tg} curly-brace mark', () => {
     const svg = readFileSync(faviconPath, 'utf8');
-    expect(svg).toContain('{10x}');
+    expect(svg).toContain('{tg}');
   });
 
   /// Tests checklist item: 1

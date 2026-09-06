@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { isValidElement, type ReactNode } from 'react';
+import { site } from '@/lib/site';
 import {
   OG_SIZE,
   OG_CONTENT_TYPE,
@@ -98,7 +99,7 @@ describe('og-image helper (styling-overhaul-8.2)', () => {
     expect(text).toContain('Zero to 10x · Episode 3');
     expect(text).toContain('Build the whole');
     expect(text).toContain('thing alone');
-    expect(text).toContain('fabled10x.com');
+    expect(text).toContain(site.domain);
   });
 
   it('unit_composition_uses_brand_hexes', () => {
@@ -221,7 +222,7 @@ describe('og-image helper (styling-overhaul-8.2)', () => {
       .replace('Zero to 10x · Episode 3', '')
       .replace('Public Title', '')
       .replace('?', '')
-      .replace('fabled10x.com', '')
+      .replace(site.domain, '')
       .trim();
     expect(stripped).toBe('');
   });

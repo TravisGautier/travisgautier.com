@@ -65,12 +65,12 @@ describe('Footer', () => {
 
   it('unit_footer_renders_logo_component', () => {
     render(<Footer />);
-    expect(screen.getByLabelText('Fabled 10X')).toBeInTheDocument();
+    expect(screen.getByLabelText('Travis Gautier')).toBeInTheDocument();
   });
 
   it('unit_footer_home_link_wraps_logo', () => {
     render(<Footer />);
-    const home = screen.getByRole('link', { name: 'Fabled 10X' });
+    const home = screen.getByRole('link', { name: 'Travis Gautier' });
     expect(home).toHaveAttribute('href', '/');
     expect(home.className).toMatch(/inline-flex/);
   });
@@ -78,7 +78,7 @@ describe('Footer', () => {
   it('unit_footer_logo_size_sm', () => {
     render(<Footer />);
     // size='sm' → wordmark fontSize is 1rem (per Logo's sizeScale.sm.wordmark)
-    const wordmark = screen.getByText('FABLED');
+    const wordmark = screen.getByText('TRAVIS GAUTIER');
     expect(wordmark).toBeInTheDocument();
     const style = (wordmark as HTMLElement).style;
     expect(style.fontSize).toBe('1rem');
@@ -234,13 +234,13 @@ describe('Footer', () => {
 
   it('a11y_footer_logo_accessible_name', () => {
     render(<Footer />);
-    expect(screen.getByLabelText('Fabled 10X')).toBeInTheDocument();
+    expect(screen.getByLabelText('Travis Gautier')).toBeInTheDocument();
   });
 
   it('a11y_footer_home_link_accessible_name', () => {
     render(<Footer />);
-    const home = screen.getByRole('link', { name: 'Fabled 10X' });
-    expect(home).toHaveAccessibleName('Fabled 10X');
+    const home = screen.getByRole('link', { name: 'Travis Gautier' });
+    expect(home).toHaveAccessibleName('Travis Gautier');
   });
 
   it('a11y_footer_arrow_glyph_aria_hidden', () => {

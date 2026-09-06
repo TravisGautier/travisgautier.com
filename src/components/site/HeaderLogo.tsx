@@ -1,12 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Logo } from '@/components/brand/Logo';
+import { site } from '@/lib/site';
 
 export function HeaderLogo() {
   return (
     <Link
       href="/"
-      aria-label="Fabled 10X"
+      aria-label={site.name}
       className="
         inline-flex items-center gap-(--space-2)
         min-h-(--tap-min)

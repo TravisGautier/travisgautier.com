@@ -42,16 +42,16 @@ describe('Header', () => {
 
   it('unit_header_renders_logo_component', () => {
     // 9.7: the mark is the HeaderLogo composite; its accessible name is
-    // carried by the wrapping link, announced once as "Fabled 10X".
+    // carried by the wrapping link, announced once as "Travis Gautier".
     render(<Header />);
     expect(
-      screen.getByRole('link', { name: 'Fabled 10X' }),
+      screen.getByRole('link', { name: 'Travis Gautier' }),
     ).toBeInTheDocument();
   });
 
   it('unit_header_home_link_wraps_logo', () => {
     render(<Header />);
-    const home = screen.getByRole('link', { name: 'Fabled 10X' });
+    const home = screen.getByRole('link', { name: 'Travis Gautier' });
     expect(home).toHaveAttribute('href', '/');
   });
 
@@ -199,7 +199,7 @@ describe('Header', () => {
     // name is announced once, not duplicated.
     render(<Header />);
     expect(
-      screen.getAllByRole('link', { name: 'Fabled 10X' }),
+      screen.getAllByRole('link', { name: 'Travis Gautier' }),
     ).toHaveLength(1);
   });
 
@@ -328,7 +328,7 @@ describe('Header', () => {
 
   it('unit_header_logo_link_is_inline_flex', () => {
     render(<Header />);
-    const home = screen.getByRole('link', { name: 'Fabled 10X' });
+    const home = screen.getByRole('link', { name: 'Travis Gautier' });
     expect(home.className).toMatch(/\binline-flex\b/);
   });
 

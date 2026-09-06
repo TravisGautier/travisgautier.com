@@ -1,4 +1,5 @@
 import type { CSSProperties } from 'react';
+import { site } from '@/lib/site';
 
 interface LogoProps {
   size?: 'sm' | 'md' | 'lg';
@@ -39,10 +40,10 @@ export function Logo({ size = 'md', mono = false, className = '' }: LogoProps) {
     <span
       className={`inline-flex items-baseline ${className}`}
       style={{ gap: s.gap }}
-      aria-label="Fabled 10X"
+      aria-label={site.name}
     >
-      <span style={wordmarkStyle} aria-hidden="true">FABLED</span>
-      <span style={markStyle} aria-hidden="true">{'{10x}'}</span>
+      <span style={wordmarkStyle} aria-hidden="true">TRAVIS GAUTIER</span>
+      <span style={markStyle} aria-hidden="true">{'{tg}'}</span>
     </span>
   );
 }

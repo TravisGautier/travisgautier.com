@@ -18,6 +18,7 @@ import { ImageResponse } from 'next/og';
 import Image, { size, contentType, alt } from '../opengraph-image';
 import EpisodeImage from '../episodes/[slug]/opengraph-image';
 import CaseImage from '../cases/[slug]/opengraph-image';
+import { site } from '@/lib/site';
 
 const MockImageResponse = vi.mocked(ImageResponse);
 
@@ -72,14 +73,14 @@ describe('root opengraph-image (styling-overhaul-8.2)', () => {
     expect(text).toContain('Build the whole');
     expect(text).toContain('thing alone');
     expect(text).toContain('?');
-    expect(text).toContain('fabled10x.com');
+    expect(text).toContain(site.domain);
   });
 
   // ---------- Accessibility ----------
   it('a11y_robust_root_alt_text_present', () => {
     expect(typeof alt).toBe('string');
     expect((alt as string).trim().length).toBeGreaterThan(8);
-    expect((alt as string).toLowerCase()).toContain('fabled');
+    expect((alt as string).toLowerCase()).toContain('travis');
   });
 
   // ---------- Infrastructure (source sentinels across all 3 routes) ----------

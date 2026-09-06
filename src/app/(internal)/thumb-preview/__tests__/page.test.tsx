@@ -20,6 +20,7 @@ import { render, screen, cleanup } from '@testing-library/react';
 import { notFound } from 'next/navigation';
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { site } from '@/lib/site';
 
 vi.mock('next/navigation', () => ({
   notFound: vi.fn(),
@@ -128,7 +129,7 @@ describe('ThumbPreviewPage — composition (dev)', () => {
     expect(screen.getByText('Build the whole thing alone')).toBeInTheDocument();
     expect(screen.getByText('Zero to 10x')).toBeInTheDocument();
     expect(screen.getByText('FLAGSHIP')).toBeInTheDocument();
-    expect(screen.getByText('fabled10x.com')).toBeInTheDocument();
+    expect(screen.getByText(site.domain)).toBeInTheDocument();
     expect(notFound).not.toHaveBeenCalled();
   });
 
@@ -183,9 +184,9 @@ describe('ThumbPreviewPage — composition (dev)', () => {
   });
 
   /// Tests checklist items: 1
-  it('unit_footer_brand_wordmark: footer renders fabled10x.com', async () => {
+  it('unit_footer_brand_wordmark: footer renders the site domain', async () => {
     await renderDev({});
-    expect(screen.getByText('fabled10x.com')).toBeInTheDocument();
+    expect(screen.getByText(site.domain)).toBeInTheDocument();
   });
 });
 
@@ -199,7 +200,7 @@ describe('ThumbPreviewPage — integration (dev)', () => {
     expect(h1s).toHaveLength(1);
     expect(h1s[0]).toHaveTextContent('Build the whole thing alone');
     expect(container.querySelectorAll('img')).toHaveLength(1);
-    expect(screen.getByText('fabled10x.com')).toBeInTheDocument();
+    expect(screen.getByText(site.domain)).toBeInTheDocument();
   });
 
   /// Tests checklist items: 1

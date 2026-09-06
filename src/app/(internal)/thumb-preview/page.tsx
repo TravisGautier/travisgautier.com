@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { BrushstrokeSeam, DropAccent } from '@/components/brand';
 import { toAccentGlyph } from './glyphs';
+import { site } from '@/lib/site';
 
 export const dynamic = 'force-dynamic';
 
@@ -78,7 +79,7 @@ export default async function ThumbPreviewPage({ searchParams }: ThumbPreviewPag
             </DropAccent>
           </h1>
 
-          <span className="label text-(--color-ink) opacity-70">fabled10x.com</span>
+          <span className="label text-(--color-ink) opacity-70">{site.domain}</span>
         </div>
       </BrushstrokeSeam>
     </div>

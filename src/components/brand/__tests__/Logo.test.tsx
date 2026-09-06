@@ -17,7 +17,7 @@ const sizeExpectations: Record<Size, { wordmark: string; mark: string; gap: stri
 };
 
 function getWrapperSpan(container: HTMLElement): HTMLSpanElement | null {
-  return container.querySelector('span[aria-label="Fabled 10X"]');
+  return container.querySelector('span[aria-label="Travis Gautier"]');
 }
 
 function getInnerSpans(container: HTMLElement): HTMLSpanElement[] {
@@ -37,18 +37,18 @@ function getMarkSpan(container: HTMLElement): HTMLSpanElement | null {
 describe('Logo', () => {
   // --- Unit ---
 
-  it('unit_logo_renders_FABLED_wordmark', () => {
+  it('unit_logo_renders_TRAVIS_GAUTIER_wordmark', () => {
     const { container } = render(<Logo />);
     const wordmark = getWordmarkSpan(container);
     expect(wordmark).not.toBeNull();
-    expect(wordmark?.textContent).toBe('FABLED');
+    expect(wordmark?.textContent).toBe('TRAVIS GAUTIER');
   });
 
   it('unit_logo_renders_curly_brace_mark', () => {
     const { container } = render(<Logo />);
     const mark = getMarkSpan(container);
     expect(mark).not.toBeNull();
-    expect(mark?.textContent).toBe('{10x}');
+    expect(mark?.textContent).toBe('{tg}');
   });
 
   it('unit_logo_sm_size_dimensions', () => {
@@ -195,7 +195,7 @@ describe('Logo', () => {
     expect(wrapper).not.toBeNull();
     expect(anchor?.contains(wrapper)).toBe(true);
     expect(wrapper?.className).toMatch(/\bcustom-wrap\b/);
-    expect(wrapper?.textContent).toBe('FABLED{10x}');
+    expect(wrapper?.textContent).toBe('TRAVIS GAUTIER{tg}');
   });
 
   it('integration_logo_barrel_export', () => {
@@ -215,7 +215,7 @@ describe('Logo', () => {
   it('a11y_logo_wrapper_announces_brand_label', () => {
     const { container } = render(<Logo />);
     const wrapper = getWrapperSpan(container);
-    expect(wrapper?.getAttribute('aria-label')).toBe('Fabled 10X');
+    expect(wrapper?.getAttribute('aria-label')).toBe('Travis Gautier');
     expect(wrapper?.getAttribute('role')).toBeNull();
     expect(wrapper?.getAttribute('aria-labelledby')).toBeNull();
   });
@@ -234,13 +234,13 @@ describe('Logo', () => {
   it('a11y_logo_text_content_matches_visual', () => {
     const { container } = render(<Logo />);
     const wrapper = getWrapperSpan(container);
-    expect(wrapper?.textContent).toBe('FABLED{10x}');
+    expect(wrapper?.textContent).toBe('TRAVIS GAUTIER{tg}');
   });
 
   it('a11y_logo_mono_preserves_aria', () => {
     const { container } = render(<Logo mono />);
     const wrapper = getWrapperSpan(container);
-    expect(wrapper?.getAttribute('aria-label')).toBe('Fabled 10X');
+    expect(wrapper?.getAttribute('aria-label')).toBe('Travis Gautier');
     const spans = getInnerSpans(container);
     expect(spans).toHaveLength(2);
     for (const span of spans) {
@@ -269,7 +269,7 @@ describe('Logo', () => {
   it('infra_logo_svg_has_valid_root_element', () => {
     const svg = readFileSync(join(process.cwd(), 'public/logo.svg'), 'utf8');
     expect(svg).toMatch(/<svg[^>]*xmlns="http:\/\/www\.w3\.org\/2000\/svg"/);
-    expect(svg).toMatch(/viewBox="0 0 480 80"/);
+    expect(svg).toMatch(/viewBox="0 0 960 80"/);
   });
 
   it('infra_surface_barrel_export_count_includes_logo', () => {
@@ -348,14 +348,14 @@ describe('Logo', () => {
 
   // --- Data integrity (SVG file) ---
 
-  it('data_logo_svg_contains_FABLED_word', () => {
+  it('data_logo_svg_contains_TRAVIS_GAUTIER_word', () => {
     const svg = readFileSync(join(process.cwd(), 'public/logo.svg'), 'utf8');
-    expect(svg).toMatch(/FABLED/);
+    expect(svg).toMatch(/TRAVIS GAUTIER/);
   });
 
   it('data_logo_svg_contains_curly_mark', () => {
     const svg = readFileSync(join(process.cwd(), 'public/logo.svg'), 'utf8');
-    expect(svg).toMatch(/\{10x\}/);
+    expect(svg).toMatch(/\{tg\}/);
   });
 
   it('data_logo_svg_uses_brand_colors_ink_and_oxblood', () => {
