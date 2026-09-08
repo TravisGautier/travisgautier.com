@@ -55,7 +55,7 @@ MARGIN = 28
 PAD = 40
 RADIUS = 18
 TITLE_H = 68
-MAX_ROWS = 10
+MAX_ROWS = 12
 MAX_COLS = 38
 MAX_BYTES = 5 * 1024 * 1024
 HOST = "travis@quivira"
@@ -179,7 +179,8 @@ def render(sid, meta, rows):
     for c in (OX_LIGHT, BONE, VERD_LIGHT):
         d.ellipse([cx, win[1] + 24, cx + 20, win[1] + 44], fill=c)
         cx += 34
-    title = f"{HOST}: ~/{Path(meta['cwd']).relative_to('/home/travis')}"
+    rel = str(Path(meta['cwd']).relative_to('/home/travis'))
+    title = f"{HOST}: ~" if rel == "." else f"{HOST}: ~/{rel}"
     tf = font(INTER, 24)
     d.text(((win[0] + win[2]) / 2 - tf.getlength(title) / 2, win[1] + 22), title, font=tf, fill=BONE)
 
