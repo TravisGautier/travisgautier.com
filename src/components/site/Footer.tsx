@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Parchment } from '@/components/brand/Parchment';
 import { Logo } from '@/components/brand/Logo';
 import { Container } from './Container';
+import { site } from '@/lib/site';
 
 export function Footer() {
   return (
@@ -12,7 +13,7 @@ export function Footer() {
             <Logo size="sm" />
           </Link>
           <p className="body-3">
-            One person. An agent team. Full SaaS delivery.
+            {site.tagline}
           </p>
         </div>
         <div className="flex flex-col items-start md:items-end gap-(--space-1)">

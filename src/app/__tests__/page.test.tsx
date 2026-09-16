@@ -146,14 +146,14 @@ describe('Homepage (styling-overhaul-7.1) — brand reskin', () => {
   it('unit_hero_h1_headline_preserved: hero h1 still carries the three-line headline', async () => {
     await renderHome();
     const h1 = screen.getByRole('heading', { level: 1 });
-    expect(h1).toHaveTextContent('One person.');
-    expect(h1).toHaveTextContent('An agent team.');
-    expect(h1).toHaveTextContent('Full SaaS delivery.');
+    expect(h1).toHaveTextContent('I teach freelancers');
+    expect(h1).toHaveTextContent('to run an agent team');
+    expect(h1).toHaveTextContent('and win retail clients.');
   });
 
   it('unit_hero_summary_body_1_muted: hero summary uses .body-1 + text-(--color-muted)', async () => {
     await renderHome();
-    const summary = screen.getByText(/documented real-world case study/);
+    const summary = screen.getByText(/Agentic development for freelancers/);
     expect(summary.className).toMatch(/\bbody-1\b/);
     expect(summary.className).toMatch(/text-\(--color-muted\)/);
     expect(summary.className).not.toMatch(/\btext-lg\b/);
@@ -373,16 +373,17 @@ describe('Homepage (styling-overhaul-7.1) — brand reskin', () => {
     expect(mockGetLatestEpisode).toHaveBeenCalledOnce();
   });
 
-  it('int_block_render_order: hero → latest → library → sister-project in DOM order', async () => {
+  it('int_block_render_order: hero → who-i-am → latest → library → sister-project in DOM order', async () => {
     await renderHome();
     const heroKicker = screen.getByText(site.heroKicker);
+    const whoKicker = screen.getByText('Who I am');
     const latestKicker = screen.getByText('Latest Episode');
     const libraryHeading = screen.getByRole('heading', {
       level: 2,
       name: 'The library',
     });
     const sisterKicker = screen.getByText('Sister Project');
-    const order = [heroKicker, latestKicker, libraryHeading, sisterKicker];
+    const order = [heroKicker, whoKicker, latestKicker, libraryHeading, sisterKicker];
     for (let i = 1; i < order.length; i++) {
       // node_a precedes node_b → DOCUMENT_POSITION_FOLLOWING bit set on b vs a.
       const rel = order[i - 1].compareDocumentPosition(order[i]);

@@ -113,6 +113,13 @@ body:has(> main > [data-hero-root]:first-child) > header {
 }
 
 @layer components {
+  /* Home hero: fluid type that keeps scaling past the global display cap.
+     Overrides the tokens the .display-1/.body-1/.label utilities read. */
+  .hero-fluid {
+    --text-display-1: clamp(2.5rem, 5.2vw + 0.5rem, 7.5rem);
+    --text-body-1: clamp(1.125rem, 0.55vw + 0.85rem, 1.75rem);
+    --text-label: clamp(0.75rem, 0.3vw + 0.6rem, 1.125rem);
+  }
   .display-1 {
     font-family: var(--font-display), serif;
     font-weight: 900;

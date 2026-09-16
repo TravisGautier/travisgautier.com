@@ -18,6 +18,7 @@ vi.mock('next/link', () => ({
 }));
 
 import { render, screen } from '@testing-library/react';
+import { site } from '@/lib/site';
 import { Footer } from '../Footer';
 
 const FOOTER_SOURCE = readFileSync(
@@ -89,7 +90,7 @@ describe('Footer', () => {
   it('unit_footer_left_column_layout', () => {
     render(<Footer />);
     const tagline = screen.getByText(
-      'One person. An agent team. Full SaaS delivery.',
+      site.tagline,
     );
     const leftCol = tagline.parentElement;
     expect(leftCol).not.toBeNull();
@@ -103,7 +104,7 @@ describe('Footer', () => {
   it('unit_footer_tagline_uses_body_3_utility', () => {
     render(<Footer />);
     const tagline = screen.getByText(
-      'One person. An agent team. Full SaaS delivery.',
+      site.tagline,
     );
     expect(tagline.className).toMatch(/\bbody-3\b/);
     expect(tagline.className).not.toMatch(/text-muted/);
@@ -113,7 +114,7 @@ describe('Footer', () => {
   it('unit_footer_tagline_text_preserved', () => {
     render(<Footer />);
     expect(
-      screen.getByText('One person. An agent team. Full SaaS delivery.'),
+      screen.getByText(site.tagline),
     ).toBeInTheDocument();
   });
 
@@ -205,7 +206,7 @@ describe('Footer', () => {
   it('int_footer_left_column_contains_logo_link_and_tagline', () => {
     render(<Footer />);
     const tagline = screen.getByText(
-      'One person. An agent team. Full SaaS delivery.',
+      site.tagline,
     );
     const leftCol = tagline.parentElement!;
     // Both the home link and the tagline live under the same wrapper

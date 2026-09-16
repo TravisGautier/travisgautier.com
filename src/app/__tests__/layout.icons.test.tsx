@@ -81,7 +81,7 @@ describe('layout metadata.icons (styling-overhaul-8.1)', () => {
   it('i_metadata_preserves_existing_fields_alongside_icons: metadataBase/openGraph/twitter/robots/title/description intact', () => {
     expect(metadata.metadataBase).toBeInstanceOf(URL);
     expect((metadata.title as { default: string }).default).toBe(site.name);
-    expect(metadata.description).toBe('One person. An agent team. Full SaaS delivery.');
+    expect(metadata.description).toBe('Teaching freelancers and small teams to run an agent team and win retail clients.');
     expect(metadata.openGraph).toBeDefined();
     expect(metadata.twitter).toBeDefined();
     expect(metadata.robots).toBeDefined();

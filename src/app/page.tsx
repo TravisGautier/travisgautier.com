@@ -11,6 +11,7 @@ import { Container } from '@/components/site/Container';
 import { EmailCapture } from '@/components/capture/EmailCapture';
 import { getLatestEpisode } from '@/lib/content/episodes';
 import { site } from '@/lib/site';
+import { WhoIAm } from '@/components/home/WhoIAm';
 
 const LIBRARY = [
   {
@@ -46,31 +47,37 @@ export default async function Home() {
     <>
       <section id="content" className="relative isolate overflow-hidden border-b border-(--edge-color-subtle)">
         <Image
-          src="/hero/floatbg.png"
+          src="/hero/floatbg-hero.png"
           alt=""
           fill
           sizes="100vw"
           aria-hidden="true"
-          className="-z-10 object-cover object-right opacity-35 mix-blend-multiply pointer-events-none select-none"
+          className="-z-10 object-fill opacity-35 mix-blend-multiply pointer-events-none select-none"
         />
         <HeroBackdrop />
         <Section rhythm="lg">
-          <Container className="flex flex-col gap-(--space-5) md:max-w-prose">
+          <Container className="hero-fluid flex flex-col gap-(--space-5) md:max-w-[clamp(40rem,52vw,76rem)]">
             <span className="label">{site.heroKicker}</span>
             <h1 className="display-1">
-              One person.<br />
-              An agent team.<br />
-              Full SaaS delivery.
+              I teach freelancers<br />
+              to run an agent team<br />
+              and win retail clients.
             </h1>
             <p className="body-1 text-(--color-muted)">
-              A documented real-world case study of using AI agent teams to run
-              a legitimate software consulting business. Real clients, real
-              money, real deliverables.
+              Agentic development for freelancers and small teams who build for
+              retail: a local service business, a storefront, any owner-operator
+              who signs their own checks. The curriculum is free. The proof is one
+              paid engagement, a CRM for a DJ and party-rental operator, 5,568
+              commits deep, with the parts that failed left in.
             </p>
-            <EmailCapture source="homepage-hero" />
+            <div className="w-full max-w-lg self-center">
+              <EmailCapture source="homepage-hero" />
+            </div>
           </Container>
         </Section>
       </section>
+
+      <WhoIAm />
 
       {latest && (
         <>

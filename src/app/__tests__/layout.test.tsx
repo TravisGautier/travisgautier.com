@@ -41,7 +41,7 @@ describe('layout metadata', () => {
 
   it('i_metadata_description', () => {
     expect(metadata.description).toBe(
-      'One person. An agent team. Full SaaS delivery.'
+      'Teaching freelancers and small teams to run an agent team and win retail clients.'
     );
   });
 
