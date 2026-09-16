@@ -60,3 +60,21 @@ next-env.d.ts
 # this rule guards against accidental `./data` mounts during local dev)
 data/
 postgres-data/
+
+# social operation content: queue, essays, notes, voice, media, facts,
+# ledgers. Local + prod only, synced by scripts/social/sync_content.sh.
+# Never tracked, never pushed (Travis ruling 2026-09-06).
+content/social/
+
+# social operation (X + Substack): private, never committed; reaches prod by scripts/social/sync_content.sh
+scripts/social/x_*.py
+scripts/social/substack_*.py
+scripts/social/tw_common.py
+scripts/social/topics.py
+scripts/social/roll_cadence.py
+scripts/social/sync_content.sh
+scripts/social/__pycache__/
+scripts/validation/
+deploy/
+docs/social-operation.md
+.github/workflows/selftests.yml
