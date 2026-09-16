@@ -5,8 +5,8 @@ export const site = {
   domain: 'travisgautier.com',
   url: 'https://travisgautier.com',
   titleTemplate: '%s · Travis Gautier',
-  tagline: 'One person. An agent team. Full SaaS delivery.',
-  heroKicker: 'Travis Gautier · Solo SaaS delivery',
+  tagline: 'Teaching freelancers and small teams to run an agent team and win retail clients.',
+  heroKicker: 'Travis Gautier · Agentic development for retail',
   twitterHandle: '@TravisGautier',
   emailFromAddress: 'no-reply@travisgautier.com',
   emailFrom: 'Travis Gautier <no-reply@travisgautier.com>',
@@ -14,6 +14,12 @@ export const site = {
   sisterProjectUrl: 'https://largelanguagelibrary.ai',
   substackProfileUrl: 'https://substack.com/@travisgautier',
   githubUrl: 'https://github.com/TravisGautier/travisgautier.com',
+  githubProfileUrl: 'https://github.com/TravisGautier',
+  xUrl: 'https://x.com/travisgautier',
+  linkedinUrl: 'https://www.linkedin.com/in/travisgautier/',
+  youtubeUrl: 'https://www.youtube.com/@travisgautier',
+  headshotPath: '/media/travis-gautier.jpg',
+  resumePath: '/resume/Travis-Gautier-Resume-2026-AI.pdf',
 } as const;
 
 export function publisherJsonLd() {
