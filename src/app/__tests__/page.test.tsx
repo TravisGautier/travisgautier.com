@@ -49,11 +49,6 @@ vi.mock('@/components/capture/EmailCapture', () => ({
   ),
 }));
 
-// The hero is a client component that probes WebGL; stub it in jsdom.
-vi.mock('@/components/hero', () => ({
-  PortalHero: () => <section data-hero-root data-testid="portal-hero" />,
-}));
-
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect, beforeEach } from 'vitest';
 import { getLatestEpisode } from '@/lib/content/episodes';
@@ -100,7 +95,7 @@ async function renderHome() {
   return render(jsx);
 }
 
-// The intro <section id="content"> that follows the portal hero.
+// The intro <section id="content"> that opens the page (portal hero shelved).
 function introSection(): HTMLElement {
   const s = document.getElementById('content');
   if (!s) throw new Error('No #content section found');
@@ -645,32 +640,26 @@ describe('Homepage (styling-overhaul-7.1) — brand reskin', () => {
   });
 });
 
-describe('Home — portal hero composition', () => {
+describe('Home — portal hero shelved (2026-09-16, revisit later)', () => {
   beforeEach(() => {
     mockGetLatestEpisode.mockResolvedValue(null);
   });
 
-  it('int_portal_hero_precedes_intro_h1: PortalHero renders first, before the h1 intro section', async () => {
-    await renderHome();
-    const hero = screen.getByTestId('portal-hero');
-    const h1 = screen.getByRole('heading', { level: 1 });
-    expect(hero.compareDocumentPosition(h1) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
-    expect(hero.hasAttribute('data-hero-root')).toBe(true);
+  it('infra_page_does_not_mount_portal_hero: the Three.js PortalHero is not imported or rendered on the root page', () => {
+    expect(PAGE_SOURCE).not.toMatch(/@\/components\/hero['"]/);
+    expect(PAGE_SOURCE).not.toMatch(/<PortalHero/);
   });
 
-  it('a11y_intro_section_is_skip_target: the section after the hero carries id="content"', async () => {
+  it('int_intro_section_is_first_block: the h1 intro section opens the page with no hero root before it', async () => {
+    await renderHome();
+    expect(document.querySelector('[data-hero-root]')).toBeNull();
+    const h1 = screen.getByRole('heading', { level: 1 });
+    expect(h1).toBeInTheDocument();
+  });
+
+  it('a11y_intro_section_is_skip_target: the intro section still carries id="content"', async () => {
     await renderHome();
     const intro = introSection();
     expect(intro.id).toBe('content');
-  });
-
-  it('infra_page_imports_portal_hero_from_hero_module', () => {
-    expect(PAGE_SOURCE).toMatch(/import\s*\{\s*PortalHero\s*\}\s*from\s*['"]@\/components\/hero['"]/);
-    expect(PAGE_SOURCE).toMatch(/<PortalHero\s*\/>/);
-  });
-
-  it('perf_intro_image_no_longer_priority: floatbg is below the fold and must not be priority-loaded', () => {
-    const introImage = PAGE_SOURCE.slice(PAGE_SOURCE.indexOf('/hero/floatbg.png'), PAGE_SOURCE.indexOf('/hero/floatbg.png') + 400);
-    expect(introImage).not.toMatch(/\bpriority\b/);
   });
 });
