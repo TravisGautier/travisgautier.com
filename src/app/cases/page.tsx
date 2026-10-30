@@ -1,12 +1,14 @@
 import type { Metadata } from 'next';
 import { EditorialCard, Marble, Section } from '@/components/brand';
 import { Container } from '@/components/site/Container';
+import { EmailCapture } from '@/components/capture/EmailCapture';
 import { getAllCases } from '@/lib/content/cases';
 import { CASE_STATUS_LABELS } from '@/content/schemas';
 import { site } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Case Studies',
+  alternates: { canonical: '/cases' },
   description:
     `Full documented project histories of ${site.name} client work — the proof layer behind the channel narrative.`,
 };
@@ -43,6 +45,9 @@ export default async function CasesIndex() {
               </li>
             ))}
           </ul>
+          <div className="mt-(--space-7) max-w-lg">
+            <EmailCapture source="cases-index" />
+          </div>
         </Container>
       </Section>
     </Marble>

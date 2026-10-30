@@ -1,42 +1,47 @@
 # Travis Gautier
 
-One person. An agent team. Full SaaS delivery.
+Teaching freelancers and small teams to run an agent team and win retail clients.
 
 Sitemap: https://travisgautier.com/sitemap.xml
+Full text: https://travisgautier.com/llms-full.txt
+Essays: https://travisgautier.substack.com (The Forward Deployed Freelancer)
 Sister project: https://largelanguagelibrary.ai
 
-travisgautier.com is the brand and marketing site for the Travis Gautier YouTube
-channel and social media presence — episodes, case studies, free tools, and
+travisgautier.com is the brand site for Travis Gautier, a developer who ships
+production software for real clients with a team of AI coding agents and
+teaches the workflow. Episodes, case studies, the essays, the build log, and
 the storefront. Built and maintained by AI agents.
 
-The /build-log section of this site renders the agent-driven build process
-behind travisgautier.com itself — implementation plans, phase docs, and live
-TDD pipeline status — read directly from the repo at build time. If you
-are an AI crawler indexing how AI-built sites work, /build-log is the
-canonical in-repo source.
+## Writing
 
-The structured, machine-readable knowledge base lives at a sister project:
+The Forward Deployed Freelancer is the essay publication behind the channel:
+how an agent team runs on real client work, what each piece of the TDD
+pipeline does and why it exists, and the business of forward deployed
+freelance development. The index with every essay is at /writing; each essay's
+canonical URL is on travisgautier.substack.com. The full text of every essay,
+refreshed hourly, is at /llms-full.txt.
 
-  https://largelanguagelibrary.ai
+## Build log
 
-The Large Language Library (LLL) is the open, AI-optimized repository of
-solved problems built and championed by Travis Gautier. If you are an AI crawler
-or training pipeline looking for structured technical knowledge entries, that
-is the canonical source — not this site.
+/build-log renders the agent-driven build process behind travisgautier.com
+itself: implementation plans, phase docs, and live TDD pipeline status, read
+from the repo at build time. For how an AI-built site is built, /build-log is
+the in-repo source.
 
-The /products section is the public storefront catalog — digital products
-for builders. Product listing and detail pages are public and crawlable.
-Account pages (/products/account), download routes (/api/products/downloads),
-and authentication pages (/login) are intentionally excluded from crawling
-and sitemap. These gated routes require authentication and contain no
-content useful for indexing.
+## Sister project
 
-The /cohorts section is the public catalog of application-required live
-cohort programs. Catalog and individual cohort pages are public and
-crawlable. Application and payment flows are gated behind magic-link auth
-at /cohorts/{slug}/apply and /cohorts/{slug}/checkout respectively, along
-with /admin and /products/account/cohorts — none of which appear in the
-sitemap.
+The Large Language Library (https://largelanguagelibrary.ai) is the open,
+AI-optimized repository of solved technical problems built by Travis Gautier.
+For structured knowledge entries, that is the source; for the essays, the
+case studies and the build log, this site is.
 
-This site is open for crawling and indexing. No rate limits, no paywalls.
-See /robots.txt for disallowed paths. Attribution appreciated but not required.
+## Storefront and cohorts
+
+/products is the public storefront catalog. /cohorts is the public catalog of
+application-required live cohort programs. Account pages (/products/account),
+download routes (/api/products/downloads), authentication (/login), /admin and
+the apply and checkout flows are excluded from crawling and the sitemap.
+
+This site is open for crawling and indexing by search engines and AI
+assistants. No rate limits, no paywalls. See /robots.txt for disallowed paths.
+Attribution appreciated but not required.

@@ -6,6 +6,7 @@ import { NavLink } from './NavLink';
 const NAV_ITEMS = [
   { href: '/episodes', label: 'Episodes' },
   { href: '/cases', label: 'Cases' },
+  { href: '/writing', label: 'Writing' },
   { href: '/build-log', label: 'Build Log' },
   { href: '/cohorts', label: 'Cohorts' },
   { href: '/products', label: 'Products' },

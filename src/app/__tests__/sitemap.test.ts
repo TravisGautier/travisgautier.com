@@ -156,6 +156,7 @@ describe('sitemap', () => {
     expect(urls).toContain(`${site.url}/`);
     expect(urls).toContain(`${site.url}/episodes`);
     expect(urls).toContain(`${site.url}/cases`);
+    expect(urls).toContain(`${site.url}/writing`);
     expect(urls).toContain(`${site.url}/about`);
   });
 
@@ -205,8 +206,8 @@ describe('sitemap', () => {
     mockGetAllProducts.mockResolvedValue([] as unknown as Awaited<ReturnType<typeof getAllProducts>>);
     mockGetAllCohorts.mockResolvedValue([] as unknown as Awaited<ReturnType<typeof getAllCohorts>>);
     const result = await sitemap();
-    // 4 pre-existing static routes + 2 build-log static routes + 1 products + 1 cohorts static route
-    expect(result).toHaveLength(8);
+    // 5 static routes (incl. /writing) + 2 build-log static routes + 1 products + 1 cohorts static route
+    expect(result).toHaveLength(9);
     const urls = result.map((r) => r.url);
     expect(urls).toContain(`${site.url}/`);
     expect(urls).toContain(`${site.url}/episodes`);

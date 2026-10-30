@@ -2,17 +2,25 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { Marble, Section, DropAccent } from '@/components/brand';
 import { Container } from '@/components/site/Container';
-import { site } from '@/lib/site';
+import { EmailCapture } from '@/components/capture/EmailCapture';
+import { personJsonLd, site, substackLink } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'About',
   description:
-    `The ${site.name} premise, the channel, and the sister project — The Large Language Library.`,
+    `The ${site.name} premise, the channel, the essays, and the sister project — The Large Language Library.`,
+  alternates: { canonical: '/about' },
 };
 
 export default function About() {
+  const jsonLd = { '@context': 'https://schema.org', ...personJsonLd() };
+
   return (
     <Marble as="article">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Section rhythm="lg">
         <Container width="prose">
           <span className="label">The Channel</span>
@@ -33,6 +41,17 @@ export default function About() {
               is maintained by the same agent workflow being documented on the
               channel.
             </p>
+            <h2>The essays</h2>
+            <p>
+              The long form lives at{' '}
+              <a href={substackLink('/', { medium: 'site', content: 'about-essays' })}>
+                {site.substackName}
+              </a>
+              : how the agent team runs on real client work, what each piece of
+              the pipeline does and why it exists, and what the business side
+              looks like when you are the whole company. The index is at{' '}
+              <Link href="/writing">/writing</Link>.
+            </p>
             <h2>The Large Language Library</h2>
             <p>
               {site.name} built and champions{' '}
@@ -44,6 +63,9 @@ export default function About() {
               the brand; LLL is the infrastructure. The tool is bigger than the
               brand that built it — that&apos;s intentional.
             </p>
+          </div>
+          <div className="mt-(--space-7)">
+            <EmailCapture source="about-cta" />
           </div>
         </Container>
       </Section>

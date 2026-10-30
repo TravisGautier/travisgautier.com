@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Parchment } from '@/components/brand/Parchment';
 import { Logo } from '@/components/brand/Logo';
 import { Container } from './Container';
-import { site } from '@/lib/site';
+import { site, substackLink } from '@/lib/site';
 
 export function Footer() {
   return (
@@ -15,6 +15,19 @@ export function Footer() {
           <p className="body-3">
             {site.tagline}
           </p>
+          <nav aria-label="Writing" className="flex flex-wrap gap-x-(--space-4) gap-y-(--space-1)">
+            <Link href="/writing" className="label text-(--color-oxblood) border-b border-(--color-oxblood) pb-(--space-1)">
+              Writing
+            </Link>
+            <a
+              href={substackLink('/', { medium: 'site', content: 'footer' })}
+              target="_blank"
+              rel="noreferrer"
+              className="label text-(--color-oxblood) border-b border-(--color-oxblood) pb-(--space-1)"
+            >
+              {site.substackName}
+            </a>
+          </nav>
         </div>
         <div className="flex flex-col items-start md:items-end gap-(--space-1)">
           <span className="label">Sister Project</span>

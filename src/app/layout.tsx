@@ -41,10 +41,14 @@ export const metadata: Metadata = {
     ],
     apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
   },
+  alternates: {
+    canonical: './',
+  },
   openGraph: {
     type: 'website',
     siteName: site.name,
-    images: ['/og-default.png'],
+    // Served by src/app/opengraph-image.tsx (the old /og-default.png never existed).
+    images: ['/opengraph-image'],
   },
   twitter: {
     card: 'summary_large_image',

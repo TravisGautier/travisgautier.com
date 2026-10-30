@@ -39,8 +39,9 @@ describe('NotFound (brand reskin 7.6)', () => {
 
   it('unit_notfound_home_link_href', () => {
     render(<NotFound />);
-    const link = screen.getByRole('link');
+    const link = screen.getByRole('link', { name: /return home/i });
     expect(link).toHaveAttribute('href', '/');
+    expect(screen.getByRole('link', { name: /read the essays/i })).toHaveAttribute('href', '/writing');
   });
 
   // --- Integration (brand surface) ---
@@ -60,7 +61,8 @@ describe('NotFound (brand reskin 7.6)', () => {
   it('a11y_notfound_h1_and_link_name', () => {
     render(<NotFound />);
     expect(screen.getByRole('heading', { level: 1 }).tagName).toBe('H1');
-    const link = screen.getByRole('link');
-    expect(link.textContent!.trim().length).toBeGreaterThan(0);
+    for (const link of screen.getAllByRole('link')) {
+      expect(link.textContent!.trim().length).toBeGreaterThan(0);
+    }
   });
 });

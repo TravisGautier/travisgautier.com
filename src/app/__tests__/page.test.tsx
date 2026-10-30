@@ -229,7 +229,7 @@ describe('Homepage (styling-overhaul-7.1) — brand reskin', () => {
     });
     const librarySection = closestSection(libraryHeading);
     const cards = librarySection.querySelectorAll('li');
-    expect(cards).toHaveLength(4);
+    expect(cards).toHaveLength(5);
   });
 
   it('unit_library_grid_hrefs: library hrefs are /episodes /cases /build-log /products (no /about)', async () => {
@@ -242,6 +242,7 @@ describe('Homepage (styling-overhaul-7.1) — brand reskin', () => {
     );
     expect(hrefs).toContain('/episodes');
     expect(hrefs).toContain('/cases');
+    expect(hrefs).toContain('/writing');
     expect(hrefs).toContain('/build-log');
     expect(hrefs).toContain('/products');
     expect(hrefs).not.toContain('/about');
@@ -255,6 +256,7 @@ describe('Homepage (styling-overhaul-7.1) — brand reskin', () => {
     const text = librarySection.textContent ?? '';
     expect(text).toContain('Episodes');
     expect(text).toContain('Case Studies');
+    expect(text).toContain('Writing');
     expect(text).toContain('Build Log');
     expect(text).toContain('Products');
   });
@@ -467,7 +469,7 @@ describe('Homepage (styling-overhaul-7.1) — brand reskin', () => {
     const ul = librarySection.querySelector('ul');
     expect(ul).not.toBeNull();
     const lis = ul!.querySelectorAll('li');
-    expect(lis.length).toBe(4);
+    expect(lis.length).toBe(5);
   });
 
   // ────────────────────────────────────────────────────────────────
@@ -554,7 +556,7 @@ describe('Homepage (styling-overhaul-7.1) — brand reskin', () => {
       name: 'The library',
     });
     const librarySection = closestSection(libraryHeading);
-    expect(librarySection.querySelectorAll('li')).toHaveLength(4);
+    expect(librarySection.querySelectorAll('li')).toHaveLength(5);
     const hrefs = Array.from(librarySection.querySelectorAll('a')).map(
       (a) => a.getAttribute('href'),
     );

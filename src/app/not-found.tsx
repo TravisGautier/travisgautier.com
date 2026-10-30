@@ -14,12 +14,20 @@ export default function NotFound() {
           <p className="body-1 mt-(--space-5) text-(--color-muted)">
             The page you asked for isn&apos;t in the library.
           </p>
-          <Link
-            href="/"
-            className="label text-(--color-oxblood) mt-(--space-6) inline-block border-b border-(--color-oxblood) pb-(--space-1)"
-          >
-            Return home →
-          </Link>
+          <div className="mt-(--space-6) flex flex-wrap justify-center gap-(--space-5)">
+            <Link
+              href="/"
+              className="label text-(--color-oxblood) inline-block border-b border-(--color-oxblood) pb-(--space-1)"
+            >
+              Return home →
+            </Link>
+            <Link
+              href="/writing"
+              className="label text-(--color-oxblood) inline-block border-b border-(--color-oxblood) pb-(--space-1)"
+            >
+              Read the essays →
+            </Link>
+          </div>
         </Container>
       </Section>
     </Marble>

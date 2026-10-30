@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import type { Job, JobRollupEntry } from '@/content/schemas';
 import { Bone, Section } from '@/components/brand';
 import { Container } from '@/components/site/Container';
+import { EmailCapture } from '@/components/capture/EmailCapture';
 import { JobCard } from '@/components/build-log/JobCard';
 import { JobsRollupTable } from '@/components/build-log/JobsRollupTable';
 import { getAllJobs } from '@/lib/build-log/jobs';
@@ -131,6 +132,13 @@ export default async function BuildLogIndexPage() {
               </a>
             </p>
           </header>
+
+          <div className="mt-(--space-6) max-w-lg">
+            <EmailCapture
+              source="build-log-index"
+              blurb={`How this gets built is the subject of ${site.substackName}. Free essays, every few days.`}
+            />
+          </div>
 
           {rollup.length > 0 && (
             <div className="mt-(--space-7)">

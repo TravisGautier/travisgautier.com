@@ -1,12 +1,14 @@
 import type { Metadata } from 'next';
 import { EditorialCard, Marble, Section } from '@/components/brand';
 import { Container } from '@/components/site/Container';
+import { EmailCapture } from '@/components/capture/EmailCapture';
 import { getAllEpisodes } from '@/lib/content/episodes';
 import { toRoman } from '@/lib/format/roman';
 import { site } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Episodes',
+  alternates: { canonical: '/episodes' },
   description:
     `The full ${site.name} episode archive — flagship series, playbooks, shorts, and livestreams.`,
 };
@@ -43,6 +45,9 @@ export default async function EpisodesIndex() {
               );
             })}
           </ul>
+          <div className="mt-(--space-7) max-w-lg">
+            <EmailCapture source="episodes-index" />
+          </div>
         </Container>
       </Section>
     </Marble>

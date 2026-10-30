@@ -103,19 +103,33 @@ describe('EmailCapture — Substack embed (email-funnel-1)', () => {
 
   // ─── Fallback: env var unset ───────────────────────────────────────────
 
-  it('unit_fallback_link_when_env_unset', () => {
+  it('unit_default_embed_when_env_unset', () => {
     delete process.env[ENV_KEY];
+    const { container } = render(<EmailCapture source="homepage-hero" />);
+    expect(iframeEl(container).src.startsWith(site.substackEmbedUrl)).toBe(true);
+  });
+
+  it('unit_blurb_names_the_publication_and_can_be_suppressed', () => {
+    const { container } = render(<EmailCapture source="homepage-hero" />);
+    expect(container.textContent).toContain(site.substackName);
+    const { container: bare } = render(<EmailCapture source="homepage-hero" blurb={null} />);
+    expect(bare.querySelector('p')).toBeNull();
+  });
+
+  it('unit_fallback_link_when_env_off', () => {
+    process.env[ENV_KEY] = 'off';
     const { container } = render(<EmailCapture source="homepage-hero" />);
     expect(container.querySelector('iframe')).toBeNull();
     const link = container.querySelector('a') as HTMLAnchorElement | null;
     expect(link, 'fallback link not found').not.toBeNull();
-    expect(link!.href).toBe(site.substackProfileUrl);
+    expect(link!.href.startsWith(`${site.substackPublicationUrl}/subscribe?`)).toBe(true);
+    expect(new URL(link!.href).searchParams.get('utm_content')).toBe('homepage-hero');
     expect(link!.target).toBe('_blank');
     expect(link!.rel).toMatch(/noopener/);
   });
 
   it('unit_fallback_wrapped_in_bone_surface', () => {
-    delete process.env[ENV_KEY];
+    process.env[ENV_KEY] = 'off';
     const { container } = render(<EmailCapture source="homepage-hero" />);
     const root = boneSurfaceRoot(container);
     expect(root.className).toMatch(/bg-\(--color-bone\)/);
@@ -130,7 +144,7 @@ describe('EmailCapture — Substack embed (email-funnel-1)', () => {
   });
 
   it('a11y_fallback_link_is_descriptive', () => {
-    delete process.env[ENV_KEY];
+    process.env[ENV_KEY] = 'off';
     const { container } = render(<EmailCapture source="homepage-hero" />);
     const link = container.querySelector('a') as HTMLAnchorElement;
     expect(link.textContent?.trim().length).toBeGreaterThan(0);

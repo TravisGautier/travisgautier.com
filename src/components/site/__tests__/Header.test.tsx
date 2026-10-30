@@ -101,7 +101,7 @@ describe('Header', () => {
     render(<Header />);
     const nav = screen.getByRole('navigation');
     const items = nav.querySelectorAll('li');
-    expect(items).toHaveLength(6);
+    expect(items).toHaveLength(7);
   });
 
   it('unit_header_nav_hrefs', () => {
@@ -153,7 +153,7 @@ describe('Header', () => {
       .getAllByRole('link')
       .filter((el) => el.closest('nav'));
     // Every nav link must carry the `.label` utility class (from so-2.2)
-    expect(navLinks.length).toBe(6);
+    expect(navLinks.length).toBe(7);
     navLinks.forEach((link) => {
       expect(link.className).toMatch(/\blabel\b/);
     });
@@ -239,6 +239,7 @@ describe('Header', () => {
     expect(items).toEqual([
       { href: '/episodes', label: 'Episodes' },
       { href: '/cases', label: 'Cases' },
+      { href: '/writing', label: 'Writing' },
       { href: '/build-log', label: 'Build Log' },
       { href: '/cohorts', label: 'Cohorts' },
       { href: '/products', label: 'Products' },
@@ -585,7 +586,7 @@ describe('Header', () => {
       .filter((el) => el.closest('nav'))
       .map((el) => el.textContent);
     expect(new Set(labels)).toEqual(
-      new Set(['Episodes', 'Cases', 'Build Log', 'Cohorts', 'Products', 'About']),
+      new Set(['Episodes', 'Cases', 'Writing', 'Build Log', 'Cohorts', 'Products', 'About']),
     );
   });
 

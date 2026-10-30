@@ -10,7 +10,7 @@ import {
 import { Container } from '@/components/site/Container';
 import { EmailCapture } from '@/components/capture/EmailCapture';
 import { getLatestEpisode } from '@/lib/content/episodes';
-import { site } from '@/lib/site';
+import { personJsonLd, site, websiteJsonLd } from '@/lib/site';
 import { WhoIAm } from '@/components/home/WhoIAm';
 
 const LIBRARY = [
@@ -25,6 +25,12 @@ const LIBRARY = [
     headline: 'Case Studies',
     subtitle: 'Production builds with research, decisions, outcomes.',
     href: '/cases',
+  },
+  {
+    tag: 'Essays',
+    headline: 'Writing',
+    subtitle: 'The Forward Deployed Freelancer: the long form behind the channel.',
+    href: '/writing',
   },
   {
     tag: 'In Progress',
@@ -43,8 +49,14 @@ const LIBRARY = [
 export default async function Home() {
   const latest = await getLatestEpisode();
 
+  const jsonLd = [websiteJsonLd(), { '@context': 'https://schema.org', ...personJsonLd() }];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <section id="content" className="relative isolate overflow-hidden border-b border-(--edge-color-subtle)">
         <Image
           src="/hero/floatbg-hero.png"

@@ -37,7 +37,7 @@ describe('WhoIAm', () => {
       site.xUrl,
       site.linkedinUrl,
       site.youtubeUrl,
-      site.substackProfileUrl,
+      site.substackPublicationUrl,
     ]);
   });
 

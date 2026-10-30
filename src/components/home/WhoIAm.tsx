@@ -8,7 +8,7 @@ export const PROFILE_LINKS = [
   { label: 'X', href: site.xUrl },
   { label: 'LinkedIn', href: site.linkedinUrl },
   { label: 'YouTube', href: site.youtubeUrl },
-  { label: 'Substack', href: site.substackProfileUrl },
+  { label: 'Substack', href: site.substackPublicationUrl },
 ] as const;
 
 export function WhoIAm() {
