@@ -1,7 +1,8 @@
 import { getEssays, stripHtml, FEED_REVALIDATE_SECONDS } from '@/lib/substack/feed';
 import { site } from '@/lib/site';
 
-export const revalidate = FEED_REVALIDATE_SECONDS;
+// Segment config must be a literal; keep in step with FEED_REVALIDATE_SECONDS.
+export const revalidate = 3600;
 
 export async function GET() {
   const essays = await getEssays();
